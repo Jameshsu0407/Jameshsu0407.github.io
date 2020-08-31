@@ -5,6 +5,12 @@
     "body": "Hugo ships with several Built-in Shortcodes for rich content, along with a Privacy Config and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.\n",
     "ref": "/en/blog/test/"
   },{
+    "title": "test",
+    "date": "",
+    "description": "Guide d'utilisation des emoji dans Hugo",
+    "body": "Hugo ships with several Built-in Shortcodes for rich content, along with a Privacy Config and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.\n",
+    "ref": "/en/protfolio/test/"
+  },{
     "title": "About",
     "date": "",
     "description": "介紹",
