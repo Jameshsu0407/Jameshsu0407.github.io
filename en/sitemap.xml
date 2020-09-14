@@ -3,21 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jameshsu0407.github.io/en/about/</loc>
-    <lastmod>2020-09-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://jameshsu0407.github.io/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jameshsu0407.github.io/en/about/"
-                />
-  </url>
-  
-  <url>
     <loc>https://jameshsu0407.github.io/en/categories/</loc>
     <lastmod>2020-08-28T00:00:00+00:00</lastmod>
     <xhtml:link

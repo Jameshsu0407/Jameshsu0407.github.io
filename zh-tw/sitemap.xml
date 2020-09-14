@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jameshsu0407.github.io/blog/test/</loc>
+    <loc>https://jameshsu0407.github.io/blog/20200914/</loc>
     <lastmod>2020-09-14T00:00:00+00:00</lastmod>
   </url>
   
@@ -90,16 +90,6 @@
   <url>
     <loc>https://jameshsu0407.github.io/about/</loc>
     <lastmod>2020-09-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jameshsu0407.github.io/en/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://jameshsu0407.github.io/about/"
-                />
   </url>
   
   <url>
