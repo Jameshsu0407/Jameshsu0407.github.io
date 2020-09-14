@@ -10,4 +10,10 @@
     "description": "自我介紹內容～",
     "body": "你好，我是米米，目前是一位學生同時也在一家軟體公司當前端工程實習生。\n因緣際會下接觸到前端工程，因此開始了我的前端人生。在這裡我會分享我的所見所聞，主要以工作上學習到的心得為主。有任何問題都歡迎來跟我討論喔！\n",
     "ref": "/about/"
+  },{
+    "title": "Rich Content",
+    "date": "",
+    "description": "A brief description of Hugo Shortcodes",
+    "body": "Hugo ships with several Built-in Shortcodes for rich content, along with a Privacy Config and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.\n Instagram Simple Shortcode .__h_instagram.card { font-family: -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif; font-size: 14px; border: 1px solid rgb(219, 219, 219); padding: 0; margin-top: 30px; } .__h_instagram.card .card-header, .__h_instagram.card .card-body { padding: 10px 10px 10px; } .__h_instagram.card img { width: 100%; height: auto; }  koloot.design   View More on Instagram    YouTube Privacy Enhanced Shortcode    Twitter Simple Shortcode .twitter-tweet { font: 14px/1.45 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif; border-left: 4px solid #2b7bb9; padding-left: 1.5em; color: #555; } .twitter-tweet a { color: #2b7bb9; text-decoration: none; } blockquote.twitter-tweet a:hover, blockquote.twitter-tweet a:focus { text-decoration: underline; }  “In addition to being more logical, asymmetry has the advantage that its complete appearance is far more optically effective than symmetry.”\n— Jan Tschichold pic.twitter.com/gcv7SrhvJb\n\u0026mdash; Graphic Design History (@DesignReviewed) January 17, 2019  Vimeo Simple Shortcode  .__h_video { position: relative; padding-bottom: 56.23%; height: 0; overflow: hidden; width: 100%; background: #000; } .__h_video img { width: 100%; height: auto; color: #000; } .__h_video .play { height: 72px; width: 72px; left: 50%; top: 50%; margin-left: -36px; margin-top: -36px; position: absolute; cursor: pointer; }  ",
+    "ref": "/protfolio/rich-content/"
   }]
