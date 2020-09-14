@@ -4,7 +4,6 @@
   
   <url>
     <loc>https://jameshsu0407.github.io/en/categories/</loc>
-    <lastmod>2020-08-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
@@ -18,53 +17,7 @@
   </url>
   
   <url>
-    <loc>https://jameshsu0407.github.io/en/tags/emoji/</loc>
-    <lastmod>2020-08-28T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://jameshsu0407.github.io/tags/emoji/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jameshsu0407.github.io/en/tags/emoji/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://jameshsu0407.github.io/en/protfolio/</loc>
-    <lastmod>2020-08-28T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://jameshsu0407.github.io/protfolio/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jameshsu0407.github.io/en/protfolio/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://jameshsu0407.github.io/en/categories/syntax/</loc>
-    <lastmod>2020-08-28T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://jameshsu0407.github.io/categories/syntax/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jameshsu0407.github.io/en/categories/syntax/"
-                />
-  </url>
-  
-  <url>
     <loc>https://jameshsu0407.github.io/en/tags/</loc>
-    <lastmod>2020-08-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
@@ -78,38 +31,7 @@
   </url>
   
   <url>
-    <loc>https://jameshsu0407.github.io/en/protfolio/test/</loc>
-    <lastmod>2020-08-28T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://jameshsu0407.github.io/protfolio/test/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jameshsu0407.github.io/en/protfolio/test/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://jameshsu0407.github.io/en/categories/themes/</loc>
-    <lastmod>2020-08-28T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://jameshsu0407.github.io/categories/themes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jameshsu0407.github.io/en/categories/themes/"
-                />
-  </url>
-  
-  <url>
     <loc>https://jameshsu0407.github.io/en/</loc>
-    <lastmod>2020-08-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
