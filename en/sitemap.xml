@@ -18,21 +18,6 @@
   </url>
   
   <url>
-    <loc>https://jameshsu0407.github.io/en/blog/</loc>
-    <lastmod>2020-08-28T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://jameshsu0407.github.io/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jameshsu0407.github.io/en/blog/"
-                />
-  </url>
-  
-  <url>
     <loc>https://jameshsu0407.github.io/en/categories/</loc>
     <lastmod>2020-08-28T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -104,21 +89,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://jameshsu0407.github.io/en/tags/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://jameshsu0407.github.io/en/blog/test/</loc>
-    <lastmod>2020-08-28T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://jameshsu0407.github.io/blog/test/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jameshsu0407.github.io/en/blog/test/"
                 />
   </url>
   
