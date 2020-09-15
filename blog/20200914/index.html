@@ -43,7 +43,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
         <script src="https://kit.fontawesome.com/be54eb011a.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"><link rel="stylesheet" href="/css/main.min.e2b9a372d587b7794a833e8306f9c1cb0448ef105ad25b09272552f177a438ed.css" integrity="sha256-4rmjctWHt3lKgz6DBvnBywRI7xBa0lsJJyVS8XekOO0="><link rel="stylesheet" href="/css/add-on.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"><link rel="stylesheet" href="/css/main.min.e36b9b831823e0f9f22f5ab04091022903e0a9b7d73cd381364316a1bff12612.css" integrity="sha256-42ubgxgj4PnyL1qwQJECKQPgqbfXPNOBNkMWob/xJhI="><link rel="stylesheet" href="/css/add-on.css">
   
   
 <script type="application/javascript">
@@ -94,14 +94,14 @@ if (!doNotTrack) {
         
       
       <a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
-      
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
     </menu>
-    
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
     <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
     
     <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
   </nav>
-  
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
   
   
     <menu id="share-menu" class="flyout-menu menu">
@@ -252,7 +252,7 @@ if (!doNotTrack) {
 <p>暑假一眨眼就過去了，回顧過去這兩個月來我也學到不少東西。七月主要改版台灣公益資訊中心的頁面，將網站改成RWD頁面並且新增一些功能。由於專案還在開發階段，因此無法公開頁面內容，請以舊版的<a href="http://www.npo.org.tw" target="_blank">台灣公益資訊中心</a>做為參考。</p>
 <p>接下來的分享主要以我在開發時遇到的困難、學習到的新東西為主。那我們就開始吧！</p>
 <h3 id="圖片自適應外框大小">圖片自適應外框大小</h3>
-<p>標題取為圖片我想一定有很多人看不懂這到底是什麼意思。簡單來說，會使用本平台的人數百百種，當他們在上架內容時若剛好有圖片，就會有以下情況：</p>
+<p>標題取為「圖片自適應外框大小」我想一定有很多人看不懂這到底是什麼意思。簡單來說，會使用本平台的人數百百種，當他們在上架內容時若剛好有圖片，就會有以下情況：</p>
 <blockquote>
 <p>點擊上傳圖片 &gt; 隨便丟一張覺得拍得不錯的照片 &gt; 送出</p>
 </blockquote>
