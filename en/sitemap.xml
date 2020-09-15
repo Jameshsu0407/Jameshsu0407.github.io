@@ -3,16 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jameshsu0407.github.io/en/series/</loc>
+    <loc>https://jameshsu0407.github.io/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="https://jameshsu0407.github.io/series/"
+                href="https://jameshsu0407.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://jameshsu0407.github.io/en/series/"
+                href="https://jameshsu0407.github.io/en/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/en/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://jameshsu0407.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jameshsu0407.github.io/en/tags/"
                 />
   </url>
   
