@@ -3,18 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jameshsu0407.github.io/blog/20200914/</loc>
-    <lastmod>2020-09-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jameshsu0407.github.io/blog/</loc>
-    <lastmod>2020-09-14T00:00:00+00:00</lastmod>
+    <loc>https://jameshsu0407.github.io/tags/bootstrap/</loc>
+    <lastmod>2020-09-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://jameshsu0407.github.io/categories/</loc>
-    <lastmod>2020-09-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -28,8 +23,23 @@
   </url>
   
   <url>
+    <loc>https://jameshsu0407.github.io/tags/fasure/</loc>
+    <lastmod>2020-09-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/protfolio/fasure/</loc>
+    <lastmod>2020-09-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/protfolio/</loc>
+    <lastmod>2020-09-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jameshsu0407.github.io/tags/</loc>
-    <lastmod>2020-09-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -43,7 +53,37 @@
   </url>
   
   <url>
+    <loc>https://jameshsu0407.github.io/categories/%E4%BD%9C%E5%93%81%E9%9B%86/</loc>
+    <lastmod>2020-09-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jameshsu0407.github.io/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2020-09-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/</loc>
+    <lastmod>2020-09-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://jameshsu0407.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://jameshsu0407.github.io/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/blog/20200914/</loc>
+    <lastmod>2020-09-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/blog/</loc>
     <lastmod>2020-09-14T00:00:00+00:00</lastmod>
   </url>
   
@@ -73,43 +113,8 @@
   </url>
   
   <url>
-    <loc>https://jameshsu0407.github.io/</loc>
-    <lastmod>2020-09-14T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://jameshsu0407.github.io/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="https://jameshsu0407.github.io/"
-                />
-  </url>
-  
-  <url>
     <loc>https://jameshsu0407.github.io/about/</loc>
     <lastmod>2020-09-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jameshsu0407.github.io/tags/privacy/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jameshsu0407.github.io/protfolio/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jameshsu0407.github.io/protfolio/rich-content/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jameshsu0407.github.io/tags/shortcodes/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

@@ -6,15 +6,33 @@
     <description>Recent content in Tags on 米米的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Mon, 14 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jameshsu0407.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Bootstrap</title>
+      <link>https://jameshsu0407.github.io/tags/bootstrap/</link>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/tags/bootstrap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fasure</title>
+      <link>https://jameshsu0407.github.io/tags/fasure/</link>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/tags/fasure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>前端</title>
       <link>https://jameshsu0407.github.io/tags/%E5%89%8D%E7%AB%AF/</link>
-      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jameshsu0407.github.io/tags/%E5%89%8D%E7%AB%AF/</guid>
       <description></description>
@@ -44,24 +62,6 @@
       <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jameshsu0407.github.io/tags/%E6%95%99%E5%AD%B8/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>privacy</title>
-      <link>https://jameshsu0407.github.io/tags/privacy/</link>
-      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jameshsu0407.github.io/tags/privacy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shortcodes</title>
-      <link>https://jameshsu0407.github.io/tags/shortcodes/</link>
-      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jameshsu0407.github.io/tags/shortcodes/</guid>
       <description></description>
     </item>
     
