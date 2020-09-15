@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Protfolio on 米米的部落格</title>
-    <link>https://jameshsu0407.github.io/protfolio/</link>
-    <description>Recent content in Protfolio on 米米的部落格</description>
+    <title>Portfolio on 米米的部落格</title>
+    <link>https://jameshsu0407.github.io/portfolio/</link>
+    <description>Recent content in Portfolio on 米米的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
     <lastBuildDate>Tue, 15 Sep 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jameshsu0407.github.io/protfolio/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jameshsu0407.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Fasure</title>
-      <link>https://jameshsu0407.github.io/protfolio/fasure/</link>
+      <link>https://jameshsu0407.github.io/portfolio/fasure/</link>
       <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jameshsu0407.github.io/protfolio/fasure/</guid>
+      <guid>https://jameshsu0407.github.io/portfolio/fasure/</guid>
       <description>這是我第一個電商網站，主要使用Bootstrap來切版。
 這網站算是我自學Bootstrap後所做出來的成果，當時我還不太懂Bootstrap是什麼，對於框架的概念不甚了解，於是我就上網自學。後來找到一本書專門介紹Bootstrap如何使用，於是我就跟著他的步驟，一點一點慢慢學習。
  書名：讓響應式(RWD)網頁設計變簡單：Bootstrap開發速成
