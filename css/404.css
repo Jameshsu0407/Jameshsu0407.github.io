@@ -26,20 +26,13 @@ a {
   transition: color .2s ease, border-bottom-color 0.2s ease;
 }
 
-a:before {
-  font-family: "Font Awesome 5 Free";
-  display: inline;
-  content: "\f064";
-  -webkit-transition: color ease;
-  -moz-transition: color ease;
-  -ms-transition: color ease;
-  -o-transition: color ease;
-  transition: color ease;
-}
-
 a:hover {
   border-bottom-color: transparent;
   color: #2eb8ac;
+}
+
+a i{
+  margin-right: 5px;
 }
 
 @media only screen and (max-width: 280px) {
