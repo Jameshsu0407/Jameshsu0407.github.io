@@ -27,7 +27,9 @@ a {
 }
 
 a:before {
-  content: "🡠 ";
+  font-family: "Font Awesome 5 Free";
+  display: inline;
+  content: "\f064";
   -webkit-transition: color ease;
   -moz-transition: color ease;
   -ms-transition: color ease;
@@ -37,7 +39,7 @@ a:before {
 
 a:hover {
   border-bottom-color: transparent;
-  color: $accent-color;
+  color: #2eb8ac;
 }
 
 @media only screen and (max-width: 280px) {
