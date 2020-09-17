@@ -21,7 +21,7 @@
 <meta itemprop="description" content="台灣公益資訊中心改版實作心得">
 <meta itemprop="datePublished" content="2020-09-14T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-09-14T00:00:00+00:00" />
-<meta itemprop="wordCount" content="141">
+<meta itemprop="wordCount" content="155">
 <meta itemprop="image" content="https://jameshsu0407.github.io/img/main/logo.png"/>
 
 
@@ -260,24 +260,27 @@ if (!doNotTrack) {
 <p>撇除照片檔案太大會影響載入速度外，另一個問題就是「照片的寬高比例」。現代人拍照通常都用手機，但是各家手機尺寸都不盡相同，若將未經裁切的照片丟上網頁，那一定會跑版&hellip;</p>
 <h4 id="解法一max-width-100-max-height-100">解法一：max-width: 100%, max-height: 100%</h4>
 <p>為了解決這個問題，我原本的想法是在圖片的外層包一層<code>div</code>，並且控制外層大小及照片的排列方式。若照片比例與外框比例不符，它就會等比例縮在外框裡。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pic&#34;</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- html --&gt;</span>
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pic&#34;</span>&gt;
   &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://images.unsplash.com/photo-1600068643981-3c4496a2be55?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=2467&amp;amp;q=80&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>/&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
 &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pic&#34;</span>&gt;
   &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://images.unsplash.com/photo-1599930499224-1b9a45439a12?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1164&amp;amp;q=80&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>/&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
 </code></pre></div><p>＊圖片的<code>src=&quot;...&quot;</code>是在圖片地址，你可以換張圖片試試</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">html</span><span style="color:#f92672">,</span> <span style="color:#f92672">body</span> {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* css */</span>
+<span style="color:#f92672">html</span><span style="color:#f92672">,</span> <span style="color:#f92672">body</span> {
   <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
   <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
   <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
-  <span style="color:#66d9ef">flex-direction</span>: <span style="color:#66d9ef">column</span>;
   <span style="color:#66d9ef">justify-content</span>: <span style="color:#66d9ef">center</span>;
   <span style="color:#66d9ef">align-items</span>: <span style="color:#66d9ef">center</span>;
+  <span style="color:#66d9ef">flex-wrap</span>: <span style="color:#66d9ef">wrap</span>;
+  <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#3d3d3d</span>;
 }
 .<span style="color:#a6e22e">pic</span> {
-  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">800</span><span style="color:#66d9ef">px</span>;
-  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">450</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">350</span><span style="color:#66d9ef">px</span>;
   <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
   <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
   <span style="color:#66d9ef">justify-content</span>: <span style="color:#66d9ef">center</span>;
@@ -290,37 +293,71 @@ if (!doNotTrack) {
 }
 </code></pre></div><p>＊<code>html</code>、<code>body</code>是為了排版用</p>
 <p>＊主要看<code>.pic</code>跟<code>.pic img</code>那邊，外層先固定好大小，並使用<code>flex</code>排版，讓裡面的內容能夠水平置中及垂直置中；內層的圖片分別在最大寬度、最大高度指定為100%，意思為寬高最大就是100%，若圖片的寬度大於高度，則寬度就是100%，而高度就依照比例去計算，反之亦然</p>
-<p>附上<a href="https://codepen.io/Jameshsu0407/pen/mdPKpbO" target="_blank">codepen連結</a></p>
+
+
+
+
+
+
+
+<script
+    data-slug-hash="mdPKpbO"
+    data-user="your_username"
+    data-height="600"
+    data-default-tab="result"
+    data-theme-id="8862"
+    class='codepen'
+    async
+    src="//codepen.io/assets/embed/ei.js"
+></script>
 <h4 id="解法二object-fit">解法二：object-fit</h4>
 <p>後來發現另一個更厲害的css內建語法，他叫做<code>object-fit</code>，若要以我剛剛的範例來說，它的語法就是<code>object-fit: contain</code>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pic&#34;</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- html --&gt;</span>
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pic&#34;</span>&gt;
   &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://images.unsplash.com/photo-1600068643981-3c4496a2be55?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=2467&amp;amp;q=80&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>/&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
 &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pic&#34;</span>&gt;
   &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://images.unsplash.com/photo-1599930499224-1b9a45439a12?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1164&amp;amp;q=80&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>/&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">html</span><span style="color:#f92672">,</span> <span style="color:#f92672">body</span> {
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* css */</span>
+<span style="color:#f92672">html</span><span style="color:#f92672">,</span> <span style="color:#f92672">body</span> {
   <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
   <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
   <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
-  <span style="color:#66d9ef">flex-direction</span>: <span style="color:#66d9ef">column</span>;
   <span style="color:#66d9ef">justify-content</span>: <span style="color:#66d9ef">center</span>;
   <span style="color:#66d9ef">align-items</span>: <span style="color:#66d9ef">center</span>;
+  <span style="color:#66d9ef">flex-wrap</span>: <span style="color:#66d9ef">wrap</span>;
+  <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#3d3d3d</span>;
 }
 .<span style="color:#a6e22e">pic</span> {
-  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">800</span><span style="color:#66d9ef">px</span>;
-  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">450</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">350</span><span style="color:#66d9ef">px</span>;
   <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
   <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span>;
 }
 .<span style="color:#a6e22e">pic</span> <span style="color:#f92672">img</span> {
   <span style="color:#66d9ef">object-fit</span>: <span style="color:#66d9ef">contain</span>;
-  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">800</span><span style="color:#66d9ef">px</span>;
-  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">450</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">350</span><span style="color:#66d9ef">px</span>;
 }
-
 </code></pre></div><p>＊使用<code>object-fit</code>就只要在圖片上加上語法，並且列出想要的寬高就可以了</p>
-<p>附上<a href="https://codepen.io/Jameshsu0407/pen/abNKqZJ?editors=1100" target="_blank">codepen連結</a></p>
+
+
+
+
+
+
+
+<script
+    data-slug-hash="abNKqZJ"
+    data-user="your_username"
+    data-height="600"
+    data-default-tab="result"
+    data-theme-id="8862"
+    class='codepen'
+    async
+    src="//codepen.io/assets/embed/ei.js"
+></script>
 <p>眼尖的人可能會發現，它的語法大致跟<code>background-size</code>一樣，所以它同樣有好幾種顯示方式：</p>
 <ul>
 <li>fill：為預設值，強制讓圖片變形成外框的寬高。（很醜誒哈哈哈哈</li>
@@ -345,6 +382,8 @@ if (!doNotTrack) {
           <li><a class="article-terms-link" href="/categories/%e5%b7%a5%e4%bd%9c%e5%bf%83%e5%be%97%e5%88%86%e4%ba%ab/">工作心得分享</a></li>
         
           <li><a class="article-terms-link" href="/categories/%e5%89%8d%e7%ab%af%e6%95%99%e5%ad%b8/">前端教學</a></li>
+        
+          <li><a class="article-terms-link" href="/categories/css/">CSS</a></li>
         
       
     </ul>
@@ -455,6 +494,9 @@ if (!doNotTrack) {
         </header>
         <ul>
           
+          
+          <li>
+              <a href="/categories/css/">css<span class="count">1</span></a>
           
           <li>
               <a href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/">作品集<span class="count">1</span></a>
