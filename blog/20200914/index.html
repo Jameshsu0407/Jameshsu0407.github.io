@@ -72,11 +72,21 @@ if (!doNotTrack) {
     <h1 class="nav-title">
       <a href="/" class="nav">
         
-          [教學]圖片自適應外框大小
+          blog
         
       </a>
     </h1>
     <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fas fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
       
         
           
@@ -90,7 +100,7 @@ if (!doNotTrack) {
       
         
           
-          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
         
       
       <a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
@@ -213,7 +223,7 @@ if (!doNotTrack) {
   <div class="meta">
     <time datetime="2020-09-14 00:00:00 &#43;0000 UTC">2020-09-14</time>
     <p>米米</p>
-    <p>1 分鐘</p>
+    <p>閱讀時間：1 分鐘</p>
   </div>
 </header>
 
@@ -267,7 +277,7 @@ if (!doNotTrack) {
 &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pic&#34;</span>&gt;
   &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://images.unsplash.com/photo-1599930499224-1b9a45439a12?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1164&amp;amp;q=80&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>/&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><p>＊圖片的<code>src=&quot;...&quot;</code>是在圖片地址，你可以換張圖片試試</p>
+</code></pre></div><p><i>＊圖片的<code>src=&quot;...&quot;</code>是在圖片地址，你可以換張圖片試試</i></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* css */</span>
 <span style="color:#f92672">html</span><span style="color:#f92672">,</span> <span style="color:#f92672">body</span> {
   <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
@@ -291,8 +301,8 @@ if (!doNotTrack) {
   <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
   <span style="color:#66d9ef">max-height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
 }
-</code></pre></div><p>＊<code>html</code>、<code>body</code>是為了排版用</p>
-<p>＊主要看<code>.pic</code>跟<code>.pic img</code>那邊，外層先固定好大小，並使用<code>flex</code>排版，讓裡面的內容能夠水平置中及垂直置中；內層的圖片分別在最大寬度、最大高度指定為100%，意思為寬高最大就是100%，若圖片的寬度大於高度，則寬度就是100%，而高度就依照比例去計算，反之亦然</p>
+</code></pre></div><p><i>＊<code>html</code>、<code>body</code>是為了排版用</i></p>
+<p><i>＊主要看<code>.pic</code>跟<code>.pic img</code>那邊，外層先固定好大小，並使用<code>flex</code>排版，讓裡面的內容能夠水平置中及垂直置中；內層的圖片分別在最大寬度、最大高度指定為100%，意思為寬高最大就是100%，若圖片的寬度大於高度，則寬度就是100%，而高度就依照比例去計算，反之亦然</i></p>
 
 
 
@@ -340,7 +350,7 @@ if (!doNotTrack) {
   <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
   <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">350</span><span style="color:#66d9ef">px</span>;
 }
-</code></pre></div><p>＊使用<code>object-fit</code>就只要在圖片上加上語法，並且列出想要的寬高就可以了</p>
+</code></pre></div><p><i>＊使用<code>object-fit</code>就只要在圖片上加上語法，並且列出想要的寬高就可以了</i></p>
 
 
 
@@ -471,8 +481,16 @@ if (!doNotTrack) {
   
     <section id="recent-posts">
       <header>
-        <h1>最新文章</h1>
+        <h1>recent post</h1>
       </header>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/portfolio/fasure/">Fasure</a></h2>
+          <time class="published" datetime="2020-09-15 00:00:00 &#43;0000 UTC">2020-09-15</time>
+        </header>
+      </article>
       
       <article class="mini-post">
           
@@ -490,7 +508,7 @@ if (!doNotTrack) {
     
       <section id="categories">
         <header>
-          <h1><a href="/categories">分類</a></h1>
+          <h1><a href="/categories">categories</a></h1>
         </header>
         <ul>
           
@@ -516,7 +534,7 @@ if (!doNotTrack) {
   
     <section id="mini-bio">
       <header>
-        <h1>關於</h1>
+        <h1>about</h1>
       </header>
       <p>你好，我是米米，目前是一位學生同時也在一家軟體公司擔任前端工程實習生。</p>
       <footer>
