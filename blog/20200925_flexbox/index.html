@@ -1,0 +1,1028 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>[教學]Flexbox - 米米的部落格</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+<meta name="generator" content="Hugo 0.74.3" /><meta itemprop="name" content="[教學]Flexbox">
+<meta itemprop="description" content="Flexbox就只是叫小朋友排好隊形而已">
+<meta itemprop="datePublished" content="2020-09-25T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-09-25T00:00:00+00:00" />
+<meta itemprop="wordCount" content="270">
+<meta itemprop="image" content="">
+
+
+
+<meta itemprop="keywords" content="前端,教學,排版,Flex," />
+<meta property="og:title" content="[教學]Flexbox" />
+<meta property="og:description" content="Flexbox就只是叫小朋友排好隊形而已" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jameshsu0407.github.io/blog/20200925_flexbox/" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2020-09-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-25T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content=""/>
+
+<meta name="twitter:title" content="[教學]Flexbox"/>
+<meta name="twitter:description" content="Flexbox就只是叫小朋友排好隊形而已"/>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+        <script src="https://kit.fontawesome.com/be54eb011a.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"><link rel="stylesheet" href="/css/main.min.219abeb0dee86e296bb149fce253c5038156947f17bbf4795863c985cfc6c3e4.css" integrity="sha256-IZq&#43;sN7obilrsUn84lPFA4FWlH8Xu/R5WGPJhc/Gw&#43;Q="><link rel="stylesheet" href="/css/add-on.css">
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-176771659-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fas fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="/portfolio/" class="nav link"><i class='fas fa-palette'></i> Portfolio</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+      <a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%5b%e6%95%99%e5%ad%b8%5dFlexbox&amp;url=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20200925_flexbox%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20200925_flexbox%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+
+  
+        <a href="mailto:?subject=%e6%9f%a5%e7%9c%8b%e6%ad%a4%e5%b8%96%e5%ad%90%e7%9a%84%e4%bd%9c%e8%80%85 %e7%b1%b3%e7%b1%b3&amp;body=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20200925_flexbox%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://jameshsu0407.github.io/img/main/picture.jpg" class="circle" width="150" alt="大頭照" /></a>
+  <header>
+    <h1>你好，我是米米</h1>
+  </header>
+  <main>
+    <p>弱弱的前端實習生</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/Jameshsu0407" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+<li><a href="//codepen.io/Jameshsu0407" target="_blank" rel="noopener" title="CodePen" class="fab fa-codepen"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/100002336973433" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/jameshsu_0407" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:Jameshsu0407@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/20200925_flexbox/">[教學]Flexbox</a></h2>
+    
+    
+      <p>Flexbox就只是叫小朋友排好隊形而已</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-09-25 00:00:00 &#43;0000 UTC">2020-09-25</time>
+    <p>米米</p>
+    <p>閱讀時間：2 分鐘</p>
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%5b%e6%95%99%e5%ad%b8%5dFlexbox&amp;url=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20200925_flexbox%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20200925_flexbox%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+
+  
+        <a href="mailto:?subject=%e6%9f%a5%e7%9c%8b%e6%ad%a4%e5%b8%96%e5%ad%90%e7%9a%84%e4%bd%9c%e8%80%85 %e7%b1%b3%e7%b1%b3&amp;body=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20200925_flexbox%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </div>
+    <div class="content">
+      <a href="/blog/20200925_flexbox/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/main/CSS.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/main/CSS.png" alt="css">
+  </a>
+      <h3 id="前言">前言</h3>
+<p>前端在切版時最最需要的就是排版，上篇文章就有偷偷使用<code>display: flex</code>來做排版，這次就讓我們來看看Flex到底有多麽強大！在了解Flex之前，我們需要知道它究竟是如何排版的。</p>
+<blockquote>
+<p>以中央伍為準～～成體操隊形～～散開！</p>
+</blockquote>
+<p>聽到這句口令，想必大家腦中已經浮現出排隊的隊形了吧！沒錯，這就是Flex的排版原理。想要叫人員乖乖排好就需要先限制場地，因此人員就只能在這個範圍活動，不會跑到外面去。而這個場地就是「外容器、Container、父元素」；而人員就是「內元件、items、子元素」，接下來大家就可以開始排排站好囉～～</p>
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <figure>
+    <a data-fancybox="flexbox" href="/img/blog_img/20200925_flexbox/container,items.png" data-caption="Container,Items"><img src="https://jameshsu0407.github.io/img/blog_img/20200925_flexbox/container,items.png"></a>
+    <figcaption>Container,Items</figcaption>
+  </figure>
+
+
+<p><i>＊接下來我會以「Container」、「Items」來說明他們的關係</i></p>
+<p>首先來看看Container、Items各自有哪些屬性：</p>
+<blockquote>
+<p>Container：</p>
+<ul>
+<li><a href="#display">Display</a></li>
+<li><a href="#flex-direction">Flex-direction</a></li>
+<li><a href="#flex-wrap">Flex-wrap</a></li>
+<li><a href="#flex-flow">Flex-flow</a></li>
+<li><a href="#justify-content">Justify-content</a></li>
+<li><a href="#align-items">Align-items</a></li>
+<li><a href="#align-content">Align-content</a></li>
+</ul>
+<p>Items：</p>
+<ul>
+<li><a href="#order">Order</a></li>
+<li><a href="#flex-basis">Flex-basis</a></li>
+<li><a href="#flex-grow">Flex-grow</a></li>
+<li><a href="#flex-shrink">Flex-shrink</a></li>
+<li><a href="#align-self">Align-self</a></li>
+</ul>
+</blockquote>
+<h3 id="container">Container</h3>
+<p>Flex主要都是在Container上下指令。</p>
+<blockquote>
+<p>發動場地魔法卡「大地力量」，場面上地屬性怪獸的攻擊力可以上升500&hellip;</p>
+</blockquote>
+<p>沒錯，可以把它想像成場地效果，你要裡面的東西怎樣他就會怎樣，這樣就可以很好的控制裡面的內容了。以下介紹的屬性都是放在Container裡面的喔。</p>
+<h4 id="display">Display</h4>
+<p>首先先宣告為<code>flex</code>它才能使用。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
+.<span style="color:#a6e22e">container</span>{
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
+}
+</code></pre></div><h4 id="flex-direction">Flex-direction</h4>
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <figure>
+    <a data-fancybox="flexbox" href="/img/blog_img/20200925_flexbox/flex-direction.png" data-caption="flex-direction"><img src="https://jameshsu0407.github.io/img/blog_img/20200925_flexbox/flex-direction.png"></a>
+    <figcaption>flex-direction</figcaption>
+  </figure>
+
+
+<p><code>Flex-direction</code>負責管理Items該如何排列，它掌控著誰可以拿到主導權，能拿到主導權的有兩位人選，一位是<code>column</code>，另一位是<code>row</code>，也就是我們常講的「直行橫列」，直行是<code>column</code>；橫列是<code>row</code>。</p>
+<p>所謂的主導權就是「主軸（main-axis）」，既然有主軸那就有「副軸（cross-axis）」。預設下主軸為<code>row</code>，而副軸為<code>column</code>。主副軸彼此的關係為「十字交叉」，若一方為主軸，則另一方就是副軸，但<code>Flex-direction</code>只有決定主軸是誰，副軸的功用等等再說吧。我們現來看<code>Flex-direction</code>，它有4個語法，分別是：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">flex-direction</span><span style="color:#f92672">:</span> <span style="color:#f92672">row</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*預設，主軸由左至右*/</span>
+<span style="color:#f92672">flex-direction</span><span style="color:#f92672">:</span> <span style="color:#f92672">row-reverse</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*主軸由右至左*/</span>
+<span style="color:#f92672">flex-direction</span><span style="color:#f92672">:</span> <span style="color:#f92672">column</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*主軸由上至下*/</span>
+<span style="color:#f92672">flex-direction</span><span style="color:#f92672">:</span> <span style="color:#f92672">column-reverse</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*主軸由下至上*/</span>
+</code></pre></div>
+
+
+
+
+
+
+<script
+    data-slug-hash="NWNLbEV"
+    data-user="your_username"
+    data-height="500"
+    data-default-tab="result"
+    data-theme-id="8862"
+    class='codepen'
+    async
+    src="//codepen.io/assets/embed/ei.js"
+></script>
+<p><i>＊因為瀏覽器對於每個語法的定義不同，因此在Chome上看到的<code>flex-direction: column</code>、<code>flex-direction: column-reverse</code>是會爆出框框的；而在Safari上看到的是塞好塞滿。不過兩者皆是把物件塞在同一排，即便有定義好Items的寬高，但在空間不夠時是會壓縮它們的喔！</i></p>
+<blockquote>
+<p>咦咦咦！？我不要裡面的東西變形啦！！該怎麼解決呢？有兩個方法，第一個是減少Items，這樣空間就留出來了；第二個是加大Container的寬高。</p>
+</blockquote>
+<p>但～～上面講的都治標不治本，接下來就來介紹解決方案吧！</p>
+<h4 id="flex-wrap">Flex-wrap</h4>
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <figure>
+    <a data-fancybox="flexbox" href="/img/blog_img/20200925_flexbox/flex-wrap.png" data-caption="flex-direction"><img src="https://jameshsu0407.github.io/img/blog_img/20200925_flexbox/flex-wrap.png"></a>
+    <figcaption>flex-direction</figcaption>
+  </figure>
+
+
+<p><code>Flex-wrap</code>決定了Items的排列方式，有別於前者說提到的<code>Flex-direction</code>，它控制物件該不該「包起來」。我們知道單就下<code>Flex-direction</code>只會讓items排一排站好，而且還有可能擠在一起，讓Items變形，因此<code>Flex-wrap</code>透過包起來的方式，將塞不下的Items換行繼續塞，而換行的方向就是根據副軸去排的喔。說了這麼多我們直接看看它到底有哪些功能：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">flex-wrap</span><span style="color:#f92672">:</span> <span style="color:#f92672">nowrap</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*預設，單行排列，不包起來*/</span>
+<span style="color:#f92672">flex-wrap</span><span style="color:#f92672">:</span> <span style="color:#f92672">wrap</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*包好包滿*/</span>
+<span style="color:#f92672">flex-wrap</span><span style="color:#f92672">:</span> <span style="color:#f92672">wrap-reverse</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*包好包滿外還要來個反轉*/</span>
+</code></pre></div>
+
+
+
+
+
+
+<script
+    data-slug-hash="xxVaMrV"
+    data-user="your_username"
+    data-height="500"
+    data-default-tab="result"
+    data-theme-id="8862"
+    class='codepen'
+    async
+    src="//codepen.io/assets/embed/ei.js"
+></script>
+<p><i>＊Codepen展示中用到<code>Flex-direction: row</code>，其餘的排列組合就請自己去玩玩探索吧！</i></p>
+<p><i>＊<code>Flex-wrap: reverse</code>，反轉的地方是指「副軸反轉」，正常的方向是由左至右，由上至下，而反轉後的方向則變成了由右至左，由下至上</i></p>
+<h4 id="flex-flow">Flex-flow</h4>
+<p>那麼這個屬性又是幹嘛的呢？？其實你也可以不用懂它，它就是<code>Flex-direction</code>、<code>Flex-wrap</code>的「組合技」，如此一來就可以共同定義主副軸的排列方式了。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">flex-flow</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-direction</span> <span style="color:#f92672">flex-wrap</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*大括號裡面放的就是它們各自的屬性*/</span>
+</code></pre></div><p><i>＊預設為<code>flex-flow: row nowrap</code></i></p>
+<p>接下來就進入重頭戲，也就是介紹Flex屬性是如何「排版」的吧！</p>
+<h4 id="justify-content">Justify-content</h4>
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <figure>
+    <a data-fancybox="flexbox" href="/img/blog_img/20200925_flexbox/justify-content.png" data-caption="justify-content"><img src="https://jameshsu0407.github.io/img/blog_img/20200925_flexbox/justify-content.png"></a>
+    <figcaption>justify-content</figcaption>
+  </figure>
+
+
+<p><code>Justify-content</code>定義了「主軸」的「對齊方式」，有以下5種方式：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">justify-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-start</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*預設，靠頭對齊*/</span>
+<span style="color:#f92672">justify-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-end</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*靠尾對齊*/</span>
+<span style="color:#f92672">justify-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">center</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*置中對齊*/</span>
+<span style="color:#f92672">justify-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">space-between</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*置中對齊，頭尾的items貼齊Container，items之間有固定距離*/</span>
+<span style="color:#f92672">justify-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">space-around</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*置中對齊，頭尾的items沒有貼齊Container，items之間、頭尾items跟Container之間皆有固定距離*/</span>
+<span style="color:#f92672">justify-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">space-evenly</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*置中對齊，頭尾的items沒有貼齊Container，items之間、頭尾items跟Container之間距離相同*/</span>
+</code></pre></div>
+
+
+
+
+
+
+<script
+    data-slug-hash="abNaXXB"
+    data-user="your_username"
+    data-height="500"
+    data-default-tab="result"
+    data-theme-id="8862"
+    class='codepen'
+    async
+    src="//codepen.io/assets/embed/ei.js"
+></script>
+<p><i>＊Codepen展示中用到<code>Flex-flow: row wrap</code>，其餘的排列組合就請自己去玩玩探索吧！</i></p>
+<p><i>＊<code>Justify-content</code>是「控制主軸」，不是「控制左右」。在<code>Flex-direction</code>的控制下是有可能把主軸變為直向，副軸變為橫向。因此註解上我不以「靠左對齊」、「靠右對齊」而改用頭尾，原因是彼此的關係是互相的</i></p>
+<p><i>＊<code>Justify-content:space-arounnd</code>與<code>Justify-content:space-evenly</code>意思其實不太一樣喔。舉例來說每個items距離20px，那麼前者代表每個items都有20px，彼此的距離是40px；反觀後者，是每個items彼此之間的距離是20px</i></p>
+<h4 id="align-items">Align-items</h4>
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <figure>
+    <a data-fancybox="flexbox" href="/img/blog_img/20200925_flexbox/align-items.png" data-caption="align-items"><img src="https://jameshsu0407.github.io/img/blog_img/20200925_flexbox/align-items.png"></a>
+    <figcaption>align-items</figcaption>
+  </figure>
+
+
+<p><code>Align-items</code>定義了「副軸」的「對其方式」，有以下5種方式：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">align-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-start</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*預設，靠頭對齊*/</span>
+<span style="color:#f92672">align-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-end</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*靠尾對齊*/</span>
+<span style="color:#f92672">align-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">center</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*置中對齊*/</span>
+<span style="color:#f92672">align-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">baseline</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*按照文本基線對齊*/</span>
+<span style="color:#f92672">align-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">stretch</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*items延展至Container的頭尾*/</span>
+</code></pre></div>
+
+
+
+
+
+
+<script
+    data-slug-hash="OJNoqmY"
+    data-user="your_username"
+    data-height="500"
+    data-default-tab="result"
+    data-theme-id="8862"
+    class='codepen'
+    async
+    src="//codepen.io/assets/embed/ei.js"
+></script>
+<p><i>＊Codepen展示中用到<code>Flex-flow: row wrap</code>、<code>Justify-content: center</code>，其餘的排列組合就請自己去玩玩探索吧！</i></p>
+<p><i>＊使用<code>stretch</code>時，請不要設死Items的高度喔，不然它會拉不開</i></p>
+<h4 id="align-content">Align-content</h4>
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <figure>
+    <a data-fancybox="flexbox" href="/img/blog_img/20200925_flexbox/align-content.png" data-caption="align-content"><img src="https://jameshsu0407.github.io/img/blog_img/20200925_flexbox/align-content.png"></a>
+    <figcaption>align-content</figcaption>
+  </figure>
+
+
+<p>這個屬性是<code>Align-items</code>的進階版，而且它跟<code>Justify-content</code>長得有八成像，所以他們能控制的東西也是一樣差不多～這裡再再提醒一次：<code>Justify-content</code>控制主軸；<code>Align-content</code>控制副軸喔。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">align-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-start</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*預設，靠頭對齊*/</span>
+<span style="color:#f92672">align-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-end</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*靠尾對齊*/</span>
+<span style="color:#f92672">align-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">center</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*置中對齊*/</span>
+<span style="color:#f92672">align-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">space-between</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*置中對齊，頭尾的items貼齊Container，items之間有固定距離*/</span>
+<span style="color:#f92672">align-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">space-around</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*置中對齊，頭尾的items沒有貼齊Container，items之間、頭尾items跟Container之間皆有固定距離*/</span>
+<span style="color:#f92672">align-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">stretch</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*items延展至Container的頭尾*/</span>
+</code></pre></div>
+
+
+
+
+
+
+<script
+    data-slug-hash="jOqejBN"
+    data-user="your_username"
+    data-height="500"
+    data-default-tab="result"
+    data-theme-id="8862"
+    class='codepen'
+    async
+    src="//codepen.io/assets/embed/ei.js"
+></script>
+<p><i>＊Codepen展示中用到<code>Flex-flow: row wrap</code>、<code>Justify-content: center</code>，其餘的排列組合就請自己去玩玩探索吧！</i></p>
+<p><i>＊使用<code>stretch</code>時，請不要設死Items的高度喔，不然它會拉不開</i></p>
+<p>以上大致講完Container可以用的屬性了，那麼我們就，下面一位～～～～</p>
+<h3 id="items">Items</h3>
+<p>Items也是有很多東西可以控制的，它能做到的事情主要是items跟items之間的關係，像是誰在前誰在後的<code>order</code>，又或是誰位置可以比較大誰位置可以比較小的<code>Flex-grow</code>跟<code>Flex-shrink</code>等等。有些屬性甚至能覆蓋掉Container的屬性呢，那就讓我們繼續看下去。</p>
+<h4 id="order">Order</h4>
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <figure>
+    <a data-fancybox="flexbox" href="/img/blog_img/20200925_flexbox/order.png" data-caption="order"><img src="https://jameshsu0407.github.io/img/blog_img/20200925_flexbox/order.png"></a>
+    <figcaption>order</figcaption>
+  </figure>
+
+
+<p><code>order</code>屬性可以控制誰在前誰在後，即使在HTML上的物件是在最後一個，只要下達這個指令就可以輕輕鬆鬆要它在哪它就在哪囉。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">order</span><span style="color:#f92672">:</span> <span style="color:#f92672">integer</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*預設為0，integer的地方是給整數*/</span>
+</code></pre></div>
+
+
+
+
+
+
+<script
+    data-slug-hash="BaKqXLo"
+    data-user="your_username"
+    data-height="500"
+    data-default-tab="result"
+    data-theme-id="8862"
+    class='codepen'
+    async
+    src="//codepen.io/assets/embed/ei.js"
+></script>
+<p><i>＊Codepen展示中用到<code>Flex-flow: row wrap</code>、<code>Justify-content: center</code>、<code>Align-content: space-around</code>，其餘的排列組合就請自己去玩玩探索吧！</i></p>
+<p><i>＊<code>order</code>預設為零，若要排在0前面的話也可以負值喔</i></p>
+<h4 id="flex-basis">Flex-basis</h4>
+<p>它決定了主軸上items的預設長度。以<code>row</code>當主軸來說它控制items的「寬度」；以<code>column</code>當主軸來說它控制items的「高度」</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">flex-basis</span><span style="color:#f92672">:</span> <span style="color:#f92672">auto</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*預設為auto，可以給長度各種單位*/</span>
+</code></pre></div>
+
+
+
+
+
+
+<script
+    data-slug-hash="PoNyMdz"
+    data-user="your_username"
+    data-height="500"
+    data-default-tab="result"
+    data-theme-id="8862"
+    class='codepen'
+    async
+    src="//codepen.io/assets/embed/ei.js"
+></script>
+<p><i>＊範例當中<code>Flex-basis</code>的長度為50px。以<code>row</code>來當主軸的話所有items的「寬度」皆為50px；反之以<code>column</code>當主軸的話所有items的「高度」皆為50px</i></p>
+<h4 id="flex-grow">Flex-grow</h4>
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <figure>
+    <a data-fancybox="flexbox" href="/img/blog_img/20200925_flexbox/flex-grow.png" data-caption="flex-grow"><img src="https://jameshsu0407.github.io/img/blog_img/20200925_flexbox/flex-grow.png"></a>
+    <figcaption>flex-grow</figcaption>
+  </figure>
+
+
+<p>這個屬性跟等一下講的屬性是相關的，可以將他們視為兄弟。<code>Flex-grow</code>屬性決定items如何分配剩餘空間。我們上範例會比較好理解：</p>
+
+
+
+
+
+
+
+<script
+    data-slug-hash="ZEWwKer"
+    data-user="your_username"
+    data-height="500"
+    data-default-tab="result"
+    data-theme-id="8862"
+    class='codepen'
+    async
+    src="//codepen.io/assets/embed/ei.js"
+></script>
+<p>第一個範例當中有三個items排在一起，彼此大小皆為100x100px。第二個範例只是都讓他們有<code>flex-grow: 1</code>的屬性，items就將Container撐好撐滿。</p>
+<p><code>flex-grow</code>的預設值為0，也可以給其他的值，這個值代表要將剩下的空間分成幾等分。以這題為例，Container：600x350px；box：100x100px，那麼剩餘的空間就是600-(100*3)=300，因此就要來瓜分剩餘的300。items有三個，每個都有<code>flex-grow: 1</code>，因此切為三等份，每等分的長度則為300/3=100，所以每個items都會獲得100px的長度。</p>
+<p>那我們試著想一下，假設box1的<code>flex-grow: 2</code>，box2的<code>flex-grow: 3</code>那會變成怎麼樣呢？</p>
+<p>剩餘空間300要分給5等分，每等分為60，其中box1占2等分所以是120，而box2占3等分所以是180。最終items的長度分別為：220px、280px、100px（若把codepen上的範例改成這題，他們的實際大小可能會有一點點的落差，因為items都有border，border的長度也是會被算在裡面的。）</p>
+<h4 id="flex-shrink">Flex-shrink</h4>
+<p>剛剛的<code>Flex-grow</code>是處理當Container有剩餘空間時，將items「伸展」來符合Container的長度；現在<code>Flex-shrink</code>則是處理當Container不夠items塞時，將items「縮小」來符合Container的長度。</p>
+
+
+
+
+
+
+
+<script
+    data-slug-hash="wvGOaaa"
+    data-user="your_username"
+    data-height="500"
+    data-default-tab="result"
+    data-theme-id="8862"
+    class='codepen'
+    async
+    src="//codepen.io/assets/embed/ei.js"
+></script>
+<p>在第一個範例裡Container的大小是600x350px，每個items的長度皆為300px，照理來講items的長度比Container還要長，那為什麼它們沒有爆開呢？答案是在預設裡其實就已經加上了<code>Flex-shrink:1</code>了～因此它們都會被包在Container裡面。我們可以來算算實際上items到底多長，3個items總長度為3*300=900，扣掉Container的600，因此差為300。而各自的<code>Flex-shrink</code>皆為1，故300/3=100，每個items的長度都要減去100，所以長度為200。第二範例就只是把<code>Flex-shrink</code>設為0，items總長大於Container，那麼就會爆開了。</p>
+<p>再來看看第三個範例，長寬依舊，但是<code>Flex-shrink</code>分別是2、3、1，故300/(2+3+1)=50。box1占了2份，300-(2＊50)=200；box2占了3份，300-(3＊50)=150；box3占了1份，300-(1＊50)=250。這樣各位有清楚了嗎～</p>
+<h4 id="align-self">Align-self</h4>
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <figure>
+    <a data-fancybox="flexbox" href="/img/blog_img/20200925_flexbox/align-self.png" data-caption="align-self"><img src="https://jameshsu0407.github.io/img/blog_img/20200925_flexbox/align-self.png"></a>
+    <figcaption>align-self</figcaption>
+  </figure>
+
+
+<p>終終終於來到最後一個屬性了啊！！！！（撒花～</p>
+<p>這個屬性可以調整「副軸」的對齊屬性，再重申一次，是「副軸」喔不是主軸。它與<code>Align-items</code>、<code>Align-content</code>一樣可以控制副軸的排列方式，它卻能更進一步個別調整單一item的排列方式，以下是它的語法：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">align-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">auto</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*預設，與Container的align-items一樣*/</span>
+<span style="color:#f92672">align-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-start</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*預設，靠頭對齊*/</span>
+<span style="color:#f92672">align-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-end</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*靠尾對齊*/</span>
+<span style="color:#f92672">align-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">center</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*置中對齊*/</span>
+<span style="color:#f92672">align-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">baseline</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*按照文本基線對齊*/</span>
+<span style="color:#f92672">align-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">stretch</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*items延展至Container的頭尾*/</span>
+</code></pre></div>
+
+
+
+
+
+
+<script
+    data-slug-hash="jOqJboJ"
+    data-user="your_username"
+    data-height="500"
+    data-default-tab="result"
+    data-theme-id="8862"
+    class='codepen'
+    async
+    src="//codepen.io/assets/embed/ei.js"
+></script>
+<p><i>＊特別注意！<code>Align-self</code>給定的值是會壓過<code>Align-items</code>、<code>Align-content</code>的喔</i></p>
+<h3 id="結語">結語</h3>
+<p>其實Flex並沒有想象中的那麼難，我當初在學習時也是看到一大堆屬性就頭昏腦花了，但只要先了解Container與items各自是負責做什麼的，以及主軸和副軸之間的關係，其他的即便忘了，網路上找一下就知道該怎麼使用了。前端的路途是很遙遠的，我們共勉之～</p>
+<hr>
+<p>參考資料：</p>
+<p><a href="https://wcc723.github.io/css/2017/07/21/css-flex/" target="_blank">圖解：CSS Flex 屬性一點也不難</a></p>
+<p><a href="https://medium.com/enjoy-life-enjoy-coding/css-所以我說那個版能不能好切一點-flex-基本用法-e68cc2906995" target="_blank">CSS | 所以我說那個版能不能好切一點？ - Flex 基本用法</a></p>
+<p><a href="https://blog.camel2243.com/2019/11/14/css-%E6%90%9E%E6%87%82-flex-grow-flex-shirk-%E5%8F%8A-flex-basis-%E4%B8%89%E7%A8%AE%E5%B1%AC%E6%80%A7/" target="_blank">[css] 搞懂 flex-grow, flex-shirk 及 flex-basis 三種屬性</a></p>
+<p><a href="https://www.w3schools.com/css/css3_flexbox.asp" target="_blank">CSS Flexbox</a></p>
+<p>圖片來源：</p>
+<p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">A Complete Guide to Flexbox</a></p>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/%e5%89%8d%e7%ab%af%e6%95%99%e5%ad%b8/">前端教學</a></li>
+        
+          <li><a class="article-terms-link" href="/categories/css/">CSS</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/%e5%89%8d%e7%ab%af/">前端</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/%e6%95%99%e5%ad%b8/">教學</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/%e6%8e%92%e7%89%88/">排版</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/flex/">Flex</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jameshsu0407" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+
+  
+
+  
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jameshsu0407" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+  <div class="pagination">
+    
+    
+      <a href="/blog/20200914/" class="button right"><span>[教學]圖片自適應外框大小</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>recent post</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/20200925_flexbox/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/main/CSS.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/main/CSS.png" alt="css">
+  </a>
+        <header>
+          <h2><a href="/blog/20200925_flexbox/">[教學]Flexbox</a></h2>
+          <time class="published" datetime="2020-09-25 00:00:00 &#43;0000 UTC">2020-09-25</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/portfolio/fasure/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/portfolio_img/fasure/fasure.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/portfolio_img/fasure/fasure.png" alt="css">
+  </a>
+        <header>
+          <h2><a href="/portfolio/fasure/">Fasure</a></h2>
+          <time class="published" datetime="2020-09-15 00:00:00 &#43;0000 UTC">2020-09-15</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/20200914/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/main/CSS.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/main/CSS.png" alt="css">
+  </a>
+        <header>
+          <h2><a href="/blog/20200914/">[教學]圖片自適應外框大小</a></h2>
+          <time class="published" datetime="2020-09-14 00:00:00 &#43;0000 UTC">2020-09-14</time>
+        </header>
+      </article>
+      
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/css/">css<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/%E5%89%8D%E7%AB%AF%E6%95%99%E5%AD%B8/">前端教學<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/">作品集<span class="count">1</span></a>
+          
+          <li>
+              <a href="/categories/%E5%B7%A5%E4%BD%9C%E5%BF%83%E5%BE%97%E5%88%86%E4%BA%AB/">工作心得分享<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>about</h1>
+      </header>
+      <p>你好，我是米米，目前是一位學生同時也在一家軟體公司擔任前端工程實習生。</p>
+      <footer>
+        <a href="/about" class="button">查看更多</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/Jameshsu0407" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+<li><a href="//codepen.io/Jameshsu0407" target="_blank" rel="noopener" title="CodePen" class="fab fa-codepen"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/100002336973433" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/jameshsu_0407" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:Jameshsu0407@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    © 2020 米米的部落格
+      <br>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js"></script>
+    <script src="//unpkg.com/lunr/lunr.js"></script><script src="/js/bundlecdn.min.021aeffc097b31e48f3bafd74782482e2babb33d7c2fb3d33091362d6d8a5951.js" integrity="sha256-Ahrv/Al7MeSPO6/XR4JILiursz18L7PTMJE2LW2KWVE="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-176771659-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>
