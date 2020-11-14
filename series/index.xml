@@ -5,10 +5,6 @@
     <link>https://jameshsu0407.github.io/series/</link>
     <description>Recent content in Series on 米米的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-TW</language>
-    
-	<atom:link href="https://jameshsu0407.github.io/series/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>zh-TW</language><atom:link href="https://jameshsu0407.github.io/series/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
