@@ -6,10 +6,33 @@
     <description>Recent content in Tags on 米米的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bootstrap</title>
+      <link>https://jameshsu0407.github.io/tags/bootstrap/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/tags/bootstrap/</guid>
+      <description></description>
+    </item>
     
-	<atom:link href="https://jameshsu0407.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google地圖</title>
+      <link>https://jameshsu0407.github.io/tags/google%E5%9C%B0%E5%9C%96/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/tags/google%E5%9C%B0%E5%9C%96/</guid>
+      <description></description>
+    </item>
     
+    <item>
+      <title>前端</title>
+      <link>https://jameshsu0407.github.io/tags/%E5%89%8D%E7%AB%AF/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/tags/%E5%89%8D%E7%AB%AF/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Flex</title>
@@ -17,15 +40,6 @@
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jameshsu0407.github.io/tags/flex/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>前端</title>
-      <link>https://jameshsu0407.github.io/tags/%E5%89%8D%E7%AB%AF/</link>
-      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jameshsu0407.github.io/tags/%E5%89%8D%E7%AB%AF/</guid>
       <description></description>
     </item>
     
@@ -44,15 +58,6 @@
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jameshsu0407.github.io/tags/%E6%95%99%E5%AD%B8/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bootstrap</title>
-      <link>https://jameshsu0407.github.io/tags/bootstrap/</link>
-      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jameshsu0407.github.io/tags/bootstrap/</guid>
       <description></description>
     </item>
     
