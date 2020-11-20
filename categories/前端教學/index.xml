@@ -6,7 +6,29 @@
     <description>Recent content in 前端教學 on 米米的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/categories/%E5%89%8D%E7%AB%AF%E6%95%99%E5%AD%B8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/categories/%E5%89%8D%E7%AB%AF%E6%95%99%E5%AD%B8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[教學]Gap</title>
+      <link>https://jameshsu0407.github.io/blog/20201120_gap/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/blog/20201120_gap/</guid>
+      <description>前言 在上一篇文章中講解了如何用flex排版，如果還沒看過的話請去看FLEXBOX再來看這篇文章喔。
+各位在使用Flex時有沒有發生過Container裡面的items都會黏在一起、擠在一起的情況呢？這時我想大家的處理方式應該都是在items下外距來隔開吧！這次要介紹的就是超級方便的gap，他可以快速控制的items的之間的間隔喔！
+GAP 它使用的方式非常簡單，只要在Container裡加上：
+&amp;lt;!-- css --&amp;gt; .container{ gap: 20px; } 好，結束收工。
+484很～～～～～～簡單。
+ 但是&amp;hellip;我用safari看完全沒有間隔R，東西還是黏在一起誒。為什麼會這樣子？
+ 我們可以去查一下gap語法的支援程度如何。
+  gap的支援程度  恩&amp;hellip;滿江紅一片呢，這代表還有很多瀏覽器不支援，各位請加油好嗎？
+在各瀏覽器普遍還沒支援的情況下，我們可以換一種寫法，讓沒有不支援的瀏覽器也能呈現出gap的樣式。
+修改後的GAP 為了達到目的，我們必須從Container跟items下手。
+&amp;lt;!-- css --&amp;gt; .container{ display: flex; flex-wrap: wrap; --gap: 20px; margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap)); } .container &amp;gt; *{ margin: var(--gap) 0 0 var(--gap); } ＊--gap這個東西css裡面的變數，我們將想要的間隔寬度存在這裡，之後要改大小就只需在這裡處理就好。
+它的原理很簡單，以items來說，彼此之間都要有距離，因此每個items都需要在「上方」及「左側」有外距，但如次一來在「上方第一橫排的items」跟「左側第一直排的items」就會跟Container產生間隔。
+這時就換Container來處理問題。我們只需把Container「上方」及「左側」的外距再縮回來就能達到這個效果了。
+ 結語 其實我比較希望各家瀏覽器能快快支援gap，但目前也只能先以修改外距來達到類似的效果。不過不用灰心，因為除了gap能控制間隔外，還有另一個也能控制間隔的語法，不過這並不在flex的範疇裡，而是在更方便的grid裡，之後會陸陸續續地放上來喔～</description>
+    </item>
+    
     <item>
       <title>[教學]Flexbox</title>
       <link>https://jameshsu0407.github.io/blog/20200925_flexbox/</link>
