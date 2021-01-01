@@ -13,7 +13,7 @@
       <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jameshsu0407.github.io/blog/20201120_gap/</guid>
-      <description>前言 在上一篇文章中講解了如何用flex排版，如果還沒看過的話請去看FLEXBOX再來看這篇文章喔。
+      <description>前言 在上一篇文章中講解了如何用flex排版，如果還沒看過的話請去看[教學]FLEXBOX再來看這篇文章喔。
 各位在使用Flex時有沒有發生過Container裡面的items都會黏在一起、擠在一起的情況呢？這時我想大家的處理方式應該都是在items下外距來隔開吧！這次要介紹的就是超級方便的gap，他可以快速控制的items的之間的間隔喔！
 GAP 它使用的方式非常簡單，只要在Container裡加上：
 &amp;lt;!-- css --&amp;gt; .container{ gap: 20px; } 好，結束收工。
