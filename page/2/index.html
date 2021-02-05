@@ -2,7 +2,7 @@
 <html lang="zh-tw">
   <head>
   <meta charset="utf-8">
-<title>Blog - 米米的部落格</title>
+<title>米米的部落格</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -17,17 +17,17 @@
   
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
-<meta name="generator" content="Hugo 0.78.2" /><meta itemprop="name" content="Blog">
+<meta name="generator" content="Hugo 0.78.2" /><meta itemprop="name" content="米米的部落格">
 <meta itemprop="description" content="米米的部落格">
-<meta property="og:title" content="Blog" />
+<meta property="og:title" content="米米的部落格" />
 <meta property="og:description" content="米米的部落格" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://jameshsu0407.github.io/blog/" />
+<meta property="og:url" content="https://jameshsu0407.github.io/" />
 <meta property="og:image" content="https://jameshsu0407.github.io/img/main/logo.png"/>
 <meta property="og:updated_time" content="2021-02-05T00:00:00+00:00" /><meta property="og:site_name" content="米米的部落格" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://jameshsu0407.github.io/img/main/logo.png"/>
 
-<meta name="twitter:title" content="Blog"/>
+<meta name="twitter:title" content="米米的部落格"/>
 <meta name="twitter:description" content="米米的部落格"/>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
@@ -57,12 +57,48 @@ if (!doNotTrack) {
   <body>
     
 
+  <div id="theme-message" style="background-color:#3c3b3b;color:#f4f4f4;margin:auto auto;padding:.25em 2em;width:75%;">
+    <p style="text-align:center;">This message, related to the development of the theme, only displays on the
+      <code>localhost</code> homepage to notify you of any important theme changes.</p>
+      <hr>
+      <h5 style="color:#f4f4f4;text-align:center;"><i class="fas fa-exclamation-triangle"></i>Version 2.0.0 - July 20, 2020<i class="fas fa-exclamation-triangle"></i></h5>
+    <p>Below are the following changes that <em>could</em> be breaking changes for your site. For more details on any change, please refer to <a href="https://github.com/pacollins/hugo-future-imperfect-slim/pull/154">PR #154</a>.</p>
+<p>The major breaking change is:</p>
+<ol>
+<li>Users that have front matter that utilize <code>images</code> (backwards compatibility for <code>featured</code> and associated parameters still remains) <em>will</em> need to adjust from <code>[images]=&quot;SRC&quot;</code> to the new format.</li>
+</ol>
+<pre><code>[[images]]
+    src = &quot;&quot; // Link to image
+    alt = &quot;&quot; // Alt text for image
+    stretch = // Optional: See screenshots for referenced values and outcomes
+</code></pre><p>If you utilize any of the following, there <em>might</em> be a breaking:</p>
+<ol>
+<li>User custom templates <em>may</em> require adjustment.</li>
+<li>User custom i18n languages, or custom templates referencing i18n translations <em>may</em> require adjustment.</li>
+<li>User custom template for comments <em>will</em> require adjustment <em>if</em> it uses the theme&rsquo;s CSS and/or JS.</li>
+<li>User custom CSS <em>may</em> need to adjust due to a variety of class name changes and specificity changes.</li>
+</ol>
+<p>While I realize this is inconvenient, I hope that it is worth it to you in the long run. Thanks for using the theme, and feel free to submit issues as needed.</p>
+
+    <div style="text-align:center;">
+      <button onclick="removeBox()" class="button" style="color:#f4f4f4;margin-bottom:1em;">Close Notification Until Next Update</button>
+    </div>
+    <script>
+      if (window.location.href.indexOf('localhost:') < 1 || window.localStorage.getItem('HFIS-version') == '2.0.0') {
+        document.getElementsByTagName("body")[0].removeChild(document.getElementById("theme-message"));
+      }
+      function removeBox() {
+        window.localStorage.setItem('HFIS-version', '2.0.0');
+        document.getElementsByTagName("body")[0].removeChild(document.getElementById("theme-message"));
+      }
+    </script>
+  </div>
 <header id="site-header">
   <nav id="site-nav">
     <h1 class="nav-title">
       <a href="/" class="nav">
         
-          blog
+          米米的部落格
         
       </a>
     </h1>
@@ -113,13 +149,13 @@ if (!doNotTrack) {
 
   
     
-    <a href="//twitter.com/share?text=Blog&amp;url=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+    <a href="//twitter.com/share?text=%e7%b1%b3%e7%b1%b3%e7%9a%84%e9%83%a8%e8%90%bd%e6%a0%bc&amp;url=https%3a%2f%2fjameshsu0407.github.io%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
         <p>Twitter</p>
       </a>
   
 
   
-      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjameshsu0407.github.io%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
         <p>Facebook</p>
         </a>
   
@@ -127,7 +163,7 @@ if (!doNotTrack) {
   
 
   
-        <a href="mailto:?subject=%e6%9f%a5%e7%9c%8b%e6%ad%a4%e5%b8%96%e5%ad%90%e7%9a%84%e4%bd%9c%e8%80%85 %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&amp;body=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+        <a href="mailto:?subject=%e6%9f%a5%e7%9c%8b%e6%ad%a4%e5%b8%96%e5%ad%90%e7%9a%84%e4%bd%9c%e8%80%85 %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&amp;body=https%3a%2f%2fjameshsu0407.github.io%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
           <p>Email</p>
         </a>
   
@@ -150,8 +186,6 @@ if (!doNotTrack) {
     <footer>
       <ul class="socnet-icons">
         
-    <li><a href="/blog/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a></li>
-
 
         <li><a href="//github.com/Jameshsu0407" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
 
@@ -203,185 +237,6 @@ if (!doNotTrack) {
       <main id="site-main">
         
   
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/202102005_grid/">[教學]Grid</a></h2>
-    
-    
-      <p>可以二維排列的Grid</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2021-02-05 00:00:00 &#43;0000 UTC">2021-02-05</time>
-    <p>米米</p>
-    <p>閱讀時間：1 分鐘</p>
-  </div>
-</header>
-
-  <div class="content">
-    <a href="/blog/202102005_grid/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/main/CSS.png');">
-    <img class="stretchH" src="https://jameshsu0407.github.io/img/main/CSS.png" alt="css">
-  </a>
-    
-    <p><strong>此頁面還再施工中</strong></p>
-  </div>
-  <footer>
-    <a href="/blog/202102005_grid/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/%e5%89%8d%e7%ab%af%e6%95%99%e5%ad%b8/">前端教學</a></li>
-        
-          <li><a class="article-terms-link" href="/categories/css/">CSS</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/%e5%89%8d%e7%ab%af/">前端</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/%e6%95%99%e5%ad%b8/">教學</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/%e6%8e%92%e7%89%88/">排版</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/grid/">Grid</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/20201120_gap/">[教學]Gap</a></h2>
-    
-    
-      <p>Gap:「請做好社交距離」</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2020-11-20 00:00:00 &#43;0000 UTC">2020-11-20</time>
-    <p>米米</p>
-    <p>閱讀時間：1 分鐘</p>
-  </div>
-</header>
-
-  <div class="content">
-    <a href="/blog/20201120_gap/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/main/CSS.png');">
-    <img class="stretchH" src="https://jameshsu0407.github.io/img/main/CSS.png" alt="css">
-  </a>
-    
-    <p>在上一篇文章中講解了如何用flex排版，如果還沒看過的話請去看<a href="https://jameshsu0407.github.io/blog/20200925_flexbox/">[教學]FLEXBOX</a>再來看這篇文章喔。</p>
-  </div>
-  <footer>
-    <a href="/blog/20201120_gap/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/%e5%89%8d%e7%ab%af%e6%95%99%e5%ad%b8/">前端教學</a></li>
-        
-          <li><a class="article-terms-link" href="/categories/css/">CSS</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/%e5%89%8d%e7%ab%af/">前端</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/%e6%95%99%e5%ad%b8/">教學</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/%e6%8e%92%e7%89%88/">排版</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/flex/">Flex</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/gap/">Gap</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
-  
-    <article class="post">
-  <header>
-  <div class="title">
-    
-      <h2><a href="/blog/20200925_flexbox/">[教學]Flexbox</a></h2>
-    
-    
-      <p>Flexbox就只是叫小朋友排好隊形而已</p>
-    
-  </div>
-  <div class="meta">
-    <time datetime="2020-09-25 00:00:00 &#43;0000 UTC">2020-09-25</time>
-    <p>米米</p>
-    <p>閱讀時間：2 分鐘</p>
-  </div>
-</header>
-
-  <div class="content">
-    <a href="/blog/20200925_flexbox/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/main/CSS.png');">
-    <img class="stretchH" src="https://jameshsu0407.github.io/img/main/CSS.png" alt="css">
-  </a>
-    
-    <p>前端在切版時最最需要的就是排版，上篇文章就有偷偷使用<code>display: flex</code>來做排版，這次就讓我們來看看Flex到底有多麽強大！在了解Flex之前，我們需要知道它究竟是如何排版的。</p>
-  </div>
-  <footer>
-    <a href="/blog/20200925_flexbox/" class="button big">閱讀全文</a>
-    <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/%e5%89%8d%e7%ab%af%e6%95%99%e5%ad%b8/">前端教學</a></li>
-        
-          <li><a class="article-terms-link" href="/categories/css/">CSS</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      
-        
-          <li><a class="article-terms-link" href="/tags/%e5%89%8d%e7%ab%af/">前端</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/%e6%95%99%e5%ad%b8/">教學</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/%e6%8e%92%e7%89%88/">排版</a></li>
-        
-          <li><a class="article-terms-link" href="/tags/flex/">Flex</a></li>
-        
-      
-    </ul>
-  
-</div>
-
-  </footer>
-</article>
-
   
     <article class="post">
   <header>
@@ -445,6 +300,8 @@ if (!doNotTrack) {
 
   
   <div class="pagination">
+    
+      <a href="/" class="button left"><span>上一頁</span></a>
     
     
   </div>
@@ -559,8 +416,6 @@ if (!doNotTrack) {
   
       <ul class="socnet-icons">
         
-    <li><a href="/blog/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a></li>
-
 
         <li><a href="//github.com/Jameshsu0407" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
 

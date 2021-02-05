@@ -6,7 +6,29 @@
     <description>Recent content in 排版 on 米米的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 20 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/tags/%E6%8E%92%E7%89%88/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/tags/%E6%8E%92%E7%89%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[教學]Grid</title>
+      <link>https://jameshsu0407.github.io/blog/202102005_grid/</link>
+      <pubDate>Fri, 05 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/blog/202102005_grid/</guid>
+      <description>此頁面還再施工中
+前言 grid是一個很好用的排版工具之一，他甚至比flex好用呢！兩者之間有相似也有不相似的地方，就讓我們繼續看下去吧！
+grid的包法與flex一樣，需要有外層的.container，也需要有內層的.items，若不懂內外層之間的關係，可以去看看我之前寫的[教學]FLEXBOX。
+照慣例，先來看看Container、Items的屬性有哪些：
+ Container：
+ Display Grid-template-columns_rows Grid-template-areas Grid-gap Justify-items Align-items  Items：
+ Grid-column/row Justify-self Align-self   Container 跟flex一樣，grid大都是在container裡面下指令。
+Display 先宣告要使用grid來排版。
+&amp;lt;!-- css --&amp;gt; .container{ display: grid; } grid不像flex一下display就會有變化，它還需要把空間切成一塊一塊的才能使用，雖說有些麻煩，但事後在定位排版上會比較好操作，靈活度也比flex還要來得高。
+Grid-template-columns_rows Template的意思為模板，我們透過這個屬性把想要的區塊切開。它的語法主要分兩個：
+&amp;lt;!-- css --&amp;gt; grid-template-columns: 100px 50px auto 200px 1fr; &amp;lt;!-- 直行 --&amp;gt; grid-template-rows: 25% 100px 1fr; &amp;lt;!-- 橫列 --&amp;gt;   ＊給定的值可以使用px、%、fr等長度單位
+我們從左至右看，可以發現每一格的寬度是「100px 50px auto 200px 1fr」，這不就跟css內的grid-template-column一樣嗎！它的意思是「切幾格，每格自己給定」，以剛剛的例子來說就是切五格，每格的長度按照裡面的值所定。同理grid-template-rows也是如此。
+Grid-template-areas 這東西像是給定切好的區塊一個名字，之後在items叫它去該區塊。在Container裡先設好模版該長什麼樣、該叫什麼名字，每個格子裡要放哪個items。
+&amp;lt;!-- css --&amp;gt; .container{ grid-template-areas: &amp;#34;header header header header&amp;#34; &amp;#34;main main .</description>
+    </item>
+    
     <item>
       <title>[教學]Gap</title>
       <link>https://jameshsu0407.github.io/blog/20201120_gap/</link>
