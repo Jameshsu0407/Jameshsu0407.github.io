@@ -1,1 +1,1 @@
-網頁連結：https://jameshsu0407.github.io
+部落格連結：https://jameshsu0407.github.io
