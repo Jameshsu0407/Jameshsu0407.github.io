@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+  <meta charset="utf-8">
+<title>[軟體分享]在touch bar上顯示歌詞！ - 米米的部落格</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+<meta name="generator" content="Hugo 0.78.2" /><meta itemprop="name" content="[軟體分享]在touch bar上顯示歌詞！">
+<meta itemprop="description" content="Show Lyrics on Touch Bar">
+<meta itemprop="datePublished" content="2021-04-29T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-04-29T00:00:00+00:00" />
+<meta itemprop="wordCount" content="246">
+<meta itemprop="image" content="">
+
+
+
+<meta itemprop="keywords" content="教學,touch bar,LyricsX,touchbar-lyric,BetterTouchTool," />
+<meta property="og:title" content="[軟體分享]在touch bar上顯示歌詞！" />
+<meta property="og:description" content="Show Lyrics on Touch Bar" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jameshsu0407.github.io/blog/20210426_touchbar_lyrics/" />
+<meta property="og:image" content="https://jameshsu0407.github.io/img/blog_img/20210426_touchbar_lyrics/Touch%20Bar.png" />
+<meta property="article:published_time" content="2021-04-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-04-29T00:00:00+00:00" /><meta property="og:site_name" content="米米的部落格" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jameshsu0407.github.io/img/blog_img/20210426_touchbar_lyrics/Touch%20Bar.png"/>
+
+<meta name="twitter:title" content="[軟體分享]在touch bar上顯示歌詞！"/>
+<meta name="twitter:description" content="Show Lyrics on Touch Bar"/>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+        <script src="https://kit.fontawesome.com/be54eb011a.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"><link rel="stylesheet" href="/css/main.min.219abeb0dee86e296bb149fce253c5038156947f17bbf4795863c985cfc6c3e4.css" integrity="sha256-IZq&#43;sN7obilrsUn84lPFA4FWlH8Xu/R5WGPJhc/Gw&#43;Q="><link rel="stylesheet" href="/css/add-on.css">
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-176771659-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fas fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="/portfolio/" class="nav link"><i class='fas fa-palette'></i> Portfolio</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+      <a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%5b%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%5d%e5%9c%a8touch%20bar%e4%b8%8a%e9%a1%af%e7%a4%ba%e6%ad%8c%e8%a9%9e%ef%bc%81&amp;url=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20210426_touchbar_lyrics%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20210426_touchbar_lyrics%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+
+  
+        <a href="mailto:?subject=%e6%9f%a5%e7%9c%8b%e6%ad%a4%e5%b8%96%e5%ad%90%e7%9a%84%e4%bd%9c%e8%80%85 %e7%b1%b3%e7%b1%b3&amp;body=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20210426_touchbar_lyrics%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://jameshsu0407.github.io/img/main/picture.jpg" class="circle" width="150" alt="大頭照" /></a>
+  <header>
+    <h1>你好，我是米米</h1>
+  </header>
+  <main>
+    <p>弱弱的前端實習生</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/Jameshsu0407" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+<li><a href="//codepen.io/Jameshsu0407" target="_blank" rel="noopener" title="CodePen" class="fab fa-codepen"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/100002336973433" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/jameshsu_0407" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:Jameshsu0407@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/20210426_touchbar_lyrics/">[軟體分享]在touch bar上顯示歌詞！</a></h2>
+    
+    
+      <p>Show Lyrics on Touch Bar</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-04-29 00:00:00 &#43;0000 UTC">2021-04-29</time>
+    <p>米米</p>
+    
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=%5b%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab%5d%e5%9c%a8touch%20bar%e4%b8%8a%e9%a1%af%e7%a4%ba%e6%ad%8c%e8%a9%9e%ef%bc%81&amp;url=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20210426_touchbar_lyrics%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20210426_touchbar_lyrics%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+
+  
+        <a href="mailto:?subject=%e6%9f%a5%e7%9c%8b%e6%ad%a4%e5%b8%96%e5%ad%90%e7%9a%84%e4%bd%9c%e8%80%85 %e7%b1%b3%e7%b1%b3&amp;body=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20210426_touchbar_lyrics%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </div>
+    <div class="content">
+      <a href="/blog/20210426_touchbar_lyrics/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/blog_img/20210426_touchbar_lyrics/Touch%20Bar.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/blog_img/20210426_touchbar_lyrics/Touch%20Bar.png" alt="touchbar">
+  </a>
+      <h3 id="前言">前言</h3>
+<p>大家好，最近忙的事情差不多都告一段落了，就來分享兩個讓touch bar能夠顯示歌詞的軟體吧！兩者各有各的優缺點，安裝方式也不一樣，就讓我們繼續看下去吧！</p>
+<blockquote>
+<p>目錄：</p>
+<ul>
+<li><a href="#lyricsx">LyricsX</a></li>
+<li><a href="#touchbar_lyric">touchbar_lyric</a></li>
+</ul>
+</blockquote>
+<h3 id="lyricsx">LyricsX</h3>
+<p>這個軟體能在App store上找到，它是一套能夠支援iTunes、Spotify、Vox、Audirvana、Swinsian等串流軟體，自動搜尋相對應的歌詞，並且可以設定歌詞要提前或延後顯示，還可將簡體中文自動翻譯成繁體中文，功能非常豐富。LyricsX提供多種呈現方式，但本次僅介紹如何將它應用在touch bar上。</p>
+<p>在App store上的LyricsX是閹割版的，並不支持touch bar歌詞功能，必須從LyricsX的Github上下載。</p>
+<p>附上<a href="https://github.com/ddddxxx/LyricsX/releases" target="_blank">網站連結</a></p>
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <figure>
+    <a data-fancybox="LyricsX" href="/img/blog_img/20210426_touchbar_lyrics/LyricsX_download.png" data-caption="下載最新版本的zip檔"><img src="https://jameshsu0407.github.io/img/blog_img/20210426_touchbar_lyrics/LyricsX_download.png"></a>
+    <figcaption>下載最新版本的zip檔</figcaption>
+  </figure>
+
+
+<p>下載LyricsX的壓縮包，並且點開執行。此時會跳出一個警告視窗，提醒說是否要打開。</p>
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <figure>
+    <a data-fancybox="LyricsX" href="/img/blog_img/20210426_touchbar_lyrics/LyricsX_warnning.png" data-caption="授權打開LyricsX"><img src="https://jameshsu0407.github.io/img/blog_img/20210426_touchbar_lyrics/LyricsX_warnning.png"></a>
+    <figcaption>授權打開LyricsX</figcaption>
+  </figure>
+
+
+<p>若打不開，請去系統偏好設定裡強制打開。點擊「蘋果鍵 &gt; 系統偏好設定⋯ &gt;  安全性與隱私權  &gt; 一般」，按下強制打開就可以了。</p>
+<p><i>＊貼心小提醒：因為軟體不是從App store上載下來的，所以他的位置是在「下載項目」，記得把他拖曳到「應用程式」喔！</i></p>
+<p>基本上就安裝完成了。如果你剛好在播放音樂，那麼歌詞就已經出現在桌面上囉！接著我們要把歌詞塞在touch bar裡。</p>
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <figure>
+    <a data-fancybox="LyricsX" href="/img/blog_img/20210426_touchbar_lyrics/LyricsX_show_lyrics.png" data-caption="歌詞會顯示在桌面上"><img src="https://jameshsu0407.github.io/img/blog_img/20210426_touchbar_lyrics/LyricsX_show_lyrics.png"></a>
+    <figcaption>歌詞會顯示在桌面上</figcaption>
+  </figure>
+
+
+<p>點選上方選單列LyricsX的icon，並且選擇偏好設定。</p>
+<p><i>＊貼心小提醒：在這裡可以把「啟用動態歌詞」關閉，畢竟一直出現在視窗上有點煩人</i></p>
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <figure>
+    <a data-fancybox="LyricsX" href="/img/blog_img/20210426_touchbar_lyrics/LyricsX_show_setting.png" data-caption="關閉桌面歌詞並且進入偏好設定"><img src="https://jameshsu0407.github.io/img/blog_img/20210426_touchbar_lyrics/LyricsX_show_setting.png"></a>
+    <figcaption>關閉桌面歌詞並且進入偏好設定</figcaption>
+  </figure>
+
+
+<p>裡面有很多東西可以設定，像是偏好的音樂播放器、雙語歌詞、轉為繁中等等，各位可以依照自己的使用情境來設定。</p>
+<p>接著進入「實驗功能」必且把「啟用Touch Bar歌詞」打開，如此一來就可以在touch bar上顯示歌詞了。</p>
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <figure>
+    <a data-fancybox="LyricsX" href="/img/blog_img/20210426_touchbar_lyrics/LyricsX_opinion.png" data-caption="啟用touch bar歌詞"><img src="https://jameshsu0407.github.io/img/blog_img/20210426_touchbar_lyrics/LyricsX_opinion.png"></a>
+    <figcaption>啟用touch bar歌詞</figcaption>
+  </figure>
+
+
+<p>此時的touch bar會出現LyricsX的icon，點擊它之後歌詞就會跑出來了。</p>
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <figure>
+    <a data-fancybox="LyricsX" href="/img/blog_img/20210426_touchbar_lyrics/LyricsX_touchbar_icon.png" data-caption="點選icon"><img src="https://jameshsu0407.github.io/img/blog_img/20210426_touchbar_lyrics/LyricsX_touchbar_icon.png"></a>
+    <figcaption>點選icon</figcaption>
+  </figure>
+
+
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <figure>
+    <a data-fancybox="LyricsX" href="/img/blog_img/20210426_touchbar_lyrics/LyricsX_touchbar_lyrics.png" data-caption="歌詞出現！"><img src="https://jameshsu0407.github.io/img/blog_img/20210426_touchbar_lyrics/LyricsX_touchbar_lyrics.png"></a>
+    <figcaption>歌詞出現！</figcaption>
+  </figure>
+
+
+<h3 id="touchbar_lyric">touchbar_lyric</h3>
+<p>這個軟體是需要搭配<a href="https://folivora.ai" target="_blank">BetterTouchTool</a>來使用的。簡單來說BetterTouchTool可以完全客製化touch bar的內容，多了很多彈性，當然設定也就蠻複雜的，網路上有很多別人做好的設定，下載下來並且根據自己需要的情境做設定是最快的方法。，由於設定BetterTouchTool需要花很長的篇幅來講解，這裡僅分享如何安裝歌詞的外掛到BetterTouchTool上，BetterTouchTool的安裝設定就不多贅述了，說不定哪天我心情好就來寫～</p>
+<p>此次的安裝需要打一些程式碼，稍微有些難度，但我們會一步一步慢慢來。</p>
+<p>我們使用homebrew來安裝python3，之後再去安裝touchbar_lyric。將此段程式碼貼到終端機上。</p>
+<pre><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
+</code></pre><p>安裝好homebrew之後，接著來安裝python3。一樣將下列程式碼貼到終端機上。</p>
+<pre><code>brew install python3 
+</code></pre><p>在終端機輸入下列程式碼：</p>
+<pre><code>pip3 install touchbar_lyric --upgrade
+</code></pre><p>安裝完成之後，複製以下文字，之後直接貼在BetterTouchTool。</p>
+<pre><code>[
+    {
+      &quot;BTTWidgetName&quot; : &quot;Lyric&quot;,
+      &quot;BTTTriggerType&quot; : 642,
+      &quot;BTTTriggerTypeDescription&quot; : &quot;Shell Script \/ Task Widget&quot;,
+      &quot;BTTTriggerClass&quot; : &quot;BTTTriggerTypeTouchBar&quot;,
+      &quot;BTTPredefinedActionType&quot; : -1,
+      &quot;BTTPredefinedActionName&quot; : &quot;No Action&quot;,
+      &quot;BTTShellScriptWidgetGestureConfig&quot; : &quot;\/bin\/sh:::-c:::-:::&quot;,
+      &quot;BTTEnabled2&quot; : 1,
+      &quot;BTTRepeatDelay&quot; : 0,
+      &quot;BTTUUID&quot; : &quot;93C8B565-73C7-49BE-960A-4FCF512CE881&quot;,
+      &quot;BTTNotesInsteadOfDescription&quot; : 0,
+      &quot;BTTEnabled&quot; : 1,
+      &quot;BTTModifierMode&quot; : 0,
+      &quot;BTTOrder&quot; : 0,
+      &quot;BTTDisplayOrder&quot; : 99,
+      &quot;BTTMergeIntoTouchBarGroups&quot; : 0,
+      &quot;BTTTriggerConfig&quot; : {
+        &quot;BTTTouchBarFreeSpaceAfterButton&quot; : 0,
+        &quot;BTTTouchBarOnlyShowIcon&quot; : false,
+        &quot;BTTTouchBarButtonColor&quot; : &quot;0.000000, 0.000000, 0.000000, 255.000000&quot;,
+        &quot;BTTTouchBarApplyCornerRadiusTo&quot; : 0,
+        &quot;BTTTouchBarItemPlacement&quot; : 0,
+        &quot;BTTTouchBarAppleScriptStringRunOnInit&quot; : true,
+        &quot;BTTTouchBarAlwaysShowButton&quot; : false,
+        &quot;BTTTouchBarFontColorAlternate&quot; : &quot;0.000000, 0.000000, 0.000000, 255.000000&quot;,
+        &quot;BTTScriptType&quot; : 0,
+        &quot;BTTTouchBarButtonWidth&quot; : 550,
+        &quot;BTTTouchBarScriptUpdateInterval&quot; : 1,
+        &quot;BTTTouchBarItemIconHeight&quot; : 22,
+        &quot;BTTTouchBarButtonUseFixedWidth&quot; : 0,
+        &quot;BTTTouchBarButtonTextAlignment&quot; : 1,
+        &quot;BTTTouchBarAlternateBackgroundColor&quot; : &quot;0.000000, 0.000000, 0.000000, 255.000000&quot;,
+        &quot;BTTTBWidgetWidth&quot; : 400,
+        &quot;BTTTouchBarItemIconWidth&quot; : 22,
+        &quot;BTTTouchBarShellScriptString&quot; : &quot;$PYTHONPATH -m touchbar_lyric  --app Spotify&quot;,
+        &quot;BTTTouchBarIconTextOffset&quot; : 5,
+        &quot;BTTTouchBarButtonFontSize&quot; : 12,
+        &quot;BTTTouchBarFontColor&quot; : &quot;156.000006, 226.000002, 90.000002, 255.000000&quot;,
+        &quot;BTTTouchBarButtonName&quot; : &quot;Lyric&quot;,
+        &quot;BTTTouchBarButtonCornerRadius&quot; : 6,
+        &quot;BTTTouchBarItemPadding&quot; : 20
+      }
+    }
+  ]
+</code></pre><p>接著在Script裡面填上：</p>
+<pre><code>/usr/local/Cellar/python@3.9/3.9.4/bin/python3.9 -m touchbar_lyric  --app Music --traditional
+</code></pre>
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <figure>
+    <a data-fancybox="touchbar_lyric" href="/img/blog_img/20210426_touchbar_lyrics/touchbar_lyric_script.png" data-caption="script設定"><img src="https://jameshsu0407.github.io/img/blog_img/20210426_touchbar_lyrics/touchbar_lyric_script.png"></a>
+    <figcaption>script設定</figcaption>
+  </figure>
+
+
+<p>這裡講解一下程式碼。</p>
+<ul>
+<li>剛剛用homebrew下載的python會放在Cellar的資料夾裡，每個人下載的版本可能會略微不同，但道理是一樣的，選擇python的路徑就對了。</li>
+<li>這裡偵測Apple Music播放器，若使用Spotify當作主要的播放器，將程式碼的「Music」代換成「Spotify」就可以了。</li>
+<li>最後的「traditional」是將簡體中文轉換成繁體中文。</li>
+</ul>
+<p>到這裡基本的設定就設定完成了，若要更改文字顏色、文字大小及背景顏色等等可以在「Common」裡面設定。</p>
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <figure>
+    <a data-fancybox="touchbar_lyric" href="/img/blog_img/20210426_touchbar_lyrics/touchbar_lyric_common_setting.png" data-caption="設定文字大小、顏色、背景色"><img src="https://jameshsu0407.github.io/img/blog_img/20210426_touchbar_lyrics/touchbar_lyric_common_setting.png"></a>
+    <figcaption>設定文字大小、顏色、背景色</figcaption>
+  </figure>
+
+
+<h3 id="結語">結語</h3>
+<p>LyricsX跟touchbar_lyric兩者我都有使用，不過後都用後者居多，畢竟我有在用BetterTouchTool嘛～這兩者我用過，以下是我的心得感想。</p>
+<p>LyricsX的優點：</p>
+<ul>
+<li>方便安裝，操作簡易</li>
+<li>有多種控制選項</li>
+<li>可以控制歌詞提早、延後出現的時間</li>
+</ul>
+<p>LyricsX的可改進的有：</p>
+<ul>
+<li>自動轉成繁體中文的功能常常失靈</li>
+</ul>
+<p>touchbar_lyric的優點：</p>
+<ul>
+<li>可搭配BetterTouchTool使用</li>
+<li>歌詞支持繁體中文</li>
+</ul>
+<p>touchbar_lyric可改進的有：</p>
+<ul>
+<li>安裝過程麻煩</li>
+<li>歌詞有時候會出錯</li>
+<li>歌詞出現時間過晚</li>
+<li>可偵測的播放來源過少</li>
+</ul>
+<p>以上就是這次的分享，若有問題也可以在底下留言互相討論喔！</p>
+<hr>
+<p>參考資料：</p>
+<p><a href="https://github.com/ddddxxx/LyricsX" target="_blank">LyricsX</a></p>
+<p><a href="https://github.com/ChenghaoMou/touchbar-lyric" target="_blank">touchbar-lyric</a></p>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/%e8%bb%9f%e9%ab%94%e5%88%86%e4%ba%ab/">軟體分享</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/%e6%95%99%e5%ad%b8/">教學</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/touch-bar/">touch bar</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/lyricsx/">LyricsX</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/touchbar-lyric/">touchbar-lyric</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/bettertouchtool/">BetterTouchTool</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+  <article class="post">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jameshsu0407" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+
+  
+
+  
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jameshsu0407" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+  <div class="pagination">
+    
+    
+      <a href="/blog/20210205_grid/" class="button right"><span>[教學]Grid</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>recent post</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/20210426_touchbar_lyrics/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/blog_img/20210426_touchbar_lyrics/Touch%20Bar.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/blog_img/20210426_touchbar_lyrics/Touch%20Bar.png" alt="touchbar">
+  </a>
+        <header>
+          <h2><a href="/blog/20210426_touchbar_lyrics/">[軟體分享]在touch bar上顯示歌詞！</a></h2>
+          <time class="published" datetime="2021-04-29 00:00:00 &#43;0000 UTC">2021-04-29</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/portfolio/npo/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/portfolio_img/npo/npo.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/portfolio_img/npo/npo.png" alt="Taiwan NPO Information Platform">
+  </a>
+        <header>
+          <h2><a href="/portfolio/npo/">台灣公益資訊中心</a></h2>
+          <time class="published" datetime="2021-04-02 00:00:00 &#43;0000 UTC">2021-04-02</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/20210205_grid/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/main/CSS.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/main/CSS.png" alt="css">
+  </a>
+        <header>
+          <h2><a href="/blog/20210205_grid/">[教學]Grid</a></h2>
+          <time class="published" datetime="2021-02-05 00:00:00 &#43;0000 UTC">2021-02-05</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/20201120_gap/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/main/CSS.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/main/CSS.png" alt="css">
+  </a>
+        <header>
+          <h2><a href="/blog/20201120_gap/">[教學]Gap</a></h2>
+          <time class="published" datetime="2020-11-20 00:00:00 &#43;0000 UTC">2020-11-20</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/portfolio/intern/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/portfolio_img/intern/intern.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/portfolio_img/intern/intern.png" alt="intern">
+  </a>
+        <header>
+          <h2><a href="/portfolio/intern/">Intern Website</a></h2>
+          <time class="published" datetime="2020-11-12 00:00:00 &#43;0000 UTC">2020-11-12</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/css/">css<span class="count">4</span></a>
+          
+          <li>
+              <a href="/categories/%E5%89%8D%E7%AB%AF%E6%95%99%E5%AD%B8/">前端教學<span class="count">4</span></a>
+          
+          <li>
+              <a href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/">作品集<span class="count">3</span></a>
+          
+          <li>
+              <a href="/categories/%E5%B7%A5%E4%BD%9C%E5%BF%83%E5%BE%97%E5%88%86%E4%BA%AB/">工作心得分享<span class="count">1</span></a>
+          
+          <li>
+              <a href="/categories/%E8%BB%9F%E9%AB%94%E5%88%86%E4%BA%AB/">軟體分享<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>about</h1>
+      </header>
+      <p>你好，我是米米，目前是一位學生同時也在一家軟體公司擔任前端工程實習生。</p>
+      <footer>
+        <a href="/about" class="button">查看更多</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/Jameshsu0407" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+<li><a href="//codepen.io/Jameshsu0407" target="_blank" rel="noopener" title="CodePen" class="fab fa-codepen"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/100002336973433" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/jameshsu_0407" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:Jameshsu0407@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    © 2021 米米的部落格
+      <br>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js"></script>
+    <script src="//unpkg.com/lunr/lunr.js"></script><script src="/js/bundlecdn.min.021aeffc097b31e48f3bafd74782482e2babb33d7c2fb3d33091362d6d8a5951.js" integrity="sha256-Ahrv/Al7MeSPO6/XR4JILiursz18L7PTMJE2LW2KWVE="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-176771659-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </div>
+  </body>
+</html>
