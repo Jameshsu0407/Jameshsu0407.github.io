@@ -26,7 +26,8 @@ GAP 它使用的方式非常簡單，只要在Container裡加上：
 &amp;lt;!-- css --&amp;gt; .container{ display: flex; flex-wrap: wrap; --gap: 20px; margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap)); } .container &amp;gt; *{ margin: var(--gap) 0 0 var(--gap); } ＊--gap這個東西css裡面的變數，我們將想要的間隔寬度存在這裡，之後要改大小就只需在這裡處理就好。
 它的原理很簡單，以items來說，彼此之間都要有距離，因此每個items都需要在「上方」及「左側」有外距，但如次一來在「上方第一橫排的items」跟「左側第一直排的items」就會跟Container產生間隔。
 這時就換Container來處理問題。我們只需把Container「上方」及「左側」的外距再縮回來就能達到這個效果了。
- 結語 其實我比較希望各家瀏覽器能快快支援gap，但目前也只能先以修改外距來達到類似的效果。不過不用灰心，因為除了gap能控制間隔外，還有另一個也能控制間隔的語法，不過這並不在flex的範疇裡，而是在更方便的grid裡，之後會陸陸續續地放上來喔～</description>
+ ＊2021/06/04更新：現在Safari也已經支援使用gap了，上面的東西大家看看就好。
+結語 其實我比較希望各家瀏覽器能快快支援gap，但目前也只能先以修改外距來達到類似的效果。不過不用灰心，因為除了gap能控制間隔外，還有另一個也能控制間隔的語法，不過這並不在flex的範疇裡，而是在更方便的grid裡，之後會陸陸續續地放上來喔～</description>
     </item>
     
     <item>
