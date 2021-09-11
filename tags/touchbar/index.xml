@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TouchBar on 米米的部落格</title>
+    <link>https://jameshsu0407.github.io/tags/touchbar/</link>
+    <description>Recent content in TouchBar on 米米的部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sat, 11 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/tags/touchbar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[軟體分享]BetterTouchTool</title>
+      <link>https://jameshsu0407.github.io/blog/20210911_bettertouchtool/</link>
+      <pubDate>Sat, 11 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/blog/20210911_bettertouchtool/</guid>
+      <description>前言 TouchBar文章第三篇！這次不唬爛，確確實實解放你的TouchBar！
+這次介紹的軟體是BetterTouchTool（簡稱BTT），這個東西我在[軟體分享]在TOUCH BAR上顯示歌詞！有稍微提到過，此次就讓我們來好好研究一下BTT到底能做什麼吧！
+PS：我想很多人會覺得之後就沒有人會再用TouchBar了，何必介紹BTT呢？但其實啊~BTT能做到的事不只有TouchBar的功能，它可以客製化各種手勢操控、鍵盤快捷鍵抑或是遠程操控&amp;hellip; 就算之後沒有TouchBar也還是能活得好好的～
+ 目錄：
+ BetterTouchTool介紹 安裝及購買liscense  安裝 購買liscense   安裝GoldenChaos-BTT 客製化BetterTouchTool控制項  GC-BTT設定  Presents HomeStrip MenuBar DockBadges   BetterTouchTool控制項調整     BetterTouchTool介紹 簡單說BTT是一個強大的軟體，它能在Mac上自定義各種輸入設備，像是觸控版、滑鼠手勢、鍵盤快捷鍵等等，這次我們使用到的是TouchBar的控制設定。
+BTT還有個專門的社群可以讓使用者互相討論～就算你不會設定、不會寫程式，只想當個伸手黨，這都沒問題～～BTT支援輸出/導入功能。在社群中有一堆大神們開發自己的設定，你只需要下載、導入，你的TouchBar就能變的強大無比！
+  BTT社群  如何發揮Touch Bar 真正的實力？
+這裡附上有關BTT的討論與介紹，我當初就是看到這則貼文就被推坑使用BTT的。但網路上分享BTT設定的文章少的可憐，而且大多都是英文版，很多人看到一定是望之卻步，更不用說控制項一大堆，介面複雜的跟什麼一樣。因此我才想要寫篇文章，手把手的教大家快速安裝BTT。接下來我們就開始設定ㄅ～
+安裝及購買liscense 安裝 進入BTT的官網選擇BetterTouchTool，點擊下載最新版本的就可以了。
+  下載BTT   下載完之後若無法打開，可能是Mac阻擋第三方App，需要去偏好設定裡調整。選擇「蘋果」選單 &amp;gt;「系統偏好設定⋯」，按一下「安全性與隱私權」，然後按一下「一般」，下方就可以強制打開。
+ 購買liscense 這個軟體之前是免費的，後來就開始要收費，但金額倒也不是很貴，你都買得起一台Mac了，難道還買不起超好用的軟體嗎（笑～
+BTT購買liscense的方式有三種：
+ 一般許可證（BetterTouchTool Standard License）：價格8.5美金。一般許可證將會收到2年之內的更新，2年之後你將無法得到更新，但可以永久使用你最後更新的版本。 終生許可證（BetterTouchTool Lifetime License）：價格20.5美金。終生許可證可以一直得到最新的更新並且永久使用。 Setapp訂閱（Setapp subscription）：走訂閱制，每月9.99美金。Settapp裡面有超過200的Apps可以使用，其中包含了BetterTouchTool。    BTT liscense  點擊前往購買Liscense</description>
+    </item>
+    
+    <item>
+      <title>[軟體分享]解放你的TouchBar！</title>
+      <link>https://jameshsu0407.github.io/blog/20210831_touchbar_games/</link>
+      <pubDate>Tue, 31 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/blog/20210831_touchbar_games/</guid>
+      <description>前言 再過一兩個月，新版的MacBook Pro就要推出了（應該吧？ TouchBar被拿掉似乎已成事實，看來大家真的很不喜歡TouchBar呢～
+因此我決定再多發幾篇有關TouchBar的文來好好紀念它一下，一來是大家之後可能就不會看到它，二來是我寫TouchBar的文章有非～常～多～人瀏覽，不信的話可以去Google上搜尋TouchBar歌詞，沒意外的話我寫的文章是排在第一個！！！真的超級感動的～～沒看過的朋友可以點這個連結：[軟體分享]在TOUCH BAR上顯示歌詞！
+這次介紹的東西有點廢（笑～ 它其實沒有什麼太大的實質作用，頂多就是打發時間娛樂一下而已。這同時也是在做實驗，看看這麼廢的內容會不會有人搜尋、SEO排名會不會靠前、後台流量會不會又大爆發&amp;hellip;&amp;hellip;
+希望能給我一個滿意的流量！以下是本次會介紹的軟體。
+ 目錄：
+ 溫馨小提醒 Touché Pac-Bar TouchBarSpaceFight TouchBar-Piano TouchBarDino RunMarioRun TouchBarPong Touchbar_nyancat   溫馨小提醒 等等介紹的軟體都是第三方軟體，因此Apple會嘗試阻擋，以下是來自Apple的文件：
+ 若您嘗試打開的 App 並未由識別之開發者向 Apple 登錄，便會收到警告對話框。這並不代表一定是 App 發生問題。例如，部分 App 是在開發者登錄其識別碼之前所撰寫的。然而，這些 App 並未經過檢查，macOS 也無法檢查這些 App 在發行之後是否曾損壞或被修改。
+ 簡單來說只要軟體不是放在App Store上，那麼這些軟體都沒有被Apple檢測過，不能保證其安全性。因此需要使用者額外授權才能打開。
+ 若要在 Mac 上更改這些偏好設定，選擇「蘋果」選單 &amp;gt;「系統偏好設定⋯」，按一下「安全性與隱私權」，然後按一下「一般」。
+ 接著就點擊強制打開就可以了。
+若對於安全性有疑慮的朋友可以查看官方文件了解進一步的資訊。
+Touché 它可以讓TouchBar上的資訊同步到螢幕上，可以使用滑鼠點擊控制，除此之外也方便TouchBar的截圖。
+PS：不要覺得他很爛～等等你就不用一直盯著TouchBar來玩遊戲了（笑～
+前往下載
+Pac-Bar   小精靈  有沒有玩過小精靈？我想大部分的人都有玩過吧！那我再問問，你有沒有在TouchBar上玩過小精靈？肯定沒有吧～～
+PS：你不要以為路線只有一條很簡單，難的很勒！
+前往下載
+TouchBarSpaceFight   太空射擊遊戲  使用方向鍵控制上下左右，空白鍵發射子彈，在你的TouchBar上也能玩到太空射擊遊戲！
+PS：只要一直射子彈就不會死，雖然浪費蠻多子彈的。</description>
+    </item>
+    
+    <item>
+      <title>[軟體分享]在touch bar上顯示歌詞！</title>
+      <link>https://jameshsu0407.github.io/blog/20210426_touchbar_lyrics/</link>
+      <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/blog/20210426_touchbar_lyrics/</guid>
+      <description>前言 大家好，最近忙的事情差不多都告一段落了，就來分享兩個讓touch bar能夠顯示歌詞的軟體吧！兩者各有各的優缺點，安裝方式也不一樣，就讓我們繼續看下去吧！
+ 目錄：
+ LyricsX touchbar_lyric   LyricsX 這個軟體能在App store上找到，它是一套能夠支援iTunes、Spotify、Vox、Audirvana、Swinsian等串流軟體，自動搜尋相對應的歌詞，並且可以設定歌詞要提前或延後顯示，還可將簡體中文自動翻譯成繁體中文，功能非常豐富。LyricsX提供多種呈現方式，但本次僅介紹如何將它應用在touch bar上。
+在App store上的LyricsX是閹割版的，並不支持touch bar歌詞功能，必須從LyricsX的Github上下載。
+附上網站連結
+  下載最新版本的zip檔  下載LyricsX的壓縮包，並且點開執行。此時會跳出一個警告視窗，提醒說是否要打開。
+  授權打開LyricsX  若打不開，請去系統偏好設定裡強制打開。點擊「蘋果鍵 &amp;gt; 系統偏好設定⋯ &amp;gt; 安全性與隱私權 &amp;gt; 一般」，按下強制打開就可以了。
+＊貼心小提醒：因為軟體不是從App store上載下來的，所以他的位置是在「下載項目」，記得把他拖曳到「應用程式」喔！
+基本上就安裝完成了。如果你剛好在播放音樂，那麼歌詞就已經出現在桌面上囉！接著我們要把歌詞塞在touch bar裡。
+  歌詞會顯示在桌面上  點選上方選單列LyricsX的icon，並且選擇偏好設定。
+＊貼心小提醒：在這裡可以把「啟用動態歌詞」關閉，畢竟一直出現在視窗上有點煩人
+  關閉桌面歌詞並且進入偏好設定  裡面有很多東西可以設定，像是偏好的音樂播放器、雙語歌詞、轉為繁中等等，各位可以依照自己的使用情境來設定。
+接著進入「實驗功能」必且把「啟用Touch Bar歌詞」打開，如此一來就可以在touch bar上顯示歌詞了。
+  啟用touch bar歌詞  此時的touch bar會出現LyricsX的icon，點擊它之後歌詞就會跑出來了。
+  點選icon    歌詞出現！  touchbar_lyric 這個軟體是需要搭配BetterTouchTool來使用的。簡單來說BetterTouchTool可以完全客製化touch bar的內容，多了很多彈性，當然設定也就蠻複雜的，網路上有很多別人做好的設定，下載下來並且根據自己需要的情境做設定是最快的方法。，由於設定BetterTouchTool需要花很長的篇幅來講解，這裡僅分享如何安裝歌詞的外掛到BetterTouchTool上，BetterTouchTool的安裝設定就不多贅述了，說不定哪天我心情好就來寫～</description>
+    </item>
+    
+  </channel>
+</rss>
