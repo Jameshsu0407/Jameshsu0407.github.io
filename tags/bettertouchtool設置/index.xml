@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BetterTouchTool設置 on 米米的部落格</title>
+    <link>https://jameshsu0407.github.io/tags/bettertouchtool%E8%A8%AD%E7%BD%AE/</link>
+    <description>Recent content in BetterTouchTool設置 on 米米的部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sat, 11 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/tags/bettertouchtool%E8%A8%AD%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[軟體分享]BetterTouchTool</title>
+      <link>https://jameshsu0407.github.io/blog/20210911_bettertouchtool/</link>
+      <pubDate>Sat, 11 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/blog/20210911_bettertouchtool/</guid>
+      <description>前言 TouchBar文章第三篇！這次不唬爛，確確實實解放你的TouchBar！
+這次介紹的軟體是BetterTouchTool（簡稱BTT），這個東西我在[軟體分享]在TOUCH BAR上顯示歌詞！有稍微提到過，此次就讓我們來好好研究一下BTT到底能做什麼吧！
+PS：我想很多人會覺得之後就沒有人會再用TouchBar了，何必介紹BTT呢？但其實啊~BTT能做到的事不只有TouchBar的功能，它可以客製化各種手勢操控、鍵盤快捷鍵抑或是遠程操控&amp;hellip; 就算之後沒有TouchBar也還是能活得好好的～
+ 目錄：
+ BetterTouchTool介紹 安裝及購買liscense  安裝 購買liscense   安裝GoldenChaos-BTT 客製化BetterTouchTool控制項  GC-BTT設定  Presents HomeStrip MenuBar DockBadges   BetterTouchTool控制項調整     BetterTouchTool介紹 簡單說BTT是一個強大的軟體，它能在Mac上自定義各種輸入設備，像是觸控版、滑鼠手勢、鍵盤快捷鍵等等，這次我們使用到的是TouchBar的控制設定。
+BTT還有個專門的社群可以讓使用者互相討論～就算你不會設定、不會寫程式，只想當個伸手黨，這都沒問題～～BTT支援輸出/導入功能。在社群中有一堆大神們開發自己的設定，你只需要下載、導入，你的TouchBar就能變的強大無比！
+  BTT社群   如何發揮Touch Bar 真正的實力？
+這裡附上有關BTT的討論與介紹，我當初就是看到這則貼文就被推坑使用BTT的。但網路上分享BTT設定的文章少的可憐，而且大多都是英文版，很多人看到一定是望之卻步，更不用說控制項一大堆，介面複雜的跟什麼一樣。因此我才想要寫篇文章，手把手的教大家快速安裝BTT。接下來我們就開始設定ㄅ～
+安裝及購買liscense 安裝 進入BTT的官網選擇BetterTouchTool，點擊下載最新版本的就可以了。
+  下載BTT   下載完之後若無法打開，可能是Mac阻擋第三方App，需要去偏好設定裡調整。選擇「蘋果」選單 &amp;gt;「系統偏好設定⋯」，按一下「安全性與隱私權」，然後按一下「一般」，下方就可以強制打開。
+ 購買liscense 這個軟體之前是免費的，後來就開始要收費，但金額倒也不是很貴，你都買得起一台Mac了，難道還買不起超好用的軟體嗎（笑～
+BTT購買liscense的方式有三種：
+ 一般許可證（BetterTouchTool Standard License）：價格8.5美金。一般許可證將會收到2年之內的更新，2年之後你將無法得到更新，但可以永久使用你最後更新的版本。 終生許可證（BetterTouchTool Lifetime License）：價格20.5美金。終生許可證可以一直得到最新的更新並且永久使用。 Setapp訂閱（Setapp subscription）：走訂閱制，每月9.99美金。Settapp裡面有超過200的Apps可以使用，其中包含了BetterTouchTool。    BTT liscense  點擊前往購買Liscense</description>
+    </item>
+    
+  </channel>
+</rss>
