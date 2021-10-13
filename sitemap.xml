@@ -3,6 +3,66 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jameshsu0407.github.io/blog/20211013_var_let_const/</loc>
+    <lastmod>2021-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/blog/</loc>
+    <lastmod>2021-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/categories/</loc>
+    <lastmod>2021-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/tags/javascript/</loc>
+    <lastmod>2021-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/tags/js/</loc>
+    <lastmod>2021-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/categories/js/</loc>
+    <lastmod>2021-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/tags/</loc>
+    <lastmod>2021-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2021-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/categories/%E5%89%8D%E7%AB%AF%E6%95%99%E5%AD%B8/</loc>
+    <lastmod>2021-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/tags/%E6%95%99%E5%AD%B8/</loc>
+    <lastmod>2021-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/</loc>
+    <lastmod>2021-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/tags/%E8%AE%8A%E6%95%B8/</loc>
+    <lastmod>2021-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jameshsu0407.github.io/blog/20210911_bettertouchtool/</loc>
     <lastmod>2021-09-11T00:00:00+00:00</lastmod>
   </url>
@@ -23,37 +83,12 @@
   </url>
   
   <url>
-    <loc>https://jameshsu0407.github.io/blog/</loc>
-    <lastmod>2021-09-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jameshsu0407.github.io/categories/</loc>
-    <lastmod>2021-09-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://jameshsu0407.github.io/tags/goldenchaos-btt/</loc>
     <lastmod>2021-09-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jameshsu0407.github.io/tags/</loc>
-    <lastmod>2021-09-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://jameshsu0407.github.io/tags/touchbar/</loc>
-    <lastmod>2021-09-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jameshsu0407.github.io/tags/%E6%95%99%E5%AD%B8/</loc>
-    <lastmod>2021-09-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jameshsu0407.github.io/</loc>
     <lastmod>2021-09-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -79,11 +114,6 @@
   
   <url>
     <loc>https://jameshsu0407.github.io/categories/%E4%BD%9C%E5%93%81%E9%9B%86/</loc>
-    <lastmod>2021-08-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jameshsu0407.github.io/tags/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2021-08-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -139,11 +169,6 @@
   
   <url>
     <loc>https://jameshsu0407.github.io/tags/grid/</loc>
-    <lastmod>2021-02-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jameshsu0407.github.io/categories/%E5%89%8D%E7%AB%AF%E6%95%99%E5%AD%B8/</loc>
     <lastmod>2021-02-05T00:00:00+00:00</lastmod>
   </url>
   

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on 米米的部落格</title>
+    <link>https://jameshsu0407.github.io/tags/javascript/</link>
+    <description>Recent content in Javascript on 米米的部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Wed, 13 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[教學]var、let、const之間的比較</title>
+      <link>https://jameshsu0407.github.io/blog/20211013_var_let_const/</link>
+      <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/blog/20211013_var_let_const/</guid>
+      <description>前言 重新開始學習JS我才發現有很多小細節是需要好好打底的，所以我去報名了六角學院的Javascript工程師養成直播班從基礎開始學習，跟著老師的步調再加上每日作業、每週作業一定可以飛速成長的～
+接下來幾次的更新會注重在JS上，因為就連寫文章也是學習JS的一環（雖然我不確定能不能跟得上老師的進度生產文章，全職學習真的沒那麼多時間Ｒ～～ 但我還是會努力跟上進度的！
+本次探討的東西是非常基礎的宣告變數，但越是簡單的東西越要小心，魔鬼藏在細節中，你的程式碼出現bug很有可能就是因為變數使用錯誤的關係喔！今天就讓我們來了解var、let、const之間的差異吧～
+ 目錄：
+ 從ES5到ES6 變數的有效範圍 初始值（initializer） 作用域（scope） 重複賦值（reassigned） 重複宣告（redeclared） 變量提升（hoisting）   從ES5到ES6 什麼是ES5、ES6??
+在了解這兩者之間的差異前，我們需要先來認識ECMAScript。ECMAScript提供腳本語言需要遵守的細節、規則以及規範，ECMAScript每年都會發布一次新的版本，而比較知名的版本就是第五版的ES5以及第六版的ES6。
+ 更詳細了解ECMAScript可以參考Day2 [JavaScript 基礎] 淺談 ECMAScript 與 JavaScript，裡面有詳細講解ECMAScript的歷史和制定流程。
+ 目前的瀏覽器普遍支援ES5、ES6，甚至支援更新的ES7，大家可以安心使用。這裡我列出從ES5更新到ES6的主要改動：
+    ES5 ES6     類型 空值（null）、未定義（undefined）、布林值（boolean）、數字（number）、字串（string）、物件（object） 引入新的類型：符號（symbol）用來表示唯一值   變數 只能使用var來定義變數 新增let、const，能夠更嚴謹的定義變數   箭頭函數 使用function、return來定義函數內容 可用&amp;quot;=&amp;gt;&amp;ldquo;等符號代表function   迴圈 使用for迴圈、for in迴圈、forEach迴圈&amp;hellip; 新增for of迴圈    從上方表格可得知ES6是基於ES5上新增了部分的功能，而我們今天就先來探討變數的部分，其他的之後後再說（如果老師有出的話我就一定會更新 XDD~
+變數的有效範圍 宣告變數的位置是會影響到他們的作用範圍，有效範圍主要分成「全域變數」、「區域變數」兩種：
+ 全域變數（Global Variable）：在函式外宣告的變數。整個程式中都可以被存取與修改。 區域變數（Local Variable）：在區塊內等被 { } 包起來的地方宣告的變數。此變數只能提供在所屬的function函式中執行，不提供給functionc函式以外呼叫使用，當function函式執行完後，記憶體只會保留其執行的結果，變數的部分則會被記憶體消除釋放掉。  var global_variable = &amp;#34;我是全域變數&amp;#34;; // 宣告全域變數 function show(){ var local_variable = &amp;#34;我是區域變數&amp;#34;; // 宣告區域變數  console.</description>
+    </item>
+    
+  </channel>
+</rss>
