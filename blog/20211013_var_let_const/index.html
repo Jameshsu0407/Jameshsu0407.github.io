@@ -21,7 +21,7 @@
 <meta itemprop="description" content="不要再亂設定變數了啊～設定好變數可以幫你減少bug喔！">
 <meta itemprop="datePublished" content="2021-10-13T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-10-13T00:00:00+00:00" />
-<meta itemprop="wordCount" content="476">
+<meta itemprop="wordCount" content="482">
 <meta itemprop="image" content="">
 
 
@@ -42,7 +42,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
         <script src="https://kit.fontawesome.com/be54eb011a.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"><link rel="stylesheet" href="/css/main.min.fad49fa996cca47be2bf181ea61193c4e5b2d413735c5ad6afe62c9305ef4c06.css" integrity="sha256-&#43;tSfqZbMpHvivxgephGTxOWy1BNzXFrWr&#43;YskwXvTAY="><link rel="stylesheet" href="/css/add-on.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"><link rel="stylesheet" href="/css/main.min.d5812816772b9bdb2dc60d1ac9cb10a7612abf8ce0652efa07af744ce236d73a.css" integrity="sha256-1YEoFncrm9stxg0aycsQp2Eqv4zgZS76B690TOI21zo="><link rel="stylesheet" href="/css/add-on.css">
   
   
 <script type="application/javascript">
@@ -371,7 +371,7 @@ if (!doNotTrack) {
 </span></code></pre></div><h3 id="作用域scope">作用域（scope）</h3>
 <ol>
 <li>函式作用域（function scope）：<code>var</code>屬函式作用域，唯有在函式（function）內才使用，作用範圍為區域性（local）；若在函式外宣告，其作用範圍就變成了全域性（global）。</li>
-<li>塊級作用域（block scope）：<code>let</code>、<code>const</code>屬塊級作用域，以塊級（block）當作最小單位來切分，也就是用大括號（{}）來區分。</li>
+<li>塊級作用域（block scope）：<code>let</code>、<code>const</code>屬塊級作用域，以塊級（block）當作最小單位來切分，也就是用大括號<code>{}</code>來區分。</li>
 </ol>
 <p>以下是函式作用域（function scope）的範例：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">show</span>() {
@@ -396,7 +396,7 @@ if (!doNotTrack) {
   <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>); <span style="color:#75715e">//依序顯示：1、2
 </span><span style="color:#75715e"></span>}
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>); <span style="color:#75715e">// 顯示： 3
-</span></code></pre></div><p>但我覺得那是工程師沒有仔細注意<code>var</code>是function scope，它的最小單位是以function來區分的，而<code>if</code>、<code>else</code>、<code>for</code>、<code>while</code>等塊級區域（block scope）則是以大括號（{}）來區分的，因此在block scope裡面的<code>var</code>當然會繼續往上加Ｒ～</p>
+</span></code></pre></div><p>但我覺得那是工程師沒有仔細注意<code>var</code>是function scope，它的最小單位是以function來區分的，而<code>if</code>、<code>else</code>、<code>for</code>、<code>while</code>等塊級區域（block scope）則是以大括號<code>{}</code>來區分的，因此在block scope裡面的<code>var</code>當然會繼續往上加Ｒ～</p>
 <p>這裡再舉一個例子，這樣會比較好理解：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">show1</span>() {
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
@@ -428,7 +428,7 @@ if (!doNotTrack) {
 <span style="color:#a6e22e">arr2</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">4</span>);
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr1</span>); <span style="color:#75715e">// 顯示：1,2,3,4
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr2</span>); <span style="color:#75715e">// 顯示：1,2,3,4
-</span></code></pre></div><p>由上方的程式碼可以看到，在arr2新增4，結果arr1的值也發生了改動，這樣確實看起來像是<code>const</code>可以重複賦值。然而實際上卻不是如此，第二行程式碼的意思為將arr2「指向」arr1現在指向的記憶體位置，所以兩者皆指向同一個記憶體，因此改變的是記憶體位置，並非值本身。</p>
+</span></code></pre></div><p>由上方的程式碼可以看到，在arr2新增4，結果arr1的值也發生了改動，這樣確實看起來像是<code>const</code>可以重複賦值。然而實際上卻不是如此，第二行程式碼的意思為將arr2「指向」arr1現在指向的記憶體位置，所以兩者皆指向同一個記憶體。<strong>「用 const 宣告的變數，不能改變其值」，對於 object 來說是指：「物件/陣列裡面存的 『記憶體位置』 不能改變」</strong>，因此這裡不會改變記憶體位置，改變的而是值。</p>
 <p>我之後會補上傳值、傳參考的文章，想要了解詳情之後可以去看看。</p>
 <h3 id="重複宣告redeclared">重複宣告（redeclared）</h3>
 <ol>
@@ -485,9 +485,9 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>初始值（initializer）</td>
+<td>✘</td>
+<td>✘</td>
 <td>✔︎</td>
-<td>✘</td>
-<td>✘</td>
 </tr>
 <tr>
 <td>函式作用域（function scope）</td>
