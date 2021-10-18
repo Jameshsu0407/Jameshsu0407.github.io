@@ -1,0 +1,926 @@
+<!doctype html>
+<html lang="zh-tw">
+<head>
+  <meta charset="utf-8">
+<title>[教學]undefined與null的比較 - 米米的部落格</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+<meta name="generator" content="Hugo 0.78.2" /><meta itemprop="name" content="[教學]undefined與null的比較">
+<meta itemprop="description" content="null的型別居然是object！這是Bug啊～這是Bug啊～這是Bug啊～">
+<meta itemprop="datePublished" content="2021-10-18T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-10-18T00:00:00+00:00" />
+<meta itemprop="wordCount" content="267">
+<meta itemprop="image" content="">
+
+
+
+<meta itemprop="keywords" content="前端,教學,Javascript,JS,undefined,null," />
+<meta property="og:title" content="[教學]undefined與null的比較" />
+<meta property="og:description" content="null的型別居然是object！這是Bug啊～這是Bug啊～這是Bug啊～" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jameshsu0407.github.io/blog/20211019_undefined_null/" />
+<meta property="og:image" content="https://jameshsu0407.github.io/img/main/JS.png" />
+<meta property="article:published_time" content="2021-10-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-18T00:00:00+00:00" /><meta property="og:site_name" content="米米的部落格" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jameshsu0407.github.io/img/main/JS.png"/>
+
+<meta name="twitter:title" content="[教學]undefined與null的比較"/>
+<meta name="twitter:description" content="null的型別居然是object！這是Bug啊～這是Bug啊～這是Bug啊～"/>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+        <script src="https://kit.fontawesome.com/be54eb011a.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="/css/main.min.e4cd996d784826e2c003f03053c639f2d4ff9b28c47b892bcbe07a15377605ba.css" integrity="sha256-5M2ZbXhIJuLAA/AwU8Y58tT/myjEe4kry&#43;B6FTd2Bbo="><link rel="stylesheet" href="/css/add-on.css">
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-176771659-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+  <script data-ad-client="ca-pub-8363323903573630" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+
+<body>
+  
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title" data-aos="fade-down" data-aos-duration="800">
+      <a href="/" class="nav">
+        
+          blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu" data-aos="fade-down" data-aos-duration="800">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fas fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="/portfolio/" class="nav link"><i class='fas fa-palette'></i> Portfolio</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+      <a href="javascript:void0" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="javascript:void0" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="javascript:void0" class="nav search-toggle" data-aos="fade-down" data-aos-duration="800" data-aos-delay="300"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="javascript:void0" class="nav share-toggle" data-aos="fade-down" data-aos-duration="800" data-aos-delay="400"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    
+    <a href="javascript:void0" class="nav nav-toggle" data-aos="fade-down" data-aos-duration="800" data-aos-delay="500"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu" placeholder="For English Only"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+        <a href="//social-plugins.line.me/lineit/share?url=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20211019_undefined_null%2f" target="_blank" rel="noopener" class="nav share-btn line">
+          <p>line</p>
+          </a>
+  
+
+  
+    
+    <a href="//twitter.com/share?text=%5b%e6%95%99%e5%ad%b8%5dundefined%e8%88%87null%e7%9a%84%e6%af%94%e8%bc%83&amp;url=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20211019_undefined_null%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20211019_undefined_null%2f&amp;title=%5b%e6%95%99%e5%ad%b8%5dundefined%e8%88%87null%e7%9a%84%e6%af%94%e8%bc%83" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20211019_undefined_null%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=%e6%9f%a5%e7%9c%8b%e6%ad%a4%e5%b8%96%e5%ad%90%e7%9a%84%e4%bd%9c%e8%80%85 %e7%b1%b3%e7%b1%b3&amp;body=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20211019_undefined_null%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+  <div id="wrapper">
+    <section id="site-intro" data-aos="zoom-in-up" data-aos-duration="800" >
+  <a href="/"><img src="https://jameshsu0407.github.io/img/main/memoji.png" class="circle" width="150" alt="大頭照" /></a>
+  <header>
+    <h1>你好，我是米米</h1>
+  </header>
+  <main>
+    <p>菜雞前端工程師</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/Jameshsu0407" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+<li><a href="//codepen.io/Jameshsu0407" target="_blank" rel="noopener" title="CodePen" class="fab fa-codepen"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/100002336973433" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/jameshsu_0407" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:Jameshsu0407@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+    <main id="site-main">
+      
+
+
+<article class="post" data-aos="zoom-in-up" data-aos-duration="800">
+  
+  <div class="ad_slick">
+    <a href='https://vbtrax.com/track/clicks/3559/ce2bc2ba910723d6efcda67f8835ce13286b4aca76ebf0ab416db100620d?subid_1=&subid_2=&subid_3=&subid_4=&subid_5='><img src='https://vbtrax.com/track/imp/img/48639/ce2bc2ba910723d6efcda67f8835ce13286b4aca76ebf0ab416db100620d?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+    <a href='https://affclkr.com/track/clicks/3559/ce2bc2bb9d0125d9efcda67f8835ce13286b4aca76ebf0ab416db100620d?subid_1=&subid_2=&subid_3=&subid_4=&subid_5='><img src='https://affclkr.com/track/imp/img/54056/ce2bc2bb9d0125d9efcda67f8835ce13286b4aca76ebf0ab416db100620d?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+    <a href='https://affclkr.online/track/clicks/3559/ce2bc2bc9c0728dfefcda67f8835ce13286b4aca76ebf0ab416db100620d?subid_1=&subid_2=&subid_3=&subid_4=&subid_5='><img src='https://affclkr.online/track/imp/img/25680/ce2bc2bc9c0728dfefcda67f8835ce13286b4aca76ebf0ab416db100620d?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+  </div>
+</article>
+
+
+<article class="post" data-aos="zoom-in-up" data-aos-duration="800">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/20211019_undefined_null/">[教學]undefined與null的比較</a></h2>
+    
+    
+      <p>null的型別居然是object！這是Bug啊～這是Bug啊～這是Bug啊～</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2021-10-18 00:00:00 &#43;0000 UTC">2021-10-18</time>
+    <p>米米</p>
+    
+  </div>
+</header>
+
+  <div id="socnet-share">
+    
+
+
+
+
+  
+        <a href="//social-plugins.line.me/lineit/share?url=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20211019_undefined_null%2f" target="_blank" rel="noopener" class="nav share-btn line">
+          <p>line</p>
+          </a>
+  
+
+  
+    
+    <a href="//twitter.com/share?text=%5b%e6%95%99%e5%ad%b8%5dundefined%e8%88%87null%e7%9a%84%e6%af%94%e8%bc%83&amp;url=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20211019_undefined_null%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20211019_undefined_null%2f&amp;title=%5b%e6%95%99%e5%ad%b8%5dundefined%e8%88%87null%e7%9a%84%e6%af%94%e8%bc%83" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20211019_undefined_null%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=%e6%9f%a5%e7%9c%8b%e6%ad%a4%e5%b8%96%e5%ad%90%e7%9a%84%e4%bd%9c%e8%80%85 %e7%b1%b3%e7%b1%b3&amp;body=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20211019_undefined_null%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+  </div>
+  <div class="content">
+    <a href="/blog/20211019_undefined_null/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/main/JS.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/main/JS.png" alt="JS、undefined與null的差異">
+  </a>
+    <h3 id="前言">前言</h3>
+<p>今天繼續來打底練基礎～本次要來聊聊<code>undefined</code>、<code>not defined</code>、<code>null</code>，這些看起來就像「沒有」一樣，實際上他們之間可是差很多的哩！有些在時候會相等，有些時候又不一樣，那就跟著腳步一起看下去吧～～</p>
+<blockquote>
+<p>目錄：</p>
+<ul>
+<li><a href="#使用型態比較">使用型態比較</a></li>
+<li><a href="#truthy與falsy">truthy與falsy</a></li>
+<li><a href="#使用一般相等與嚴格相等比較">使用一般相等與嚴格相等比較</a></li>
+<li><a href="#使用數字運算比較">使用數字運算比較</a></li>
+<li><a href="#undefined與not-defined的差別">undefined與not defined的差別</a></li>
+<li><a href="#undefined居然可以當作變數名稱或參數使用">undefined居然可以當作變數名稱或參數使用</a></li>
+</ul>
+</blockquote>
+<h3 id="使用型態比較">使用型態比較</h3>
+<p>在寫JS時有兩大型別，分別是<strong>基本型別（Primitives）<strong>與</strong>物件型別（Object）</strong>。</p>
+<ul>
+<li>基本型別： <code>string</code>、<code>number</code>、<code>boolean</code>、<code>null</code>、<code>undefined</code>、<code>symbol</code></li>
+<li>物件型別：<code>array</code>、<code>object</code>、<code>function</code>&hellip;&hellip;</li>
+</ul>
+<p>在這裡可以觀察到本次要探討的<code>null</code>、<code>undefined</code>均出現在基本型別中。而基本型別裡都有「原始值 (primitive value)」，原始值是無法經過更改的的，例如布林值只有<code>truth</code>、<code>false</code>，不會再有其他的值，因此<code>null</code>、<code>undefined</code>也是一樣，<code>null</code> 型別只有一種值，就是 <code>null</code> ，而 <code>undefined</code> 類型也只有一種值，就是 <code>undefined</code>。</p>
+<p>我們透過程式碼來更進一步了解兩者之間的差異，首先分別給他們型別：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>) <span style="color:#75715e">// 顯示：undefined，表示尚未賦值，未定義
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>) <span style="color:#75715e">// 顯示：null，表示此變數沒有值
+</span></code></pre></div><p><code>undefined</code>代表根本沒有這個東西，所以不知道這是什麼；<code>null</code>代表此變數（可能曾經有值，可能沒有值）現在沒有值。</p>
+<p>接著再用<code>typeof</code>來檢驗型別是不是<code>undefined</code>跟<code>null</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">a</span>) <span style="color:#75715e">// 顯示：undefined
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">b</span>) <span style="color:#75715e">// 顯示：object
+</span></code></pre></div><p>可以知道<code>undefined</code> 的型別是 <code>undefined</code>，<code>null</code>的型別是<code>object</code>。</p>
+<blockquote>
+<p>誒，不是誒！剛剛不是說<code>null</code> 型別只有一種值，就是 <code>null</code> ？怎麼變成<code>object</code>？說變就變，不講武德誒！！！</p>
+</blockquote>
+<p>既然有問題我們就去找找，從官方文件<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/null" target="_blank">MDN Web Docs</a>有說：</p>
+<blockquote>
+<p>The value <code>null</code> represents the intentional absence of any object value&hellip;</p>
+<p>The value <code>null</code> is written with a literal, <code>null</code> (it&rsquo;s not an identifer for a property of the global object like <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/undefined"><code>undefined</code></a> can be)&hellip;</p>
+</blockquote>
+<p>翻成白話文的意思就是「<code>null</code>是刻意指出一個值是『不存在的狀態』」，因此視為物件，只是它是個沒有值的物件（沒有值的意思不是0喔）。</p>
+<p>我這裡將兩者分別理解為：「<code>undefined</code>代表變數尚未被指派，呈現『尚未初始化的狀態』，因此型態為<code>undefined</code>；<code>null</code>代表變數已經被指派，但指派的值呈現『不存在的狀態』，因為已經被指派過了只是值尚未得知，若有值，型態就是<code>object</code>」</p>
+<p><code>null</code>的型態為<code>object</code>確實是強詞奪理，它其實就是有bug，而官方文件也有說這就是bug，此型態應該要是<code>null</code>才對！我們也只好先這樣接受了，也許等哪天就會改回來也說不一定（<del>但修正會牽扯太多，我想這輩子應該是看不到吧）</del>。</p>
+<p>到這裡先兩者的比較就先告個段落，因為我們要來認識新的東西，之後再比較才不會搞不清楚狀況。</p>
+<h3 id="truthy與falsy">truthy與falsy</h3>
+<p>JS有<code>truthy</code>的概念，在某些情況下會被推斷為<code>true</code>，例如下列程式碼：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">if</span> (<span style="color:#ae81ff">123</span>) {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;沒有寫判斷居然就進來了&#39;</span>); <span style="color:#75715e">// 顯示：沒有寫判斷居然就進來了
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>有時候我們在寫if else等判斷式，寫的會像上面的程式碼一樣。這裡的<code>123</code>就代表著<code>true</code>，這就是<code>truthy</code>。<code>truthy</code>的概念就像是「世間萬物皆有更古不變的道理，本就如此，而<code>truthy</code>就是如此，反之亦然」。以下有列表顯示在哪些情況下為<code>truthy</code>，而又在哪些情況下代表<code>falsy</code>：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><code>truthy</code>狀態</th>
+<th><code>falsy</code>狀態</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>布林值（Boolean）</td>
+<td>true</td>
+<td>false</td>
+</tr>
+<tr>
+<td>字串（string）</td>
+<td>除了空字串以外的字串</td>
+<td>空字串</td>
+</tr>
+<tr>
+<td>數字（number）</td>
+<td>除了0之外的任意值</td>
+<td>0</td>
+</tr>
+<tr>
+<td>null、undefined</td>
+<td>不可能</td>
+<td>永遠</td>
+</tr>
+<tr>
+<td>任何物件，包含<code>{}</code>、<code>[]</code></td>
+<td>永遠</td>
+<td>不可能</td>
+</tr>
+</tbody>
+</table>
+<p>這裡有個簡單的概念：「所有的物件都是<code>truthy</code>, 只有<strong>空字串</strong>、<strong>數字0</strong>、<strong>undefined</strong>和 <strong>null</strong> 會是<code>falsy</code>， 其餘的都是 <code>truthy</code>。」這裡要特別留意就算是「<code>boolean</code>（false）」它在<code>if</code>判斷之下，仍然為<code>true</code>喔！</p>
+<p>補充了有關<code>truthy</code>、<code>falsy</code>的知識點後，我們就可以繼續做比較了。</p>
+<h3 id="使用一般相等與嚴格相等比較">使用一般相等與嚴格相等比較</h3>
+<p>等等我們會使用一般相等與嚴格相等來比較<code>undefined</code>、<code>null</code>是否相等。首先來看看一般相等與嚴格相等的差異：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>符號</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一般相等（equality operator）</td>
+<td><code>==</code></td>
+<td>將比較值轉換成同型別後比較，再比較兩者的值。（如字串8等同於數字8）</td>
+</tr>
+<tr>
+<td>一般不相等</td>
+<td><code>!=</code></td>
+<td>將比較值轉換成同型別後比較，再比較兩者的值，值不同視為不相等。（如字串8不等同於數字7）</td>
+</tr>
+<tr>
+<td>嚴格相等（identity operator）</td>
+<td><code>===</code></td>
+<td>先看型別再看值，兩者的值不會轉換型別。</td>
+</tr>
+<tr>
+<td>嚴格不相等</td>
+<td><code>!==</code></td>
+<td>兩個不同型別的值，視為不相等。（如字串8不等同於數字8）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>一般相等允許在等價性比較中進行強制轉換；嚴格相等則不允許強制轉換。</p>
+</blockquote>
+<p>知道一般相等是比較值、嚴格相等比較型態和值（不能全然這樣說，正確說法是上面那條，這裡僅以大概的意思去詮釋）後，我們可以來做比較了：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">undefined</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>); <span style="color:#75715e">// 顯示：true
+</span></code></pre></div><p>這裡使用一般相等來比較，兩者在轉換完型態後，其值是相等的。這裡我推測這是跟剛剛講的<code>truthy</code>、<code>falsy</code>有關，由於<code>undefined</code>和<code>null</code>都是<code>falsy</code>值，因此兩個<code>falsy</code>相等，得出的是<code>true</code>。</p>
+<p>為了避免被強制轉型，這裡建議使用嚴格相等來做比較：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">undefined</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>); <span style="color:#75715e">// 顯示：false
+</span></code></pre></div><p>這就比較正常了～嚴格相等從型別先下手，兩者的型別一個是<code>undefined</code>一個是<code>object</code>，是完全不同的，當然就不一樣囉！</p>
+<h3 id="使用數字運算比較">使用數字運算比較</h3>
+<p>前面透過型別、運算子來做比較，現在我們來用算數來比較它們的差異：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// 顯示：NaN
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// 顯示：1
+</span></code></pre></div><p><code>undefined</code>與任意數字運算都會是 NaN （Not a number）；<code>null</code>與任意數字運算時，<code>null</code>代表的值會是 0，因此可以運算。</p>
+<h3 id="undefined與not-defined的差別">undefined與not defined的差別</h3>
+<p>這兩個都跟defined有關，但是卻是兩個完全不一樣的概念，前者已經知道是已給定變數名稱，卻還未賦值，英文直譯為『尚未被定義』；後者是「完全沒有者個東西～它連變數也沒有，哪來的定義可言，根本不存在」，因此為『沒有被定義』。</p>
+<h3 id="undefined居然可以當作變數名稱或參數使用">undefined居然可以當作變數名稱或參數使用</h3>
+<p>驚不驚喜，意不意外～我們常說不能拿保留字當作變數，沒想到<code>undefined</code>居然打破這個限制！！！在非全域作用範圍下， <code>undefined</code>允許被當成變數名稱，而且變數的值是可以被修改的：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 當作變數名稱
+</span><span style="color:#75715e"></span>(<span style="color:#66d9ef">function</span>() {
+  <span style="color:#66d9ef">var</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;foo&#39;</span>;
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`值為</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">undefined</span><span style="color:#e6db74">}</span><span style="color:#e6db74">，型別為</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">undefined</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>); <span style="color:#75715e">// 顯示：值為foo，型別為string
+</span><span style="color:#75715e"></span>})()
+
+<span style="color:#75715e">// 當作參數
+</span><span style="color:#75715e"></span>(<span style="color:#66d9ef">function</span>(<span style="color:#66d9ef">undefined</span>) {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`值為</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">undefined</span><span style="color:#e6db74">}</span><span style="color:#e6db74">，型別為</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">undefined</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>); <span style="color:#75715e">// 顯示：值為foo，型別為string
+</span><span style="color:#75715e"></span>})(<span style="color:#e6db74">&#39;foo&#39;</span>);
+</code></pre></div><p>此舉雖然是合法的，但請不要使用好嗎？這樣會搞死一堆人 <del>（除非你想欉康你的同事</del></p>
+<h3 id="結語">結語</h3>
+<p>講了這麼多，希望有幫助到各位了解<code>undefined</code>與<code>null</code>之間的差異，以下是整理表格：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>值</th>
+<th>型別</th>
+<th><code>truthy</code> or <code>falsy</code></th>
+<th>運算</th>
+<th>當變數名稱、參數</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>undefined</code></td>
+<td><code>undefined</code></td>
+<td><code>undefined</code></td>
+<td><code>falsy</code></td>
+<td>不能轉為數字並運算，會回傳NaN</td>
+<td>可以</td>
+</tr>
+<tr>
+<td><code>null</code></td>
+<td><code>null</code></td>
+<td><code>object</code></td>
+<td><code>falsy</code></td>
+<td>可以轉為數字0運算</td>
+<td>不可以</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>一般相等：相同，同為<code>falsy</code>值。</li>
+<li>嚴格相等：不同，<code>undefined</code>與<code>object</code>是不同的型別。</li>
+</ul>
+<hr>
+<p>參考資料：</p>
+<p><a href="https://karennnnovelty.medium.com/ㄟ問你喔-null-undefined-和-not-defined-是差在哪-98204edc07c7" target="_blank">ㄟ問你喔，null, undefined 和 not defined 是差在哪？</a></p>
+<p><a href="https://sweeteason.pixnet.net/blog/post/43007183-javascript-基礎打底系列-%28二%29---關於-null、undefine" target="_blank">Javascript 基礎打底系列 (二) - null、undefined、NaN 的差異與檢查方式</a></p>
+<p><a href="https://ithelp.ithome.com.tw/articles/10190873" target="_blank">重新認識 JavaScript: Day 03 變數與資料型別</a></p>
+<p><a href="https://ithelp.ithome.com.tw/articles/10228227" target="_blank">第29天-Truthy和Falsy</a></p>
+
+  </div>
+  <footer>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/%e5%89%8d%e7%ab%af%e6%95%99%e5%ad%b8/">前端教學</a></li>
+          
+          <li><a class="article-terms-link" href="/categories/js/">JS</a></li>
+          
+      
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/%e5%89%8d%e7%ab%af/">前端</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/%e6%95%99%e5%ad%b8/">教學</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/javascript/">Javascript</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/js/">JS</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/undefined/">undefined</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/null/">null</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+
+<article class="post" data-aos="zoom-in-up" data-aos-duration="800">
+  <h2 style="text-align: center; margin-bottom: 0;">感謝抖內</h2>
+  <h6 style="text-align: center; margin-top: 5px;">BUY ME A COFFEE</h2>
+    <div class="donate">
+      
+      <div class="jkos">
+        
+        <img class="normal_logo" src="/img/donate/jkos_logo.png" alt="jkos_logo">
+        
+        <img class="white_logo" src="/img/donate/jkos_logo_white.png" alt="jkos_logo">
+        <img class="qrcode" src="/img/donate/jkos_qrcode.JPG" alt="jkos_qrcode:901382227">
+        <h2>帳號：901382227</h5>
+      </div>
+      
+      <div class="paypal">
+        <img src="/img/donate/paypel_logo.png" alt="paypel_logo">
+        <div id="smart-button-container">
+          
+          <label for="description"></label>
+          <input type="text" name="descriptionInput" id="description" value="" placeholder="Please enter a description"
+            class="margin-bottom: 0.625rem;">
+          <p id="descriptionError" style="display: none; visibility: hidden; color:red; ">Please enter a description</p>
+          
+          <label for="amount"></label>
+          <input name="amountInput" type="number" id="amount" value="" placeholder="Please enter a price: US Dollar"
+            min="0">
+          <p id="priceLabelError" style="display: none; visibility: hidden; color:red; ">Please enter a price</p>
+
+          <div id="invoiceidDiv" style=" display: none;"><label for="invoiceid"> </label><input name="invoiceid"
+              type="text" id="invoiceid" value=""></div>
+          <p id="invoiceidError" style="visibility: hidden; color:red; ">Please enter an Invoice ID</p>
+          <div style="margin-top: 0.625rem;" id="paypal-button-container"></div>
+        </div>
+        <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD"
+          data-sdk-integration-source="button-factory"></script>
+        <script>
+          function initPayPalButton() {
+            var description = document.querySelector('#smart-button-container #description');
+            var amount = document.querySelector('#smart-button-container #amount');
+            var descriptionError = document.querySelector('#smart-button-container #descriptionError');
+            var priceError = document.querySelector('#smart-button-container #priceLabelError');
+            var invoiceid = document.querySelector('#smart-button-container #invoiceid');
+            var invoiceidError = document.querySelector('#smart-button-container #invoiceidError');
+            var invoiceidDiv = document.querySelector('#smart-button-container #invoiceidDiv');
+
+            var elArr = [description, amount];
+
+            if (invoiceidDiv.firstChild.innerHTML.length > 1) {
+              invoiceidDiv.style.display = "block";
+            }
+
+            var purchase_units = [];
+            purchase_units[0] = {};
+            purchase_units[0].amount = {};
+
+            function validate(event) {
+              return event.value.length > 0;
+            }
+
+            paypal.Buttons({
+              style: {
+                color: 'blue',
+                shape: 'rect',
+                label: 'paypal',
+                layout: 'vertical',
+
+              },
+
+              onInit: function (data, actions) {
+                actions.disable();
+
+                if (invoiceidDiv.style.display === "block") {
+                  elArr.push(invoiceid);
+                }
+
+                elArr.forEach(function (item) {
+                  item.addEventListener('keyup', function (event) {
+                    var result = elArr.every(validate);
+                    if (result) {
+                      actions.enable();
+                    } else {
+                      actions.disable();
+                    }
+                  });
+                });
+              },
+
+              onClick: function () {
+                if (description.value.length < 1) {
+                  descriptionError.style.visibility = "visible";
+                  descriptionError.style.display = "block";
+                } else {
+                  descriptionError.style.visibility = "hidden";
+                  descriptionError.style.display = "none";
+                }
+
+                if (amount.value.length < 1) {
+                  priceError.style.visibility = "visible";
+                  priceError.style.display = "block";
+                } else {
+                  priceError.style.visibility = "hidden";
+                  priceError.style.display = "none";
+                }
+
+                if (invoiceid.value.length < 1 && invoiceidDiv.style.display === "block") {
+                  invoiceidError.style.visibility = "visible";
+                } else {
+                  invoiceidError.style.visibility = "hidden";
+                }
+
+                purchase_units[0].description = description.value;
+                purchase_units[0].amount.value = amount.value;
+
+                if (invoiceid.value !== '') {
+                  purchase_units[0].invoice_id = invoiceid.value;
+                }
+              },
+
+              createOrder: function (data, actions) {
+                return actions.order.create({
+                  purchase_units: purchase_units,
+                });
+              },
+
+              onApprove: function (data, actions) {
+                return actions.order.capture().then(function (orderData) {
+
+                  
+                  console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+                  
+                  const element = document.getElementById('paypal-button-container');
+                  element.innerHTML = '';
+                  element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+                  
+
+                });
+              },
+
+              onError: function (err) {
+                console.log(err);
+              }
+            }).render('#paypal-button-container');
+          }
+          initPayPalButton();
+        </script>
+      </div>
+    </div>
+</article>
+
+
+
+
+  <article class="post" data-aos="zoom-in-up" data-aos-duration="800">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jameshsu0407" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+
+
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jameshsu0407" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+<article class="post" data-aos="zoom-in-up" data-aos-duration="800">
+  
+  <div class="ad_slick" data-aos="zoom-in-up" data-aos-duration="800">
+    <a href='https://abzcoupon.com/track/clicks/2174/ce2bc2b79c0227c9bed6f77a9672c94821684eca73fbb9b20a62b30263?subid_1=&subid_2=&subid_3=&subid_4=&subid_5='><img src='https://abzcoupon.com/track/imp/img/9537/ce2bc2b79c0227c9bed6f77a9672c94821684eca73fbb9b20a62b30263?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+    <a href='https://afftck.com/track/clicks/2174/ce2bc2b7910127c9bed6f77a9672c94821684eca73fbb9b20a62b30263?subid_1=&subid_2=&subid_3=&subid_4=&subid_5='><img src='https://afftck.com/track/imp/img/9807/ce2bc2b7910127c9bed6f77a9672c94821684eca73fbb9b20a62b30263?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+  </div>
+</article>
+
+
+<div class="pagination">
+  
+  
+  <a href="/blog/20211013_var_let_const/" class="button right"><span>[教學]var、let、const之間的比較</span></a>
+  
+</div>
+
+    </main>
+    
+    
+    <section id="site-sidebar">
+  
+  <section data-aos="zoom-in-up" data-aos-duration="800">
+    <header>
+      <h1>advertisement</h1>
+    </header>
+    <div class="ad_slick">
+      <a href='https://affclkr.online/track/clicks/4820/ce2bc2b69e0423ddefcda67f8835ce13286b4aca76ebf0ab416db60d6504?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fcategories%2Fiphone-12-collection%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://affclkr.online/track/imp/img/87532/ce2bc2b69e0423ddefcda67f8835ce13286b4aca76ebf0ab416db60d6504?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+      <a href='https://vbshoptrax.com/track/clicks/4820/ce2bc2b69f0426d7efcda67f8835ce13286b4aca76ebf0ab416db60d6504?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fcategories%2Fiphone-12-collection%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://vbshoptrax.com/track/imp/img/86568/ce2bc2b69f0426d7efcda67f8835ce13286b4aca76ebf0ab416db60d6504?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+      <a href='https://vbshoptrax.com/track/clicks/4820/ce2bc2b79c0323deefcda67f8835ce13286b4aca76ebf0ab416db60d6504?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fcategories%2F%25E9%259B%2599%25E6%2596%2599%25E6%25B8%259B%25E9%259C%2587%25E4%25BF%259D%25E8%25AD%25B7%25E6%25AE%25BC%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://vbshoptrax.com/track/imp/img/95231/ce2bc2b79c0323deefcda67f8835ce13286b4aca76ebf0ab416db60d6504?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+      <a href='https://affclkr.online/track/clicks/4820/ce2bc2b79f0022dfefcda67f8835ce13286b4aca76ebf0ab416db60d6504?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fcategories%2Fiphone-12-collection%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://affclkr.online/track/imp/img/96120/ce2bc2b79f0022dfefcda67f8835ce13286b4aca76ebf0ab416db60d6504?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+      <a href='https://vbtrax.com/track/clicks/4820/ce2bc2b79f0021d7efcda67f8835ce13286b4aca76ebf0ab416db60d6504?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fcategories%2Fiphone-12-collection%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://vbtrax.com/track/imp/img/96118/ce2bc2b79f0021d7efcda67f8835ce13286b4aca76ebf0ab416db60d6504?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+      <a href='https://afftck.com/track/clicks/4820/ce2bc2b79f0021d6efcda67f8835ce13286b4aca76ebf0ab416db60d6504?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fcategories%2Fiphone-12-collection%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://afftck.com/track/imp/img/96119/ce2bc2b79f0021d6efcda67f8835ce13286b4aca76ebf0ab416db60d6504?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+      <a href='https://vbtrax.com/track/clicks/4820/ce2bc2b79f0021d8efcda67f8835ce13286b4aca76ebf0ab416db60d6504?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fcategories%2Fiphone-12-collection%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://vbtrax.com/track/imp/img/96117/ce2bc2b79f0021d8efcda67f8835ce13286b4aca76ebf0ab416db60d6504?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+      <a href='https://tlcafftrax.com/track/clicks/4820/ce2bc2b79f0021d9efcda67f8835ce13286b4aca76ebf0ab416db60d6504?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fcategories%2Fiphone-12-collection%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://tlcafftrax.com/track/imp/img/96116/ce2bc2b79f0021d9efcda67f8835ce13286b4aca76ebf0ab416db60d6504?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+    </div>
+  </section>
+  
+  
+    <section id="recent-posts" data-aos="zoom-in-up" data-aos-duration="800">
+      <header>
+        <h1>recent post</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/20211019_undefined_null/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/main/JS.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/main/JS.png" alt="JS、undefined與null的差異">
+  </a>
+        <header>
+          <h2><a href="/blog/20211019_undefined_null/">[教學]undefined與null的比較</a></h2>
+          <time class="published" datetime="2021-10-18 00:00:00 &#43;0000 UTC">2021-10-18</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/20211013_var_let_const/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/main/JS.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/main/JS.png" alt="JS、變數教學">
+  </a>
+        <header>
+          <h2><a href="/blog/20211013_var_let_const/">[教學]var、let、const之間的比較</a></h2>
+          <time class="published" datetime="2021-10-13 00:00:00 &#43;0000 UTC">2021-10-13</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/20210911_bettertouchtool/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/blog_img/20210911_BetterTouchTool/BTT.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/blog_img/20210911_BetterTouchTool/BTT.png" alt="touchbar">
+  </a>
+        <header>
+          <h2><a href="/blog/20210911_bettertouchtool/">[軟體分享]BetterTouchTool</a></h2>
+          <time class="published" datetime="2021-09-11 00:00:00 &#43;0000 UTC">2021-09-11</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/20210831_touchbar_games/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/blog_img/20210426_touchbar_lyrics/Touch%20Bar.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/blog_img/20210426_touchbar_lyrics/Touch%20Bar.png" alt="touchbar">
+  </a>
+        <header>
+          <h2><a href="/blog/20210831_touchbar_games/">[軟體分享]解放你的TouchBar！</a></h2>
+          <time class="published" datetime="2021-08-31 00:00:00 &#43;0000 UTC">2021-08-31</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+  
+  
+    
+      <section id="categories" data-aos="zoom-in-up" data-aos-duration="800">
+        <header>
+          <h1><a href="/categories">categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/%E5%89%8D%E7%AB%AF%E6%95%99%E5%AD%B8/">前端教學<span class="count">6</span></a>
+          
+          <li>
+              <a href="/categories/css/">css<span class="count">4</span></a>
+          
+          <li>
+              <a href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/">作品集<span class="count">4</span></a>
+          
+          <li>
+              <a href="/categories/%E8%BB%9F%E9%AB%94%E5%88%86%E4%BA%AB/">軟體分享<span class="count">3</span></a>
+          
+          <li>
+              <a href="/categories/js/">js<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/%E5%B7%A5%E4%BD%9C%E5%BF%83%E5%BE%97%E5%88%86%E4%BA%AB/">工作心得分享<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+  
+  <section data-aos="zoom-in-up" data-aos-duration="800">
+    <header>
+      <h1>advertisement</h1>
+    </header>
+    <div class="ad_slick">
+      <a href='https://affclkr.com/track/clicks/6887/ce2bc2bf9b0024d9fe9cbd2e8d2b8914736249ce76eee0e25826bf036f0c58?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.michi.com.tw%2Fproducts%2F%25E7%25B6%2593%25E5%2585%25B8%25E6%25B8%25AF%25E5%25BC%258F%25E8%2598%25BF%25E8%2594%2594%25E7%25B3%2595'><img src='https://affclkr.com/track/imp/img/121467/ce2bc2bf9b0024d9fe9cbd2e8d2b8914736249ce76eee0e25826bf036f0c58?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+      <a href='https://affclkr.com/track/clicks/6887/ce2bc2bf9b0024d9ff9cbd2e8d2b8914736249ce76eee0e25826bf036f0c58?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.michi.com.tw%2Fproducts%2Fxo%25E9%259B%2599%25E9%25AE%25AE%25E8%2598%25BF%25E8%2594%2594%25E7%25B3%2595'><img src='https://affclkr.com/track/imp/img/121466/ce2bc2bf9b0024d9ff9cbd2e8d2b8914736249ce76eee0e25826bf036f0c58?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+      <a href='https://tlcafftrax.com/track/clicks/6887/ce2bc2bf9b0024d9fc9cbd2e8d2b8914736249ce76eee0e25826bf036f0c58?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.michi.com.tw%2Fproducts%2F%25E8%258A%258B%25E8%25A6%258B%25E9%25AE%25AE%25E8%2582%2589%25E8%258A%258B%25E9%25A0%25AD%25E7%25B3%2595'><img src='https://tlcafftrax.com/track/imp/img/121465/ce2bc2bf9b0024d9fc9cbd2e8d2b8914736249ce76eee0e25826bf036f0c58?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+      <a href='https://affclkr.online/track/clicks/6887/ce2bc2bf9b0024d9fd9cbd2e8d2b8914736249ce76eee0e25826bf036f0c58?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.michi.com.tw%2Fproducts%2F%25E7%25B6%2593%25E5%2585%25B8%25E5%258F%25B0%25E5%25BC%258F%25E8%2598%25BF%25E8%2594%2594%25E7%25B3%2595'><img src='https://affclkr.online/track/imp/img/121464/ce2bc2bf9b0024d9fd9cbd2e8d2b8914736249ce76eee0e25826bf036f0c58?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+      <a href='https://tlcafftrax.com/track/clicks/6887/ce2bc2bf9b0024d9fa9cbd2e8d2b8914736249ce76eee0e25826bf036f0c58?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.michi.com.tw%2Fproducts%2F%25E9%2598%25BF%25E5%25AC%25A4%25E6%2589%258B%25E4%25BD%259C%25E8%258A%258B%25E7%25B2%25BF%25E5%25B7%25A7'><img src='https://tlcafftrax.com/track/imp/img/121463/ce2bc2bf9b0024d9fa9cbd2e8d2b8914736249ce76eee0e25826bf036f0c58?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+    </div>
+  </section>
+  
+  
+    <section id="mini-bio" data-aos="zoom-in-up" data-aos-duration="800">
+      <header>
+        <h1>about</h1>
+      </header>
+      <p>你好，我是米米，是個剛畢業就已經成為社畜的前端工程師==</p>
+      <footer>
+        <a href="/about" class="button">查看更多</a>
+      </footer>
+    </section>
+  
+</section>
+
+    <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        
+      </ul>
+  
+  <p class="copyright">
+    © 2021 米米的部落格
+      <br>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="//unpkg.com/lunr/lunr.js"></script><script src="/js/bundlecdn.min.f7288d8e16a7e9974761d9099689c3eae255a74fe73940b05710429b1c0145d2.js" integrity="sha256-9yiNjhan6ZdHYdkJlonD6uJVp0/nOUCwVxBCmxwBRdI="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-176771659-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  </div>
+</body>
+
+</html>

@@ -6,7 +6,25 @@
     <description>Recent content in JS on 米米的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Wed, 13 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/categories/js/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/categories/js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[教學]undefined與null的比較</title>
+      <link>https://jameshsu0407.github.io/blog/20211019_undefined_null/</link>
+      <pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/blog/20211019_undefined_null/</guid>
+      <description>前言 今天繼續來打底練基礎～本次要來聊聊undefined、not defined、null，這些看起來就像「沒有」一樣，實際上他們之間可是差很多的哩！有些在時候會相等，有些時候又不一樣，那就跟著腳步一起看下去吧～～
+ 目錄：
+ 使用型態比較 truthy與falsy 使用一般相等與嚴格相等比較 使用數字運算比較 undefined與not defined的差別 undefined居然可以當作變數名稱或參數使用   使用型態比較 在寫JS時有兩大型別，分別是基本型別（Primitives）與物件型別（Object）。
+ 基本型別： string、number、boolean、null、undefined、symbol 物件型別：array、object、function&amp;hellip;&amp;hellip;  在這裡可以觀察到本次要探討的null、undefined均出現在基本型別中。而基本型別裡都有「原始值 (primitive value)」，原始值是無法經過更改的的，例如布林值只有truth、false，不會再有其他的值，因此null、undefined也是一樣，null 型別只有一種值，就是 null ，而 undefined 類型也只有一種值，就是 undefined。
+我們透過程式碼來更進一步了解兩者之間的差異，首先分別給他們型別：
+let a; let b = null; console.log(a) // 顯示：undefined，表示尚未賦值，未定義 console.log(b) // 顯示：null，表示此變數沒有值 undefined代表根本沒有這個東西，所以不知道這是什麼；null代表此變數（可能曾經有值，可能沒有值）現在沒有值。
+接著再用typeof來檢驗型別是不是undefined跟null:
+let a; let b = null; console.log(typeof a) // 顯示：undefined console.log(typeof b) // 顯示：object 可以知道undefined 的型別是 undefined，null的型別是object。
+ 誒，不是誒！剛剛不是說null 型別只有一種值，就是 null ？怎麼變成object？說變就變，不講武德誒！！！
+ 既然有問題我們就去找找，從官方文件MDN Web Docs有說：</description>
+    </item>
+    
     <item>
       <title>[教學]var、let、const之間的比較</title>
       <link>https://jameshsu0407.github.io/blog/20211013_var_let_const/</link>

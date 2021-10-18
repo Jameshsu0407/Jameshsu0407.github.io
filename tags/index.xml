@@ -6,11 +6,11 @@
     <description>Recent content in Tags on 米米的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Wed, 13 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Javascript</title>
       <link>https://jameshsu0407.github.io/tags/javascript/</link>
-      <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://jameshsu0407.github.io/tags/javascript/</guid>
       <description></description>
@@ -19,16 +19,34 @@
     <item>
       <title>JS</title>
       <link>https://jameshsu0407.github.io/tags/js/</link>
-      <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://jameshsu0407.github.io/tags/js/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>null</title>
+      <link>https://jameshsu0407.github.io/tags/null/</link>
+      <pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/tags/null/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>undefined</title>
+      <link>https://jameshsu0407.github.io/tags/undefined/</link>
+      <pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/tags/undefined/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>前端</title>
       <link>https://jameshsu0407.github.io/tags/%E5%89%8D%E7%AB%AF/</link>
-      <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://jameshsu0407.github.io/tags/%E5%89%8D%E7%AB%AF/</guid>
       <description></description>
@@ -37,7 +55,7 @@
     <item>
       <title>教學</title>
       <link>https://jameshsu0407.github.io/tags/%E6%95%99%E5%AD%B8/</link>
-      <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://jameshsu0407.github.io/tags/%E6%95%99%E5%AD%B8/</guid>
       <description></description>
