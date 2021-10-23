@@ -6,7 +6,18 @@
     <description>Recent content in 教學 on 米米的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Mon, 18 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/tags/%E6%95%99%E5%AD%B8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/tags/%E6%95%99%E5%AD%B8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[教學]if else與switch case的比較</title>
+      <link>https://jameshsu0407.github.io/blog/20211023_if-else_switch-case/</link>
+      <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/blog/20211023_if-else_switch-case/</guid>
+      <description>前言 在寫程式的時候如果要判斷東西，你第一個想到的是什麼語法？？我想絕大多數的人都會選擇用if else吧！因為我也是一樣～ 不過其實還有另一位弟兄可以寫判斷式，它就是最近剛發表的Switch啦！！！！！！（最近才剛收了一台二手switch，每次下班後都想拿起來玩，不想寫文章&amp;hellip;&amp;hellip;. 咳咳！扯遠了。這個switch case也能寫判斷式，所以這次就來比較看看兩者間的差異～
+ 目錄：
+ 語法差異 可讀性 嚴謹度 效能 使用時機   語法差異  if else：當條件成立的時候會執行其陳述式裡的程式，而不成立時則執行另外一個陳述式。 switch case：括號內放入表達式，接著就會表達式裡的值是否符合case條件，然後再執行此條件相關的陳述式。  // if else語法 if (條件式一){ // 若條件式一成立，則執行此區塊 } else if (條件式二){ // 若條件式二成立，則執行此區塊 } else{ // 若上述條件都不成立，則執行此區塊 } // switch case語法 switch (表達式){ case value1: //當 expression 的值符合 value1，則執行此陳述句  break; case value2: //當 expression 的值符合 value2，則執行此陳述句  break; ... case valueN: //當 expression 的值符合 valueN，則執行此陳述句  break; default: //當 expression 的值都不符合上述條件式，則執行此陳述句  break; } 從上面的程式碼可知，if else是將整個要判斷的內容放在條件式，其條件式是使用布林值作為判斷基礎，並且可以搭配邏輯運算子使用，例如：if ( a &amp;lt; 10 &amp;amp;&amp;amp; a &amp;gt;= 5)，這裡就代表如果變數a的值介於5~10之間，程式就會執行該區塊的內容；switch case的判斷方式則不同，它是將表達式的值與case裡的值做比較，其條件判斷是分佈在「表達式」與「case」裡。</description>
+    </item>
+    
     <item>
       <title>[教學]undefined與null的比較</title>
       <link>https://jameshsu0407.github.io/blog/20211019_undefined_null/</link>
