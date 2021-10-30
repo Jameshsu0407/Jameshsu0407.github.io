@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>explicit coercion on 米米的部落格</title>
+    <link>https://jameshsu0407.github.io/tags/explicit-coercion/</link>
+    <description>Recent content in explicit coercion on 米米的部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sat, 30 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/tags/explicit-coercion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[教學]何謂強制轉型、以及如何作到轉換型別？</title>
+      <link>https://jameshsu0407.github.io/blog/20211030_explicit-coercion_implicit-coercion/</link>
+      <pubDate>Sat, 30 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/blog/20211030_explicit-coercion_implicit-coercion/</guid>
+      <description>前言 相信大家在剛學習JS的時候一定會遇到 轉型（coercion） 的問題，像是：
+let a = &amp;#34;1&amp;#34;; a = a + 2; a = a * 2; a = a + true; a = a * null; a = a / undefined; 請問每一行a的值為何呢？？
+我想很多人一定會把它拿去console.log()裡面查詢吧～
+JS會很貼心的（有夠雞婆）幫我們轉換型別，其中有分「顯性轉型（explicit coercion）」與「隱性轉型（implicit coercion）」，前者規規矩矩，你叫它轉型它才轉型；後者像一個死屁孩一樣會自動轉型，而且你還可能猜不透它會怎麼轉！！！
+本次就來了解到底轉型是怎麼一回事ㄅ～
+ 目錄：
+ 顯性轉型與隱性轉型 顯性轉型  轉型為布林型別：Boolean() 轉型為字串型別：toString()、String() 轉型為數值型別：Number()、parseInt()、parseFloat()   隱性轉型  轉換為布林型別：其實都是看truthy跟falsy值 轉換為字串型別：使用加號 轉換為數值型別：可以使用加號，但是小心使用     顯性轉型與隱性轉型 剛剛前面有提過強制轉型分兩種：
+ 顯性轉型（explicit coercion）：透過人工的方式，以函式的方法轉換值的型別。 隱性轉型（implicit coercion）：看到兩個不同型別的值就會自動判斷，把值轉換為相同型別，再做運算。  let a = &amp;#34;1&amp;#34;; let b = &amp;#34;1&amp;#34;; console.</description>
+    </item>
+    
+  </channel>
+</rss>
