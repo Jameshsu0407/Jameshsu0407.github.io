@@ -2,7 +2,7 @@
 <html lang="zh-tw">
 <head>
   <meta charset="utf-8">
-<title>工作心得分享 - 米米的部落格</title>
+<title>米米的部落格</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -17,17 +17,17 @@
   
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
-<meta name="generator" content="Hugo 0.78.2" /><meta itemprop="name" content="工作心得分享">
+<meta name="generator" content="Hugo 0.78.2" /><meta itemprop="name" content="米米的部落格">
 <meta itemprop="description" content="米米的部落格">
-<meta property="og:title" content="工作心得分享" />
+<meta property="og:title" content="米米的部落格" />
 <meta property="og:description" content="米米的部落格" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://jameshsu0407.github.io/categories/%E5%B7%A5%E4%BD%9C%E5%BF%83%E5%BE%97%E5%88%86%E4%BA%AB/" />
+<meta property="og:url" content="https://jameshsu0407.github.io/" />
 <meta property="og:image" content="https://jameshsu0407.github.io/img/main/logo.png"/>
-<meta property="og:updated_time" content="2020-09-14T00:00:00+00:00" /><meta property="og:site_name" content="米米的部落格" /><meta name="twitter:card" content="summary_large_image"/>
+<meta property="og:updated_time" content="2021-11-30T00:00:00+00:00" /><meta property="og:site_name" content="米米的部落格" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://jameshsu0407.github.io/img/main/logo.png"/>
 
-<meta name="twitter:title" content="工作心得分享"/>
+<meta name="twitter:title" content="米米的部落格"/>
 <meta name="twitter:description" content="米米的部落格"/>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
@@ -62,12 +62,48 @@ if (!doNotTrack) {
 <body>
   
 
+  <div id="theme-message" style="background-color:#3c3b3b;color:#f4f4f4;margin:auto auto;padding:.25em 2em;width:75%;">
+    <p style="text-align:center;">This message, related to the development of the theme, only displays on the
+      <code>localhost</code> homepage to notify you of any important theme changes.</p>
+      <hr>
+      <h5 style="color:#f4f4f4;text-align:center;"><i class="fas fa-exclamation-triangle"></i>Version 2.0.0 - July 20, 2020<i class="fas fa-exclamation-triangle"></i></h5>
+    <p>Below are the following changes that <em>could</em> be breaking changes for your site. For more details on any change, please refer to <a href="https://github.com/pacollins/hugo-future-imperfect-slim/pull/154">PR #154</a>.</p>
+<p>The major breaking change is:</p>
+<ol>
+<li>Users that have front matter that utilize <code>images</code> (backwards compatibility for <code>featured</code> and associated parameters still remains) <em>will</em> need to adjust from <code>[images]=&quot;SRC&quot;</code> to the new format.</li>
+</ol>
+<pre><code>[[images]]
+    src = &quot;&quot; // Link to image
+    alt = &quot;&quot; // Alt text for image
+    stretch = // Optional: See screenshots for referenced values and outcomes
+</code></pre><p>If you utilize any of the following, there <em>might</em> be a breaking:</p>
+<ol>
+<li>User custom templates <em>may</em> require adjustment.</li>
+<li>User custom i18n languages, or custom templates referencing i18n translations <em>may</em> require adjustment.</li>
+<li>User custom template for comments <em>will</em> require adjustment <em>if</em> it uses the theme&rsquo;s CSS and/or JS.</li>
+<li>User custom CSS <em>may</em> need to adjust due to a variety of class name changes and specificity changes.</li>
+</ol>
+<p>While I realize this is inconvenient, I hope that it is worth it to you in the long run. Thanks for using the theme, and feel free to submit issues as needed.</p>
+
+    <div style="text-align:center;">
+      <button onclick="removeBox()" class="button" style="color:#f4f4f4;margin-bottom:1em;">Close Notification Until Next Update</button>
+    </div>
+    <script>
+      if (window.location.href.indexOf('localhost:') < 1 || window.localStorage.getItem('HFIS-version') == '2.0.0') {
+        document.getElementsByTagName("body")[0].removeChild(document.getElementById("theme-message"));
+      }
+      function removeBox() {
+        window.localStorage.setItem('HFIS-version', '2.0.0');
+        document.getElementsByTagName("body")[0].removeChild(document.getElementById("theme-message"));
+      }
+    </script>
+  </div>
 <header id="site-header">
   <nav id="site-nav">
     <h1 class="nav-title" data-aos="fade-down" data-aos-duration="800">
       <a href="/" class="nav">
         
-          categories
+          米米的部落格
         
       </a>
     </h1>
@@ -117,32 +153,32 @@ if (!doNotTrack) {
 
 
   
-        <a href="//social-plugins.line.me/lineit/share?url=https%3a%2f%2fjameshsu0407.github.io%2fcategories%2f%25E5%25B7%25A5%25E4%25BD%259C%25E5%25BF%2583%25E5%25BE%2597%25E5%2588%2586%25E4%25BA%25AB%2f" target="_blank" rel="noopener" class="nav share-btn line">
+        <a href="//social-plugins.line.me/lineit/share?url=https%3a%2f%2fjameshsu0407.github.io%2f" target="_blank" rel="noopener" class="nav share-btn line">
           <p>line</p>
           </a>
   
 
   
     
-    <a href="//twitter.com/share?text=%e5%b7%a5%e4%bd%9c%e5%bf%83%e5%be%97%e5%88%86%e4%ba%ab&amp;url=https%3a%2f%2fjameshsu0407.github.io%2fcategories%2f%25E5%25B7%25A5%25E4%25BD%259C%25E5%25BF%2583%25E5%25BE%2597%25E5%2588%2586%25E4%25BA%25AB%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+    <a href="//twitter.com/share?text=%e7%b1%b3%e7%b1%b3%e7%9a%84%e9%83%a8%e8%90%bd%e6%a0%bc&amp;url=https%3a%2f%2fjameshsu0407.github.io%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
         <p>Twitter</p>
       </a>
   
 
   
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjameshsu0407.github.io%2fcategories%2f%25E5%25B7%25A5%25E4%25BD%259C%25E5%25BF%2583%25E5%25BE%2597%25E5%2588%2586%25E4%25BA%25AB%2f&amp;title=%e5%b7%a5%e4%bd%9c%e5%bf%83%e5%be%97%e5%88%86%e4%ba%ab" target="_blank" rel="noopener" class="nav share-btn linkedin">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjameshsu0407.github.io%2f&amp;title=%e7%b1%b3%e7%b1%b3%e7%9a%84%e9%83%a8%e8%90%bd%e6%a0%bc" target="_blank" rel="noopener" class="nav share-btn linkedin">
             <p>LinkedIn</p>
           </a>
   
 
   
-      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjameshsu0407.github.io%2fcategories%2f%25E5%25B7%25A5%25E4%25BD%259C%25E5%25BF%2583%25E5%25BE%2597%25E5%2588%2586%25E4%25BA%25AB%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjameshsu0407.github.io%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
         <p>Facebook</p>
         </a>
   
 
   
-        <a href="mailto:?subject=%e6%9f%a5%e7%9c%8b%e6%ad%a4%e5%b8%96%e5%ad%90%e7%9a%84%e4%bd%9c%e8%80%85 %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&amp;body=https%3a%2f%2fjameshsu0407.github.io%2fcategories%2f%25E5%25B7%25A5%25E4%25BD%259C%25E5%25BF%2583%25E5%25BE%2597%25E5%2588%2586%25E4%25BA%25AB%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+        <a href="mailto:?subject=%e6%9f%a5%e7%9c%8b%e6%ad%a4%e5%b8%96%e5%ad%90%e7%9a%84%e4%bd%9c%e8%80%85 %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&amp;body=https%3a%2f%2fjameshsu0407.github.io%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
           <p>Email</p>
         </a>
   
@@ -165,8 +201,6 @@ if (!doNotTrack) {
     <footer>
       <ul class="socnet-icons">
         
-    <li><a href="/categories/%E5%B7%A5%E4%BD%9C%E5%BF%83%E5%BE%97%E5%88%86%E4%BA%AB/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a></li>
-
 
         <li><a href="//github.com/Jameshsu0407" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
 
@@ -297,6 +331,8 @@ if (!doNotTrack) {
   </div>
 </article>
 <div class="pagination" data-aos="zoom-in-up" data-aos-duration="800">
+  
+  <a href="/page/3/" class="button left"><span>上一頁</span></a>
   
   
 </div>
@@ -440,8 +476,6 @@ if (!doNotTrack) {
   
       <ul class="socnet-icons">
         
-    <li><a href="/categories/%E5%B7%A5%E4%BD%9C%E5%BF%83%E5%BE%97%E5%88%86%E4%BA%AB/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a></li>
-
 
         
       </ul>
