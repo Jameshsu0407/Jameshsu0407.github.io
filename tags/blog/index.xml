@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on 米米的部落格</title>
+    <link>https://jameshsu0407.github.io/tags/blog/</link>
+    <description>Recent content in blog on 米米的部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog</title>
+      <link>https://jameshsu0407.github.io/portfolio/blog/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/portfolio/blog/</guid>
+      <description>歡迎來到我的部落格，這裡不定期會更新技術文章。
+有任何問題可以在下方的Disqus留言，我會盡快回覆的。
+  串接Google Analytics、Google Search Console支援Google搜尋及查看成效 串接Disqus支援留言功能 改寫模板並新增廣告區、關於我、留言區、贊助區、淺色 / 深色模式、Open Graph Protocol等  使用技術：HTML / CSS / Sass / JavaScript / JQuery
+使用套件：Hugo / Google Analytics / Discus / Slick.js
+   blog  附上網站連結</description>
+    </item>
+    
+  </channel>
+</rss>

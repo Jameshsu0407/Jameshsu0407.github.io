@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>woworoom on 米米的部落格</title>
+    <link>https://jameshsu0407.github.io/tags/woworoom/</link>
+    <description>Recent content in woworoom on 米米的部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Wed, 15 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/tags/woworoom/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>woworoom</title>
+      <link>https://jameshsu0407.github.io/portfolio/woworoom/</link>
+      <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/portfolio/woworoom/</guid>
+      <description>這是我在六角學院JavaSript直播班的期末作業。此網站使用原生JS撰寫，前台可供使用者選購商品；後台可讓管理了解商品購物比例及訂單資訊。
+六角學院的完課心得在此。
+  串接 API 呈現商品頁面，商品可做篩選功能 可新增、修改、刪除商品，可送出購物車訂單 網頁動畫、操作功能跳提醒通知 RWD 版面配置  使用技術：HTML / Pug / CSS / JavaScript
+使用套件：Axois / D3.js / C3.js / Validate.js
+   woworoom  附上網站連結</description>
+    </item>
+    
+  </channel>
+</rss>

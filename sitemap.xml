@@ -73,6 +73,31 @@
   </url>
   
   <url>
+    <loc>https://jameshsu0407.github.io/tags/javascript/</loc>
+    <lastmod>2021-12-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/portfolio/</loc>
+    <lastmod>2021-12-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/tags/woworoom/</loc>
+    <lastmod>2021-12-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/portfolio/woworoom/</loc>
+    <lastmod>2021-12-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/categories/%E4%BD%9C%E5%93%81%E9%9B%86/</loc>
+    <lastmod>2021-12-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jameshsu0407.github.io/blog/20211130_aspect-ratio_object-fit/</loc>
     <lastmod>2021-11-30T00:00:00+00:00</lastmod>
   </url>
@@ -114,11 +139,6 @@
   
   <url>
     <loc>https://jameshsu0407.github.io/tags/implicit-coercion/</loc>
-    <lastmod>2021-10-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jameshsu0407.github.io/tags/javascript/</loc>
     <lastmod>2021-10-30T00:00:00+00:00</lastmod>
   </url>
   
@@ -218,17 +238,7 @@
   </url>
   
   <url>
-    <loc>https://jameshsu0407.github.io/portfolio/</loc>
-    <lastmod>2021-08-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://jameshsu0407.github.io/tags/step30/</loc>
-    <lastmod>2021-08-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jameshsu0407.github.io/categories/%E4%BD%9C%E5%93%81%E9%9B%86/</loc>
     <lastmod>2021-08-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -335,6 +345,16 @@
   <url>
     <loc>https://jameshsu0407.github.io/about/</loc>
     <lastmod>2020-09-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/portfolio/blog/</loc>
+    <lastmod>2020-09-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jameshsu0407.github.io/tags/blog/</loc>
+    <lastmod>2020-09-10T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

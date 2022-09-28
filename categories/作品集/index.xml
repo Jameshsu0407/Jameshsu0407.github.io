@@ -6,7 +6,20 @@
     <description>Recent content in 作品集 on 米米的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Thu, 26 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/categories/%E4%BD%9C%E5%93%81%E9%9B%86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jameshsu0407.github.io/categories/%E4%BD%9C%E5%93%81%E9%9B%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>woworoom</title>
+      <link>https://jameshsu0407.github.io/portfolio/woworoom/</link>
+      <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/portfolio/woworoom/</guid>
+      <description>這是我在六角學院JavaSript直播班的期末作業。此網站使用原生JS撰寫，前台可供使用者選購商品；後台可讓管理了解商品購物比例及訂單資訊。
+六角學院的完課心得在此。
+  串接 API 呈現商品頁面，商品可做篩選功能 可新增、修改、刪除商品，可送出購物車訂單 網頁動畫、操作功能跳提醒通知 RWD 版面配置  使用技術：HTML / Pug / CSS / JavaScript
+使用套件：Axois / D3.js / C3.js / Validate.js
+   woworoom  附上網站連結</description>
+    </item>
+    
     <item>
       <title>舊鞋救命</title>
       <link>https://jameshsu0407.github.io/portfolio/step30/</link>
@@ -54,6 +67,19 @@
  回到專案，當初在建置網頁時都是用Bootstrap，就連顏色配置這些也都是用Bootstrap內建顏色，因此版型看起來非常中規中矩，不過對於初學者來說這應該算及格了吧？
 但也多虧這個專案讓我能夠更加深入了解Bootstrap的用法，如grid system、card、collapsed等，這些東西需要經過反覆實作才能夠熟悉，不然很快就會忘記了。此外我也有用一些套件來讓版面看起來不這麼單調，如fontawesome的icon、AOS.js的下滑動畫等，這讓我之後懂得使用套件，提升網頁的多變性。
   fasure  附上網站連結</description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>https://jameshsu0407.github.io/portfolio/blog/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jameshsu0407.github.io/portfolio/blog/</guid>
+      <description>歡迎來到我的部落格，這裡不定期會更新技術文章。
+有任何問題可以在下方的Disqus留言，我會盡快回覆的。
+  串接Google Analytics、Google Search Console支援Google搜尋及查看成效 串接Disqus支援留言功能 改寫模板並新增廣告區、關於我、留言區、贊助區、淺色 / 深色模式、Open Graph Protocol等  使用技術：HTML / CSS / Sass / JavaScript / JQuery
+使用套件：Hugo / Google Analytics / Discus / Slick.js
+   blog  附上網站連結</description>
     </item>
     
   </channel>
