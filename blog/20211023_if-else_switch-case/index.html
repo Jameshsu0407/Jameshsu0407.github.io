@@ -21,7 +21,7 @@
 <meta itemprop="description" content="別在if了，試試switch吧～">
 <meta itemprop="datePublished" content="2021-10-23T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-10-23T00:00:00+00:00" />
-<meta itemprop="wordCount" content="558">
+<meta itemprop="wordCount" content="143">
 <meta itemprop="image" content="">
 
 
@@ -46,7 +46,7 @@
         <script src="https://kit.fontawesome.com/be54eb011a.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="/css/main.min.2dc7cc66fdb1de8c9e08758ea8f404e86d9b61a4a17ded468118109499810fd6.css" integrity="sha256-LcfMZv2x3oyeCHWOqPQE6G2bYaShfe1GgRgQlJmBD9Y="><link rel="stylesheet" href="/css/add-on.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="/css/main.min.d84a57a14c75cb171588f5e35d85dbf235c4ec43fbcb3801d69d0f5a3cb044e0.css" integrity="sha256-2EpXoUx1yxcViPXjXYXb8jXE7EP7yzgB1p0PWjywROA="><link rel="stylesheet" href="/css/add-on.css">
   
   
 <script type="application/javascript">
@@ -321,223 +321,47 @@ if (!doNotTrack) {
 <li><code>if else</code>：當條件成立的時候會執行其陳述式裡的程式，而不成立時則執行另外一個陳述式。</li>
 <li><code>switch case</code>：括號內放入表達式，接著就會表達式裡的值是否符合case條件，然後再執行此條件相關的陳述式。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// if else語法
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">條件式一</span>){
-  <span style="color:#75715e">// 若條件式一成立，則執行此區塊
-</span><span style="color:#75715e"></span>}
-<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">條件式二</span>){
-  <span style="color:#75715e">// 若條件式二成立，則執行此區塊
-</span><span style="color:#75715e"></span>}
-<span style="color:#66d9ef">else</span>{
-  <span style="color:#75715e">// 若上述條件都不成立，則執行此區塊
-</span><span style="color:#75715e"></span>}
-
-<span style="color:#75715e">// switch case語法
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">表達式</span>){
-  <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">value1</span><span style="color:#f92672">:</span>
-    <span style="color:#75715e">//當 expression 的值符合 value1，則執行此陳述句
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">break</span>;
-  <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">value2</span><span style="color:#f92672">:</span>
-    <span style="color:#75715e">//當 expression 的值符合 value2，則執行此陳述句
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">break</span>;
-  ...
-  <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">valueN</span><span style="color:#f92672">:</span>
-    <span style="color:#75715e">//當 expression 的值符合 valueN，則執行此陳述句
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">break</span>;
-  <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
-    <span style="color:#75715e">//當 expression 的值都不符合上述條件式，則執行此陳述句
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">break</span>;
-}
-</code></pre></div><p>從上面的程式碼可知，<code>if else</code>是將<strong>整個要判斷的內容放在條件式</strong>，其條件式是使用布林值作為判斷基礎，並且可以搭配邏輯運算子使用，例如：<code>if ( a &lt; 10 &amp;&amp; a &gt;= 5)</code>，這裡就代表如果變數<code>a</code>的值介於5~10之間，程式就會執行該區塊的內容；<code>switch case</code>的判斷方式則不同，它是將<strong>表達式的值與<code>case</code>裡的值做比較，其條件判斷是分佈在「表達式」與「<code>case</code>」裡</strong>。</p>
+<script src="https://gist.github.com/Jameshsu0407/e68a6bee9bdcd4a19f168c57d72e4e26.js"></script>
+<p>從上面的程式碼可知，<code>if else</code>是將<strong>整個要判斷的內容放在條件式</strong>，其條件式是使用布林值作為判斷基礎，並且可以搭配邏輯運算子使用，例如：<code>if ( a &lt; 10 &amp;&amp; a &gt;= 5)</code>，這裡就代表如果變數<code>a</code>的值介於5~10之間，程式就會執行該區塊的內容；<code>switch case</code>的判斷方式則不同，它是將<strong>表達式的值與<code>case</code>裡的值做比較，其條件判斷是分佈在「表達式」與「<code>case</code>」裡</strong>。</p>
 <p>這裡特別講一下<code>switch case</code>也能夠做到區間判斷，就像<code>if else</code>語法一樣，但又不太一樣。</p>
 <p>讓我們看看傳統的<code>if else</code>是如何判斷區間：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">score</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">77</span>;
-<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">score</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">90</span>){
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`分數超過90分`</span>);
-}
-<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">score</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">score</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">90</span>){
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`分數及格，但可以更好`</span>);
-}
-<span style="color:#66d9ef">else</span>{
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`不及格，要多讀書`</span>);
-}
-
-<span style="color:#75715e">// 輸出：分數超過90分
-</span></code></pre></div><p>接著使用<code>switch case</code>的寫法，如果將<code>if else</code>的寫法搬過來使用，答案會是&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">score</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">82</span>;
-<span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">score</span>){
-  <span style="color:#66d9ef">case</span> (<span style="color:#a6e22e">score</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">90</span>)<span style="color:#f92672">:</span> <span style="color:#75715e">// 92 !== true
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`分數超過90分`</span>);
-    <span style="color:#66d9ef">break</span>;
-  <span style="color:#66d9ef">case</span> (<span style="color:#a6e22e">score</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">score</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">90</span>)<span style="color:#f92672">:</span> <span style="color:#75715e">// 92 !== false
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`分數及格，但可以更好`</span>);
-  <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`不及格，要多讀書`</span>);
-}
-
-<span style="color:#75715e">// 輸出：不及格，要多讀書
-</span></code></pre></div><p>什麼？為什麼會不及格？有哪邊出錯了嗎？其實這樣的判斷邏輯是對的，只是不了解<code>switch case</code>在比對的方法。</p>
+<script src="https://gist.github.com/Jameshsu0407/5182eacfb794fdd6fbdd6865d8688ce2.js"></script>
+<p>接著使用<code>switch case</code>的寫法，如果將<code>if else</code>的寫法搬過來使用，答案會是&hellip;</p>
+<script src="https://gist.github.com/Jameshsu0407/ee4851f63806a1cf2e1a81a8d09c9aef.js"></script>
+<p>什麼？為什麼會不及格？有哪邊出錯了嗎？其實這樣的判斷邏輯是對的，只是不了解<code>switch case</code>在比對的方法。</p>
 <p>剛剛前面有提到<code>switch case</code>的判斷方式為：<strong>「將表達式的值與<code>case</code>去做比對」</strong>，以上面的程式碼為例，第一個比較的就「表達式的是<code>score</code>」與「<code>case</code>的<code>score &gt;= 90</code>」是否相等，這裡是用布林值來做判斷<code>true</code>或<code>false</code>，所以程式其實是以<code>77 !== true</code>來做判斷。</p>
 <p>由此可見，這樣的判斷寫法是錯誤的，因此程式就會繼續執行，最後因為所以條件都不符才會跑進<code>default</code>裡。</p>
 <p>到這裡希望大家可以先停下腳步，想想看若要改程式碼的話，應該要如何調整呢？（提示：想想判斷條件及布林值的比較）</p>
 <p>3&hellip;</p>
 <p>2&hellip;</p>
 <p>1&hellip;答案揭曉：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">score</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">92</span>;
-<span style="color:#66d9ef">switch</span> (<span style="color:#66d9ef">true</span>){
-  <span style="color:#66d9ef">case</span> (<span style="color:#a6e22e">score</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">90</span>)<span style="color:#f92672">:</span> <span style="color:#75715e">// true === true
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`分數超過90分`</span>);
-    <span style="color:#66d9ef">break</span>;
-  <span style="color:#66d9ef">case</span> (<span style="color:#a6e22e">score</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">score</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">90</span>)<span style="color:#f92672">:</span> <span style="color:#75715e">// true !== false
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`分數及格，但可以更好`</span>);
-  <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`不及格，要多讀書`</span>);
-}
-
-<span style="color:#75715e">// 輸出：分數超過90分
-</span></code></pre></div><p>很簡單的，表達式帶入的值不需要是變數本身，只需寫<code>true</code>即可，亦即需要判斷的事情就交給<code>case</code>，表達式只需等同於它即可。</p>
+<script src="https://gist.github.com/Jameshsu0407/8e33238af2b14c5cafecbdd4878527de.js"></script>
+<p>很簡單的，表達式帶入的值不需要是變數本身，只需寫<code>true</code>即可，亦即需要判斷的事情就交給<code>case</code>，表達式只需等同於它即可。</p>
 <h3 id="可讀性">可讀性</h3>
 <ul>
 <li><code>if else</code>：非常直覺，可套入人類的思考邏輯，如：「如果今天下雨，就要帶傘，沒有就不需要」，想到有什麼就寫什麼，之後若要再修改條件也是非常容易，因此很常被使用。</li>
 <li><code>switch case</code>：無法想到什麼就寫什麼，需要先仔細想想該如何應用。另外，在寫程式碼時還需注意加上<code>break</code>，程式才不會一直執行下去，假設判斷的東西變多，很有可能會有所遺漏。</li>
 </ul>
 <p>這裡來看看若是沒加上<code>break</code>的話會有什麼結果：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
-<span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">num</span>){
-  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`1`</span>);
-  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`2`</span>);
-  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`3`</span>);
-  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`4`</span>);
-  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`5`</span>);
-}
-<span style="color:#75715e">// 輸出：2
-</span><span style="color:#75715e">// 輸出：3
-</span><span style="color:#75715e">// 輸出：4
-</span><span style="color:#75715e">// 輸出：5
-</span></code></pre></div><p>如果忘記加<code>break</code>，那麼程式會將所對應的<code>case</code>開始執行，然後持續執行之後的<code>case</code>，不論正確不正確。</p>
+<script src="https://gist.github.com/Jameshsu0407/6781ed4b20c013af82629a9dfc8c8b52.js"></script>
+<p>如果忘記加<code>break</code>，那麼程式會將所對應的<code>case</code>開始執行，然後持續執行之後的<code>case</code>，不論正確不正確。</p>
 <p>BTW，因為不想打太多<code>case</code>，剛剛嘗試用<code>for</code>迴圈來帶入<code>case</code>，並且「沒有加<code>break</code>」，想不到結果出乎意料：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
-<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> ; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">5</span> ; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>){
-  <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">num</span>){
-    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:</span>
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">num</span>);
-  }
-}
-<span style="color:#75715e">// 輸出：2
-</span></code></pre></div><p>我預計會輸出「2,3,4,5」，結果卻輸出了「2」。</p>
+<script src="https://gist.github.com/Jameshsu0407/784090b7114afa401d20bd5a1af815b1.js"></script>
+<p>我預計會輸出「2,3,4,5」，結果卻輸出了「2」。</p>
 <p>於是我就上網爬文、找人求救，後來得到答案了。若用<code>for</code>迴圈包住<code>switch case</code>的話，程式碼會這樣執行：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">num</span>){
-    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">:</span>
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">num</span>);
-}
-<span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">num</span>){
-    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">:</span>
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">num</span>);
-}
-<span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">num</span>){
-    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">:</span>
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">num</span>);
-}
-<span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">num</span>){
-    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">:</span>
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">num</span>);
-}
-</code></pre></div><p>它會分開執行，不會將<code>case</code>包在同一個<code>switch</code>裡，所以沒加<code>break</code>就沒有差別了。</p>
+<script src="https://gist.github.com/Jameshsu0407/b719de3377b3afb95400fa369d953a97.js"></script>
+<p>它會分開執行，不會將<code>case</code>包在同一個<code>switch</code>裡，所以沒加<code>break</code>就沒有差別了。</p>
 <h3 id="嚴謹度">嚴謹度</h3>
 <ul>
 <li><code>if else</code>：不嚴謹，有時候會強制轉換裡面的參數。</li>
 <li><code>switch case</code>：嚴謹，在比較時使用「嚴格相等（<code>===</code>）」，需要在<strong>型別</strong>與<strong>值</strong>皆相同的情況下，才會成立。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2&#34;</span>;
-<span style="color:#75715e">// if寫法
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>){
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`a等於數字1`</span>);
-}
-<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">a</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>){
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`a等於數字2`</span>);
-}
-<span style="color:#66d9ef">else</span>{
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`a不是數字1、2`</span>);
-}
-<span style="color:#75715e">// 輸出：a等於數字2
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// switch
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">a</span>){
-  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`a等於數字1`</span>);
-  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`a等於數字2`</span>);
-  <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`a不是數字1、2`</span>);
-}
-<span style="color:#75715e">// 輸出：a不是數字1、2
-</span></code></pre></div><p>一開始宣告變數為字串2，在<code>if else</code>裡會強制轉型為<code>number</code>去比較；而<code>switch case</code>就比較嚴格，要型別與值都相等的情況才成立。</p>
+<script src="https://gist.github.com/Jameshsu0407/e081e516fa00e97000c15d618fb9537b.js"></script>
+<p>一開始宣告變數為字串2，在<code>if else</code>裡會強制轉型為<code>number</code>去比較；而<code>switch case</code>就比較嚴格，要型別與值都相等的情況才成立。</p>
 <h3 id="效能">效能：</h3>
 <p>這裡來比較一下兩者的效能如何，這裡使用迴圈來重複計算無用的數據，最後輸出計算時間。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 宣告變數y為0
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-<span style="color:#75715e">// 計算當下時間
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">performance</span>.<span style="color:#a6e22e">now</span>();
-<span style="color:#75715e">// 使用if else
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10000000</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">z</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">z</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">4</span>; <span style="color:#a6e22e">z</span><span style="color:#f92672">++</span>) {
-        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">z</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
-            <span style="color:#a6e22e">y</span><span style="color:#f92672">++</span>;
-        }
-        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">z</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
-            <span style="color:#a6e22e">y</span><span style="color:#f92672">--</span>;
-        }
-        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">z</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>) {
-            <span style="color:#a6e22e">y</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">2</span>;
-        }
-        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">z</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>) {
-            <span style="color:#a6e22e">y</span> <span style="color:#f92672">-=</span> <span style="color:#ae81ff">2</span>;
-        }
-        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">z</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>) {
-            <span style="color:#a6e22e">y</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">3</span>;
-        }
-    }
-}
-<span style="color:#75715e">// 計算當下時間
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">performance</span>.<span style="color:#a6e22e">now</span>();
-<span style="color:#75715e">// 使用switch case
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10000000</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">z</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">z</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">4</span>; <span style="color:#a6e22e">z</span><span style="color:#f92672">++</span>) {
-        <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">z</span>)
-        {
-            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
-            <span style="color:#a6e22e">y</span><span style="color:#f92672">++</span>;
-            <span style="color:#66d9ef">break</span>;
-
-            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
-            <span style="color:#a6e22e">y</span><span style="color:#f92672">--</span>;
-            <span style="color:#66d9ef">break</span>;
-
-            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>
-            <span style="color:#a6e22e">y</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">2</span>;
-            <span style="color:#66d9ef">break</span>;
-
-            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>
-            <span style="color:#a6e22e">y</span> <span style="color:#f92672">-=</span> <span style="color:#ae81ff">2</span>;
-            <span style="color:#66d9ef">break</span>;
-
-            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>
-            <span style="color:#a6e22e">y</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">3</span>;
-            <span style="color:#66d9ef">break</span>;
-        }
-    }
-}
-<span style="color:#75715e">// 計算當下時間
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x3</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">performance</span>.<span style="color:#a6e22e">now</span>();
-
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`執行if else所花費的時間：</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">x2</span><span style="color:#f92672">-</span><span style="color:#a6e22e">x1</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>); <span style="color:#75715e">// 輸出：102.70000000298023
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`執行switch case所花費的時間：</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">x3</span><span style="color:#f92672">-</span><span style="color:#a6e22e">x2</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>); <span style="color:#75715e">// 輸出：90.09999999403954
-</span></code></pre></div><p>我的電腦輸出的時間可能會跟大家不一樣，有興趣的同學可以複製下來貼到瀏覽器上跑跑看，也可以改迴圈的執行次數（貼心小提醒：不要設太大，怕你點腦死去～</p>
+<script src="https://gist.github.com/Jameshsu0407/c9dcb06c0d6877ba8aec18f9fddc1271.js"></script>
+<p>我的電腦輸出的時間可能會跟大家不一樣，有興趣的同學可以複製下來貼到瀏覽器上跑跑看，也可以改迴圈的執行次數（貼心小提醒：不要設太大，怕你點腦死去～</p>
 <p>現代的電腦都算強大的，通常<code>switch case</code>的執行時間會少於<code>if else</code>。基本上除非是專案需要大量的判斷，否則在效能上是看不出太大的差異。</p>
 <p>BTW，有時候<code>if else</code>的速度會比<code>switch case</code>還要快，因為它把會成立的條件放在前面，依序執行下去；而<code>switch case</code>則是以隨機訪問，因此有時候速度可能會比較慢。</p>
 <p><code>switch case</code>編譯後的執行流程大致如下：</p>
@@ -894,7 +718,6 @@ if (!doNotTrack) {
       
       
       
-      <a href='https://vbshoptrax.com/track/clicks/4820/ce2bc2bf9f0527d6f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpages%2Fnovember-sale-1111-199up%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://vbshoptrax.com/track/imp/img/164798/ce2bc2bf9f0527d6f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
       <a href='https://twcouponcenter.com/track/clicks/4820/ce2bc2bf9f0527d6fa9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpromotions%2F635a50b7a7574d0025f80189%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://twcouponcenter.com/track/imp/img/164793/ce2bc2bf9f0527d6fa9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
       <a href='https://afftck.com/track/clicks/4820/ce2bc2bf9f0527d7f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpages%2Fnovember-sale%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://afftck.com/track/imp/img/164788/ce2bc2bf9f0527d7f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
     </div>

@@ -31,8 +31,15 @@
  剛剛的順序看似再正常不過了，不過使用者有想過隨邊丟一張圖片這確定沒問題嗎？？
 撇除照片檔案太大會影響載入速度外，另一個問題就是「照片的寬高比例」。現代人拍照通常都用手機，但是各家手機尺寸都不盡相同，若將未經裁切的照片丟上網頁，那一定會跑版&amp;hellip;
 解法一：max-width: 100%, max-height: 100% 為了解決這個問題，我原本的想法是在圖片的外層包一層div，並且控制外層大小及照片的排列方式。若照片比例與外框比例不符，它就會等比例縮在外框裡。
-&amp;lt;!-- html --&amp;gt; &amp;lt;div class=&amp;#34;pic&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;https://images.unsplash.com/photo-1600068643981-3c4496a2be55?ixlib=rb-1.2.1&amp;amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;amp;auto=format&amp;amp;amp;fit=crop&amp;amp;amp;w=2467&amp;amp;amp;q=80&amp;#34; alt=&amp;#34;&amp;#34;/&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;pic&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;https://images.unsplash.com/photo-1599930499224-1b9a45439a12?ixlib=rb-1.2.1&amp;amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;amp;auto=format&amp;amp;amp;fit=crop&amp;amp;amp;w=1164&amp;amp;amp;q=80&amp;#34; alt=&amp;#34;&amp;#34;/&amp;gt; &amp;lt;/div&amp;gt; ＊圖片的src=&amp;quot;...&amp;quot;是在圖片地址，你可以換張圖片試試
-/* css */ html, body { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; background-color: #3d3d3d; } .pic { width: 500px; height: 350px; margin: 50px; display: flex; justify-content: center; align-items: center; border: 2px solid; } .</description>
+ ＊圖片的src=&amp;quot;...&amp;quot;是在圖片地址，你可以換張圖片試試
+ ＊html、body是為了排版用
+＊主要看.pic跟.pic img那邊，外層先固定好大小，並使用flex排版，讓裡面的內容能夠水平置中及垂直置中；內層的圖片分別在最大寬度、最大高度指定為100%，意思為寬高最大就是100%，若圖片的寬度大於高度，則寬度就是100%，而高度就依照比例去計算，反之亦然
+ 解法二：object-fit 後來發現另一個更厲害的css內建語法，他叫做object-fit，若要以我剛剛的範例來說，它的語法就是object-fit: contain。
+  ＊使用object-fit就只要在圖片上加上語法，並且列出想要的寬高就可以了
+ 眼尖的人可能會發現，它的語法大致跟background-size一樣，所以它同樣有好幾種顯示方式：
+ fill：為預設值，強制讓圖片變形成外框的寬高。（很醜誒哈哈哈哈 contain：按照圖片等比例縮放塞入外框內。 cover：填滿外框，超出外框的部分會被裁切掉。 none：不做任何調整。（請問我要用你幹嘛？？ scale-down：取決於圖片與外框的大小。若外框小於圖片就用contain；若外框大於圖片就用none。  另外他還有個好朋友叫做object-position，可以理解為圖片在外框中的擺放位置，預設是在正中間。他們兩個可以互相搭配使用，說不定能擦出什麼火花（？？
+  object-fit、object-position瀏覽器支援程度  BTW，剛剛講的object-fit、object-position並不支援IE喔，不過現在應該很少人在用IE了吧！
+結語 其實還有很多種方式可以達成圖片自適應外框大小，若你有新的作法與想法，歡迎在下方留言喔！</description>
     </item>
     
   </channel>

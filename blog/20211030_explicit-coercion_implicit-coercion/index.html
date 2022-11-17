@@ -21,7 +21,7 @@
 <meta itemprop="description" content="拜託別再自動轉型了">
 <meta itemprop="datePublished" content="2021-10-30T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-10-30T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1357">
+<meta itemprop="wordCount" content="195">
 <meta itemprop="image" content="">
 
 
@@ -46,7 +46,7 @@
         <script src="https://kit.fontawesome.com/be54eb011a.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="/css/main.min.2dc7cc66fdb1de8c9e08758ea8f404e86d9b61a4a17ded468118109499810fd6.css" integrity="sha256-LcfMZv2x3oyeCHWOqPQE6G2bYaShfe1GgRgQlJmBD9Y="><link rel="stylesheet" href="/css/add-on.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="/css/main.min.d84a57a14c75cb171588f5e35d85dbf235c4ec43fbcb3801d69d0f5a3cb044e0.css" integrity="sha256-2EpXoUx1yxcViPXjXYXb8jXE7EP7yzgB1p0PWjywROA="><link rel="stylesheet" href="/css/add-on.css">
   
   
 <script type="application/javascript">
@@ -306,13 +306,8 @@ if (!doNotTrack) {
   </a>
     <h3 id="前言">前言</h3>
 <p>相信大家在剛學習JS的時候一定會遇到 <strong>轉型（coercion）</strong> 的問題，像是：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1&#34;</span>;      
-<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>;
-<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>;      
-<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">true</span>;
-<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">null</span>;
-<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">/</span> <span style="color:#66d9ef">undefined</span>;
-</code></pre></div><p>請問每一行<code>a</code>的值為何呢？？</p>
+<script src="https://gist.github.com/Jameshsu0407/0f44585907331a84c5d9c34608fde462.js"></script>
+<p>請問每一行<code>a</code>的值為何呢？？</p>
 <p>我想很多人一定會把它拿去<code>console.log()</code>裡面查詢吧～</p>
 <p>JS會很貼心的（<del>有夠雞婆</del>）幫我們轉換型別，其中有分「顯性轉型（explicit coercion）」與「隱性轉型（implicit coercion）」，前者規規矩矩，你叫它轉型它才轉型；後者像一個死屁孩一樣會自動轉型，而且你還可能猜不透它會怎麼轉！！！</p>
 <p>本次就來了解到底轉型是怎麼一回事ㄅ～</p>
@@ -342,12 +337,8 @@ if (!doNotTrack) {
 <li>顯性轉型（explicit coercion）：透過人工的方式，以函式的方法轉換值的型別。</li>
 <li>隱性轉型（implicit coercion）：看到兩個不同型別的值就會自動判斷，把值轉換為相同型別，再做運算。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1&#34;</span>;      
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1&#34;</span>;
-
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#a6e22e">a</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// 顯性轉型，輸出： 2（number）
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// 隱性轉型，輸出： 2（number）
-</span></code></pre></div><p>不管是顯性轉型或是隱性轉型，它們轉出來的型別就只會有布林值（boolean）字串（string）以及數字（number）這三種。</p>
+<script src="https://gist.github.com/Jameshsu0407/78174228c4f9f65a4b7e8bd7804a54de.js"></script>
+<p>不管是顯性轉型或是隱性轉型，它們轉出來的型別就只會有布林值（boolean）字串（string）以及數字（number）這三種。</p>
 <h3 id="顯性轉型">顯性轉型</h3>
 <p>透過明確的JS函式方法來轉換變數的型別，對應的函式方法分別有：</p>
 <ul>
@@ -356,9 +347,8 @@ if (!doNotTrack) {
 <li>轉換為數值型別：<code>Number()</code>、<code>parseInt()</code>、<code>parseFloat()</code>。</li>
 </ul>
 <p>這裡有個觀念要先澄清，變數若要轉換型別，原先的屬性下就有個類似轉換為其他型別的「方法」，因此呼叫這組方法便能轉換成其它型別。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">// 宣告變數為number
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">__proto__</span>; <span style="color:#75715e">// 顯示a可使用的函式
-</span></code></pre></div><p>大家可以執行上面的程式碼，你會發現<code>a</code>有好幾種函式，接著可以展開<code>[[Prototype]]</code>，你會發現<code>toString</code>方法就在這裡。這就是為什麼每次在官方文件上找方法會看到像<code>Number.prototype.toString()</code>一樣長的原因。</p>
+<script src="https://gist.github.com/Jameshsu0407/7cd5e6b311e16763e54603d36be0afc4.js"></script>
+<p>大家可以執行上面的程式碼，你會發現<code>a</code>有好幾種函式，接著可以展開<code>[[Prototype]]</code>，你會發現<code>toString</code>方法就在這裡。這就是為什麼每次在官方文件上找方法會看到像<code>Number.prototype.toString()</code>一樣長的原因。</p>
 
 
 
@@ -421,102 +411,18 @@ if (!doNotTrack) {
 </tbody>
 </table>
 <p>接下來到了看圖說故事的時間，顯示為<code>truthy</code>就為<code>true</code>；<code>falthy</code>就歸類為<code>false</code>，就是這麼簡單！</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// boolean
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Boolean(<span style="color:#66d9ef">true</span>)); <span style="color:#75715e">// 輸出：true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Boolean(<span style="color:#66d9ef">false</span>)); <span style="color:#75715e">// 輸出：false
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// string
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Boolean(<span style="color:#e6db74">&#34;字串&#34;</span>)); <span style="color:#75715e">// 輸出：true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Boolean(<span style="color:#e6db74">&#34;1&#34;</span>)); <span style="color:#75715e">// 輸出：true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Boolean(<span style="color:#e6db74">&#34;0&#34;</span>)); <span style="color:#75715e">// 輸出：true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Boolean(<span style="color:#e6db74">&#34;&#34;</span>)); <span style="color:#75715e">// 輸出：false
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// number
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Boolean(<span style="color:#ae81ff">123</span>)); <span style="color:#75715e">// 輸出：true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Boolean(<span style="color:#f92672">+</span><span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// 輸出：false
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Boolean(<span style="color:#f92672">-</span><span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// 輸出：false
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Boolean(<span style="color:#66d9ef">NaN</span>)); <span style="color:#75715e">// 輸出：false
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// null
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Boolean(<span style="color:#66d9ef">null</span>)); <span style="color:#75715e">// 輸出：false
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// undefined
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Boolean(<span style="color:#66d9ef">undefined</span>)); <span style="color:#75715e">// 輸出：false
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// array
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Boolean([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>])); <span style="color:#75715e">// 輸出：true
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// object
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Boolean({<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Tom&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18</span>})); <span style="color:#75715e">// 輸出：true
-</span></code></pre></div><h4 id="轉型為字串型別tostringstring">轉型為字串型別：toString()、String()</h4>
+<script src="https://gist.github.com/Jameshsu0407/76ff211104e699d999ca7c07367855d0.js"></script>
+<h4 id="轉型為字串型別tostringstring">轉型為字串型別：toString()、String()</h4>
 <p><code>String()</code>與 <code>.toString()</code>都可以將值轉換為字串型別，差別在於後者在收到<code>null</code>、<code>undefined</code>和<code>number</code>時會報錯。
 <code>String()</code>的程式碼：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// boolean
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(String(<span style="color:#66d9ef">true</span>)); <span style="color:#75715e">// 輸出：&#34;true&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(String(<span style="color:#66d9ef">false</span>)); <span style="color:#75715e">// 輸出：&#34;false&#34;
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// string
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(String(<span style="color:#e6db74">&#34;字串&#34;</span>)); <span style="color:#75715e">// 輸出：&#34;字串&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(String(<span style="color:#e6db74">&#34;1&#34;</span>)); <span style="color:#75715e">// 輸出：&#34;1&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(String(<span style="color:#e6db74">&#34;0&#34;</span>)); <span style="color:#75715e">// 輸出：&#34;0&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(String(<span style="color:#e6db74">&#34;&#34;</span>)); <span style="color:#75715e">// 輸出：&#34;&#34;
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// number
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(String(<span style="color:#ae81ff">123</span>)); <span style="color:#75715e">// 輸出：&#34;123&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(String(<span style="color:#f92672">+</span><span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// 輸出：&#34;0&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(String(<span style="color:#f92672">-</span><span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// 輸出：&#34;0&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(String(<span style="color:#66d9ef">NaN</span>)); <span style="color:#75715e">// 輸出：&#34;NaN&#34;
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// null
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(String(<span style="color:#66d9ef">null</span>)); <span style="color:#75715e">// 輸出：&#34;null&#34;
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// undefined
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(String(<span style="color:#66d9ef">undefined</span>)); <span style="color:#75715e">// 輸出：&#34;undefined&#34;
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// array
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(String([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>])); <span style="color:#75715e">// 輸出：&#34;1,2,3&#34;
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// object
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(String({<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Tom&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18</span>})); <span style="color:#75715e">// 輸出：&#34;Object Object&#34;
-</span></code></pre></div><p><code>toString()</code>的程式碼：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// boolean
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">true</span>.<span style="color:#a6e22e">toString</span>()); <span style="color:#75715e">// 輸出：&#34;true&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">false</span>.<span style="color:#a6e22e">toString</span>()); <span style="color:#75715e">// 輸出：&#34;false&#34;
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// string
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;字串&#34;</span>.<span style="color:#a6e22e">toString</span>()); <span style="color:#75715e">// 輸出：&#34;字串&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;1&#34;</span>.<span style="color:#a6e22e">toString</span>()); <span style="color:#75715e">// 輸出：&#34;1&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;0&#34;</span>.<span style="color:#a6e22e">toString</span>()); <span style="color:#75715e">// 輸出：&#34;0&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;&#34;</span>.<span style="color:#a6e22e">toString</span>()); <span style="color:#75715e">// 輸出：&#34;&#34;
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// number
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123.</span><span style="color:#a6e22e">toString</span>()); <span style="color:#75715e">// 輸出：Uncaught SyntaxError: Invalid or unexpected token
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#f92672">+</span><span style="color:#ae81ff">0.</span><span style="color:#a6e22e">toString</span>()); <span style="color:#75715e">// 輸出：Uncaught SyntaxError: Invalid or unexpected token
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">0.</span><span style="color:#a6e22e">toString</span>()); <span style="color:#75715e">// 輸出：Uncaught SyntaxError: Invalid or unexpected token
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">NaN</span>.<span style="color:#a6e22e">toString</span>()); <span style="color:#75715e">// 輸出：&#34;NaN&#34;
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// null
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">null</span>.<span style="color:#a6e22e">toString</span>()); <span style="color:#75715e">// 輸出：Uncaught TypeError: Cannot read properties of null (reading &#39;toString&#39;)
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// undefined
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">undefined</span>.<span style="color:#a6e22e">toString</span>()); <span style="color:#75715e">// 輸出：Uncaught TypeError: Cannot read properties of undefined (reading &#39;toString&#39;)
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// array
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">toString</span>()); <span style="color:#75715e">// 輸出：&#34;1,2,3&#34;
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// object
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>({<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Tom&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18</span>}.<span style="color:#a6e22e">toString</span>()); <span style="color:#75715e">// 輸出：&#34;Object Object
-</span></code></pre></div><p>在我看來要如何記得<code>toString</code>收到<code>null</code>、<code>undefined</code>和<code>number</code>時會報錯的方法就是「它這樣寫很奇怪」。</p>
+<script src="https://gist.github.com/Jameshsu0407/ad73530d5793f79ec263fb5520ba1a54.js"></script>
+<p><code>toString()</code>的程式碼：</p>
+<script src="https://gist.github.com/Jameshsu0407/d1156fbed2c4abde06135fca2c882a43.js"></script>
+<p>在我看來要如何記得<code>toString</code>收到<code>null</code>、<code>undefined</code>和<code>number</code>時會報錯的方法就是「它這樣寫很奇怪」。</p>
 <p><code>toString</code>的寫法是把變數放在函式前面而非包在裡面，這就像我們不會把變數名稱開頭命名為數字，看起來就非常奇怪～（以上的想法僅供參考，如果不是請不要來打我QAQ</p>
 <p>不過，假如用變數來代表<code>number</code>，<code>toString</code>就可以用了，而<code>null</code>跟<code>undefined</code>依然不能用。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">123</span>;
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">c</span>;
-
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">toString</span>()); <span style="color:#75715e">// 輸出：&#34;123&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">toString</span>()); <span style="color:#75715e">// 輸出：Uncaught TypeError: Cannot read properties of null (reading &#39;toString&#39;)
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">toString</span>()); <span style="color:#75715e">// 輸出：Uncaught TypeError: Cannot read properties of undefined (reading &#39;toString&#39;)
-</span></code></pre></div><h4 id="轉型為數值型別numberparseintparsefloat">轉型為數值型別：Number()、parseInt()、parseFloat()</h4>
+<script src="https://gist.github.com/Jameshsu0407/0d101fc14b9a2e74624e98415e65009c.js"></script>
+<h4 id="轉型為數值型別numberparseintparsefloat">轉型為數值型別：Number()、parseInt()、parseFloat()</h4>
 <ul>
 <li><code>Number()</code>：可以將「物件」轉化成數值。</li>
 <li><code>parseInt()</code>：可以傳回由「字串」轉換而成的整數。</li>
@@ -524,62 +430,10 @@ if (!doNotTrack) {
 </ul>
 <p>三者在遇到無法轉型的情況下，皆輸出<code>NaN</code>。</p>
 <p><code>Number()</code>的程式碼：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// boolean
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#66d9ef">true</span>)); <span style="color:#75715e">// 輸出：1
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#66d9ef">false</span>)); <span style="color:#75715e">// 輸出：0
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// string
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#e6db74">&#34;字串&#34;</span>)); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#e6db74">&#34;1&#34;</span>)); <span style="color:#75715e">// 輸出：1
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#e6db74">&#34;0&#34;</span>)); <span style="color:#75715e">// 輸出：0
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#e6db74">&#34;&#34;</span>)); <span style="color:#75715e">// 輸出：0
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// number
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#ae81ff">123</span>)); <span style="color:#75715e">// 輸出：123
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#f92672">+</span><span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// 輸出：0
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#f92672">-</span><span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// 輸出：-0
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#66d9ef">NaN</span>)); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// null
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#66d9ef">null</span>)); <span style="color:#75715e">// 輸出：0
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// undefined
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#66d9ef">undefined</span>)); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// array
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>])); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// object
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number({<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Tom&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18</span>})); <span style="color:#75715e">// 輸出：NaN
-</span></code></pre></div><p><code>parseInt()</code>的程式碼：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// boolean
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#66d9ef">true</span>)); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#66d9ef">false</span>)); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// string
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#e6db74">&#34;字串&#34;</span>)); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#e6db74">&#34;1&#34;</span>)); <span style="color:#75715e">// 輸出：1
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#e6db74">&#34;0&#34;</span>)); <span style="color:#75715e">// 輸出：0
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#e6db74">&#34;&#34;</span>)); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// number
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#ae81ff">123</span>)); <span style="color:#75715e">// 輸出：123
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#f92672">+</span><span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// 輸出：0
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#f92672">-</span><span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// 輸出：0
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#66d9ef">NaN</span>)); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// null
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#66d9ef">null</span>)); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// undefined
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#66d9ef">undefined</span>)); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// array
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>])); <span style="color:#75715e">// 輸出：1
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// object
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt({<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Tom&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18</span>})); <span style="color:#75715e">// 輸出：NaN
-</span></code></pre></div><p>仔細觀察上面的程式碼可以知道，<code>Number()</code>是將「物件」轉化成數值；<code>parseInt()</code>與<code>parseFloat()</code>是將「字串」轉化成數值，因此後者會輸出堆<code>NaN</code>，因為它們都不是字串。（沒有列<code>parseFloat</code>是因為它跟<code>parseInt</code>差不多，等等它就會出現了。</p>
+<script src="https://gist.github.com/Jameshsu0407/2a40e59384d473753f7d54748589ca41.js"></script>
+<p><code>parseInt()</code>的程式碼：</p>
+<script src="https://gist.github.com/Jameshsu0407/e5a7e4fafa9d722ad2b9a80288b46743.js"></script>
+<p>仔細觀察上面的程式碼可以知道，<code>Number()</code>是將「物件」轉化成數值；<code>parseInt()</code>與<code>parseFloat()</code>是將「字串」轉化成數值，因此後者會輸出堆<code>NaN</code>，因為它們都不是字串。（沒有列<code>parseFloat</code>是因為它跟<code>parseInt</code>差不多，等等它就會出現了。</p>
 <p>不知道有沒有人眼尖發現在<code>parseInt</code>轉換陣列時，輸出的居然是數字？</p>
 <p>因為剛剛講的都還只是基本用法，有差別的地方現在才開始：</p>
 <ul>
@@ -587,35 +441,8 @@ if (!doNotTrack) {
 <li><code>parseInt()</code>：忽略前後空白，在遇到字元被無法解析時，會忽略那個字元與後面的所有字元，停止解析，並回傳目前為止的結果。另外，它真正的寫法為<code>parseInt(string, radix)</code>前者為要轉換的目標值；後者代表使用哪種進位制轉換，為選填。</li>
 <li><code>parseFloat()</code>：只傳回第一個數字。前後空格會被省略。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 數字在前面
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#e6db74">&#34;9487就是狂&#34;</span>)); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#e6db74">&#34;9487就是狂&#34;</span>)); <span style="color:#75715e">// 輸出：9487
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseFloat(<span style="color:#e6db74">&#34;9487就是狂&#34;</span>)); <span style="color:#75715e">// 輸出：9487
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 數字在後面
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#e6db74">&#34;C8763&#34;</span>)); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#e6db74">&#34;C8763&#34;</span>)); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseFloat(<span style="color:#e6db74">&#34;C8763&#34;</span>)); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 數字前後有空白
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#e6db74">&#34; 1 1 5 5 6 6 5&#34;</span>)); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#e6db74">&#34; 1 1 5 5 6 6 5&#34;</span>)); <span style="color:#75715e">// 輸出：1
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseFloat(<span style="color:#e6db74">&#34; 1 1 5 5 6 6 5&#34;</span>)); <span style="color:#75715e">// 輸出：1
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 小數
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#e6db74">&#34;9.2&#34;</span>)); <span style="color:#75715e">// 輸出：9.2
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#e6db74">&#34;9.2&#34;</span>)); <span style="color:#75715e">// 輸出：9
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseFloat(<span style="color:#e6db74">&#34;9.2&#34;</span>)); <span style="color:#75715e">// 輸出：9.2
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#e6db74">&#34;7.77&#34;</span>)); <span style="color:#75715e">// 輸出：7.77
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#e6db74">&#34;7.77&#34;</span>)); <span style="color:#75715e">// 輸出：7
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseFloat(<span style="color:#e6db74">&#34;7.77&#34;</span>)); <span style="color:#75715e">// 輸出：7.77
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// parseInt轉換進位制
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#ae81ff">1011010</span>, <span style="color:#ae81ff">2</span>)); <span style="color:#75715e">// 輸出：90，二進位
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#ae81ff">1011010</span>, <span style="color:#ae81ff">5</span>)); <span style="color:#75715e">// 輸出：16380，五進位
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#ae81ff">1011010</span>, <span style="color:#ae81ff">8</span>)); <span style="color:#75715e">// 輸出：266760，八進位
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(parseInt(<span style="color:#ae81ff">1011010</span>, <span style="color:#ae81ff">16</span>)); <span style="color:#75715e">// 輸出：16846864，十六進位
-</span></code></pre></div><p>到這裡顯性轉型就告一段落了，接著來看看隱性轉型。</p>
+<script src="https://gist.github.com/Jameshsu0407/bc9dcf0c3ecee5b7feff8ceac0f0750f.js"></script>
+<p>到這裡顯性轉型就告一段落了，接著來看看隱性轉型。</p>
 <h3 id="隱性轉型">隱性轉型</h3>
 <p>這是轉型中最GY的一個，因為它會自己幫你轉型，有時一個不注意，輸出的結果要嘛變成字串相加；要嘛變成<code>NaN</code>。還有很多奇奇怪怪例子，像是<code>3&lt;2&lt;1</code>會顯示<code>true</code>，這次就來讓我們好好了解其中的規則吧。</p>
 <ul>
@@ -696,40 +523,17 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1450</span>; <span style="color:#75715e">//宣告為number
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1450&#34;</span>; <span style="color:#75715e">// 宣告為string
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">z</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">377</span>; <span style="color:#75715e">//宣告為number
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 一般相等
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">y</span>); <span style="color:#75715e">// 輸出：true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">z</span>); <span style="color:#75715e">// 輸出：false
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">z</span>); <span style="color:#75715e">// 輸出：true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">true</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;1&#39;</span>); <span style="color:#75715e">// 輸出：true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">false</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;0&#39;</span>); <span style="color:#75715e">// 輸出：true
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 嚴格相等
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">y</span>); <span style="color:#75715e">// 輸出：false
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">z</span>); <span style="color:#75715e">// 輸出：false
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">z</span>); <span style="color:#75715e">// 輸出：true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">true</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;1&#39;</span>); <span style="color:#75715e">// 輸出：false
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">false</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;0&#39;</span>); <span style="color:#75715e">// 輸出：false
-</span></code></pre></div><p>這裡有個比較有趣的題目，跟比大小有關：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">3</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span>);
-</code></pre></div><p>大家覺得答案會是什麼呢？（提示：比較運算子是一次比較兩個）</p>
+<script src="https://gist.github.com/Jameshsu0407/b7d935d27e051e0e7e89ccb3ca2b7e36.js"></script>
+<p>這裡有個比較有趣的題目，跟比大小有關：</p>
+<script src="https://gist.github.com/Jameshsu0407/28add55a1cba09951b07ebfeb2170290.js"></script>
+<p>大家覺得答案會是什麼呢？（提示：比較運算子是一次比較兩個）</p>
 <p>準備公布答案了喔～</p>
 <p>3&hellip;</p>
 <p>2&hellip;</p>
 <p>1&hellip;</p>
 <p>答案皆為<code>true</code>。程式的多個比較需要使用到邏輯運算子（<code>&amp;&amp;</code>或<code>||</code>），不能一整排刷過去R~</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// (1 &lt; 2 &lt; 3)會拆成這樣
-</span><span style="color:#75715e"></span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e">//true
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">true</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span> <span style="color:#75715e">// true
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// (3 &lt; 2 &lt; 1)會拆成這樣
-</span><span style="color:#75715e"></span><span style="color:#ae81ff">3</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e">// false
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">false</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e">// true
-</span></code></pre></div><p>使用邏輯運算子：</p>
+<script src="https://gist.github.com/Jameshsu0407/8c59d967f67e22aade34a3d664a58635.js"></script>
+<p>使用邏輯運算子：</p>
 <p>邏輯運算子有AND、OR、NOT這三種，詳細使用方式請參考下表。</p>
 <table>
 <thead>
@@ -757,196 +561,23 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// &amp;&amp;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">true</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">true</span>); <span style="color:#75715e">// 輸出：true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">true</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">false</span>); <span style="color:#75715e">// 輸出：false
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">false</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">true</span>); <span style="color:#75715e">// 輸出：false
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">false</span> <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#ae81ff">3</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>)); <span style="color:#75715e">// 輸出：false
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;cat&#34;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#e6db74">&#34;dog&#34;</span>); <span style="color:#75715e">// 輸出：dog
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">false</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#e6db74">&#34;cat&#34;</span>); <span style="color:#75715e">// 輸出：false
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;cat&#34;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">false</span>); <span style="color:#75715e">// 輸出：false
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// ||
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">true</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">true</span>); <span style="color:#75715e">// 輸出：true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">true</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">false</span>); <span style="color:#75715e">// 輸出：true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">false</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">true</span>); <span style="color:#75715e">// 輸出：true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">false</span> <span style="color:#f92672">||</span> (<span style="color:#ae81ff">3</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>)); <span style="color:#75715e">// 輸出：false
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;cat&#34;</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;dog&#34;</span>); <span style="color:#75715e">// 輸出：cat
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">false</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;cat&#34;</span>); <span style="color:#75715e">// 輸出：cat
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;cat&#34;</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">false</span>); <span style="color:#75715e">// 輸出：cat
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// !
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#f92672">!</span><span style="color:#66d9ef">true</span>); <span style="color:#75715e">// 輸出：false
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#f92672">!</span><span style="color:#66d9ef">false</span>); <span style="color:#75715e">// 輸出：true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#f92672">!</span><span style="color:#e6db74">&#34;cat&#34;</span>); <span style="color:#75715e">// 輸出：false
-</span></code></pre></div><p>使用條件（三元）運算子：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">77</span>;
-
-<span style="color:#75715e">// 條件（三元）運算子
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;x為true&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;x為false&#39;</span>) <span style="color:#75715e">// 輸出：x為true
-</span><span style="color:#75715e">// 上面的程式碼等同於使用if else
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">x</span>){
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;x為true&#39;</span>); <span style="color:#75715e">// 輸出此行
-</span><span style="color:#75715e"></span>}
-<span style="color:#66d9ef">else</span>{
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;x為false&#39;</span>);
-}
-<span style="color:#75715e">// 也可以加上驚嘆號，使其反轉成false
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">x</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;x為true&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;x為false&#39;</span>) <span style="color:#75715e">// 輸出：x為false
-</span><span style="color:#75715e">// 上面的程式碼等同於使用if else
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">x</span>){
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;x為true&#39;</span>);
-}
-<span style="color:#66d9ef">else</span>{
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;x為false&#39;</span>); <span style="color:#75715e">// 輸出此行
-</span><span style="color:#75715e"></span>}
-
-<span style="color:#75715e">// 也可以使用switch case
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">score</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">92</span>;
-
-<span style="color:#66d9ef">switch</span> (<span style="color:#66d9ef">true</span>){
-  <span style="color:#66d9ef">case</span> (<span style="color:#a6e22e">score</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">90</span>)<span style="color:#f92672">:</span>
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`分數超過90分`</span>); <span style="color:#75715e">// 輸出此行
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">break</span>;
-  <span style="color:#66d9ef">case</span> (<span style="color:#a6e22e">score</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">score</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">90</span>)<span style="color:#f92672">:</span>
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`分數及格，但可以更好`</span>);
-  <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`不及格，要多讀書`</span>);
-}
-</code></pre></div><h4 id="轉換為字串型別使用加號">轉換為字串型別：使用加號</h4>
+<script src="https://gist.github.com/Jameshsu0407/8495d91061dac20d7680b1b0f4cf0e3d.js"></script>
+<p>使用條件（三元）運算子：</p>
+<script src="https://gist.github.com/Jameshsu0407/4d5ccc97f9940672172c963fe794e043.js"></script>
+<h4 id="轉換為字串型別使用加號">轉換為字串型別：使用加號</h4>
 <p>使用算數運算子時，<code>+</code>可以把數字相加，不過絕大多數我們都是將它作為字串相加，因為字串跟什麼相加都等於字串！！！</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 跟boolean相加
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;我是字串&#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">true</span>); <span style="color:#75715e">// 輸出：&#34;我是字串true&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;我是字串&#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">false</span>); <span style="color:#75715e">// 輸出：&#34;我是字串false&#34;
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 跟string相加
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;我是字串&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;字串&#34;</span>); <span style="color:#75715e">// 輸出：&#34;我是字串字串&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;我是字串&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;1&#34;</span>); <span style="color:#75715e">// 輸出：&#34;我是字串1&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;我是字串&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;0&#34;</span>); <span style="color:#75715e">// 輸出：&#34;我是字串0&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;我是字串&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&#34;</span>); <span style="color:#75715e">// 輸出：&#34;我是字串&#34;
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 跟number相加
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;我是字串&#34;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">123</span>); <span style="color:#75715e">// 輸出：&#34;我是字串123&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;我是字串&#34;</span> <span style="color:#f92672">+</span> (<span style="color:#f92672">+</span><span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// 輸出：&#34;我是字串0&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;我是字串&#34;</span> <span style="color:#f92672">+</span> (<span style="color:#f92672">-</span><span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// 輸出：&#34;我是字串0&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;我是字串&#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">NaN</span>); <span style="color:#75715e">// 輸出：&#34;我是字串NaN&#34;
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 跟null相加
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;我是字串&#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">null</span>); <span style="color:#75715e">// 輸出：&#34;我是字串null&#34;
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 跟undefined相加
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;我是字串&#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">undefined</span>); <span style="color:#75715e">// 輸出：&#34;我是字串undefined&#34;
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 跟array相加
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;我是字串&#34;</span> <span style="color:#f92672">+</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]); <span style="color:#75715e">// 輸出：&#34;我是字串1,2,3&#34;
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 跟object相加
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;我是字串&#34;</span> <span style="color:#f92672">+</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Tom&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18</span>}); <span style="color:#75715e">// 輸出：&#34;我是字串[object object]&#34;
-</span></code></pre></div><h4 id="轉換為數值型別可以使用加號但是小心使用">轉換為數值型別：可以使用加號，但是小心使用</h4>
+<script src="https://gist.github.com/Jameshsu0407/215fb35bb972d50940804e9f866a81cc.js"></script>
+<h4 id="轉換為數值型別可以使用加號但是小心使用">轉換為數值型別：可以使用加號，但是小心使用</h4>
 <p>前面提到算數運算子的<code>+</code>常常被拿來和字串相加，因此若想要轉換成數值則需要注意相加的對象是否為字串。</p>
 <p>至於使用減乘除法（<code>-</code>、<code>*</code>、<code>/</code>）的情況，除了數值以外的其他基本型別都會透過<code>Number()</code>方法轉為數字。物件則在乘除的時候會透過<code>Number()</code>方法，轉為數字，在減法時透過<code>valueOf()</code>方法轉為數字。</p>
 <p>我們來看看使用加號會如何：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 使用加法
-</span><span style="color:#75715e">// 跟boolean相加
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">true</span>); <span style="color:#75715e">// 輸出：124
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">false</span>); <span style="color:#75715e">// 輸出：123
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 跟string相加
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;字串&#34;</span>); <span style="color:#75715e">// 輸出：&#34;123字串&#34;，被轉成字串
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;1&#34;</span>); <span style="color:#75715e">// 輸出：&#34;1231&#34;，被轉成字串
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;0&#34;</span>); <span style="color:#75715e">// 輸出：&#34;1230&#34;，被轉成字串
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&#34;</span>); <span style="color:#75715e">// 輸出：&#34;123&#34;，被轉成字串
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 跟number相加
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">123</span>); <span style="color:#75715e">// 輸出：&#34;246&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">+</span> (<span style="color:#f92672">+</span><span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// 輸出：&#34;123&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">+</span> (<span style="color:#f92672">-</span><span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// 輸出：&#34;123&#34;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">NaN</span>); <span style="color:#75715e">// 輸出：NaN，NaN與數值做運算會污染它，全部都會變成NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 跟null相加
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">null</span>); <span style="color:#75715e">// 輸出：123
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 跟undefined相加
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">undefined</span>); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 跟array相加
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">+</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]); <span style="color:#75715e">// 輸出：&#34;1231,2,3&#34;，被轉成字串
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 跟object相加
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">+</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Tom&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18</span>}); <span style="color:#75715e">// 輸出：&#34;123[object object]&#34;，被轉成字串
-</span></code></pre></div><p>看到<code>number</code>使用加號被污染那樣，其他的運算子在同樣的算式估計也沒辦法活得好好的，這裡就列出可能會翻車的例子：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 使用減號
-</span><span style="color:#75715e">// string
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;字串&#34;</span>); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;1&#34;</span>); <span style="color:#75715e">// 輸出：122
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;0&#34;</span>); <span style="color:#75715e">// 輸出：123
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;&#34;</span>); <span style="color:#75715e">// 輸出：123
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// number
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">-</span> <span style="color:#66d9ef">NaN</span>); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// null
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">-</span> <span style="color:#66d9ef">null</span>); <span style="color:#75715e">// 輸出：123
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// undefined
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">-</span> <span style="color:#66d9ef">undefined</span>); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// array
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">-</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// object
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">-</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Tom&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18</span>}); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-
-<span style="color:#75715e">// 使用乘號
-</span><span style="color:#75715e">// string
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">*</span> <span style="color:#e6db74">&#34;字串&#34;</span>); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">*</span> <span style="color:#e6db74">&#34;1&#34;</span>); <span style="color:#75715e">// 輸出：123
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">*</span> <span style="color:#e6db74">&#34;0&#34;</span>); <span style="color:#75715e">// 輸出：0
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">*</span> <span style="color:#e6db74">&#34;&#34;</span>); <span style="color:#75715e">// 輸出：0
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// number
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">NaN</span>); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// null
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">null</span>); <span style="color:#75715e">// 輸出：0
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// undefined
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">undefined</span>); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// array
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">*</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// object
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">*</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Tom&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18</span>}); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-
-<span style="color:#75715e">// 使用除號
-</span><span style="color:#75715e">// string
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;字串&#34;</span>); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;1&#34;</span>); <span style="color:#75715e">// 輸出：123
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;0&#34;</span>); <span style="color:#75715e">// 輸出：Infinite
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;&#34;</span>); <span style="color:#75715e">// 輸出：Infinite
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// number
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">/</span> <span style="color:#66d9ef">NaN</span>); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// null
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">/</span> <span style="color:#66d9ef">null</span>); <span style="color:#75715e">// 輸出：Infinite
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// undefined
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">/</span> <span style="color:#66d9ef">undefined</span>); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// array
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">/</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]); <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// object
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">123</span> <span style="color:#f92672">/</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Tom&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18</span>}); <span style="color:#75715e">// 輸出：NaN
-</span></code></pre></div><p>看來確實都會出問題呢，值得關注的是當數值除以<code>null</code>、<code>0</code>等概念為零的數值，輸出的竟然是無限大？？</p>
+<script src="https://gist.github.com/Jameshsu0407/ff182d09520e2da94da45cb7aa7d251f.js"></script>
+<p>看到<code>number</code>使用加號被污染那樣，其他的運算子在同樣的算式估計也沒辦法活得好好的，這裡就列出可能會翻車的例子：</p>
+<script src="https://gist.github.com/Jameshsu0407/922631d9d87b2c5d40eeb9b31570141e.js"></script>
+<p>看來確實都會出問題呢，值得關注的是當數值除以<code>null</code>、<code>0</code>等概念為零的數值，輸出的竟然是無限大？？</p>
 <p>我在網路上找解答的時候也發現有趣的例子：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">0</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">0</span>) <span style="color:#75715e">// 輸出：NaN
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">0</span>) <span style="color:#75715e">// 輸出：Infinite
-</span></code></pre></div><p>這個就牽扯到浮點數一開始的定義，但是我還是不太懂，在這裡附上<a href="https://stackoverflow.com/questions/18838301/in-javascript-why-does-zero-divided-by-zero-return-nan-but-any-other-divided-b" target="_blank">相關連結</a>，有興趣的朋友可以研究看看。</p>
+<script src="https://gist.github.com/Jameshsu0407/5a85243144e19f673d1dff2cbf8a2c55.js"></script>
+<p>這個就牽扯到浮點數一開始的定義，但是我還是不太懂，在這裡附上<a href="https://stackoverflow.com/questions/18838301/in-javascript-why-does-zero-divided-by-zero-return-nan-but-any-other-divided-b" target="_blank">相關連結</a>，有興趣的朋友可以研究看看。</p>
 <h3 id="結語">結語</h3>
 <p>前面講了這麼多，我們回過頭來複習一下：</p>
 <ul>
@@ -1245,7 +876,6 @@ if (!doNotTrack) {
       
       
       
-      <a href='https://vbshoptrax.com/track/clicks/4820/ce2bc2bf9f0527d6f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpages%2Fnovember-sale-1111-199up%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://vbshoptrax.com/track/imp/img/164798/ce2bc2bf9f0527d6f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
       <a href='https://twcouponcenter.com/track/clicks/4820/ce2bc2bf9f0527d6fa9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpromotions%2F635a50b7a7574d0025f80189%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://twcouponcenter.com/track/imp/img/164793/ce2bc2bf9f0527d6fa9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
       <a href='https://afftck.com/track/clicks/4820/ce2bc2bf9f0527d7f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpages%2Fnovember-sale%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://afftck.com/track/imp/img/164788/ce2bc2bf9f0527d7f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
     </div>

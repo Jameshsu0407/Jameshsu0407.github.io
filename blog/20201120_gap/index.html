@@ -21,7 +21,7 @@
 <meta itemprop="description" content="Gap:「請做好社交距離」">
 <meta itemprop="datePublished" content="2020-11-20T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-11-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="56">
+<meta itemprop="wordCount" content="20">
 <meta itemprop="image" content="">
 
 
@@ -46,7 +46,7 @@
         <script src="https://kit.fontawesome.com/be54eb011a.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="/css/main.min.2dc7cc66fdb1de8c9e08758ea8f404e86d9b61a4a17ded468118109499810fd6.css" integrity="sha256-LcfMZv2x3oyeCHWOqPQE6G2bYaShfe1GgRgQlJmBD9Y="><link rel="stylesheet" href="/css/add-on.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="/css/main.min.d84a57a14c75cb171588f5e35d85dbf235c4ec43fbcb3801d69d0f5a3cb044e0.css" integrity="sha256-2EpXoUx1yxcViPXjXYXb8jXE7EP7yzgB1p0PWjywROA="><link rel="stylesheet" href="/css/add-on.css">
   
   
 <script type="application/javascript">
@@ -309,11 +309,8 @@ if (!doNotTrack) {
 <p>各位在使用Flex時有沒有發生過Container裡面的items都會黏在一起、擠在一起的情況呢？這時我想大家的處理方式應該都是在items下外距來隔開吧！這次要介紹的就是超級方便的<code>gap</code>，他可以快速控制的items的之間的間隔喔！</p>
 <h3 id="gap">GAP</h3>
 <p>它使用的方式非常簡單，只要在Container裡加上：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-.<span style="color:#a6e22e">container</span>{
-  gap: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
-}
-</code></pre></div><p>好，結束收工。</p>
+<script src="https://gist.github.com/Jameshsu0407/00ef883cb4e36ecfff82054babbafb0c.js"></script>
+<p>好，結束收工。</p>
 <p>484很～～～～～～簡單。</p>
 <blockquote>
 <p>但是&hellip;我用safari看完全沒有間隔R，東西還是黏在一起誒。為什麼會這樣子？</p>
@@ -345,17 +342,8 @@ if (!doNotTrack) {
 <p>在各瀏覽器普遍還沒支援的情況下，我們可以換一種寫法，讓沒有不支援的瀏覽器也能呈現出<code>gap</code>的樣式。</p>
 <h3 id="修改後的gap">修改後的GAP</h3>
 <p>為了達到目的，我們必須從Container跟items下手。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-.<span style="color:#a6e22e">container</span>{
-  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
-  <span style="color:#66d9ef">flex-wrap</span>: <span style="color:#66d9ef">wrap</span>;
-  --gap: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
-  <span style="color:#66d9ef">margin</span>: calc(<span style="color:#ae81ff">-1</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>gap)) <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> calc(<span style="color:#ae81ff">-1</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>gap));
-}
-.<span style="color:#a6e22e">container</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">*</span>{
-  <span style="color:#66d9ef">margin</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>gap) <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>gap);
-}
-</code></pre></div><p><i>＊<code>--gap</code>這個東西css裡面的變數，我們將想要的間隔寬度存在這裡，之後要改大小就只需在這裡處理就好。</i></p>
+<script src="https://gist.github.com/Jameshsu0407/49ccac3ecd7c497c4ec84b232d38ecea.js"></script>
+<p><i>＊<code>--gap</code>這個東西css裡面的變數，我們將想要的間隔寬度存在這裡，之後要改大小就只需在這裡處理就好。</i></p>
 <p>它的原理很簡單，以items來說，彼此之間都要有距離，因此每個items都需要在「上方」及「左側」有外距，但如次一來在「上方第一橫排的items」跟「左側第一直排的items」就會跟Container產生間隔。</p>
 <p>這時就換Container來處理問題。我們只需把Container「上方」及「左側」的外距再縮回來就能達到這個效果了。</p>
 
@@ -658,7 +646,6 @@ if (!doNotTrack) {
       
       
       
-      <a href='https://vbshoptrax.com/track/clicks/4820/ce2bc2bf9f0527d6f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpages%2Fnovember-sale-1111-199up%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://vbshoptrax.com/track/imp/img/164798/ce2bc2bf9f0527d6f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
       <a href='https://twcouponcenter.com/track/clicks/4820/ce2bc2bf9f0527d6fa9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpromotions%2F635a50b7a7574d0025f80189%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://twcouponcenter.com/track/imp/img/164793/ce2bc2bf9f0527d6fa9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
       <a href='https://afftck.com/track/clicks/4820/ce2bc2bf9f0527d7f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpages%2Fnovember-sale%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://afftck.com/track/imp/img/164788/ce2bc2bf9f0527d7f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
     </div>

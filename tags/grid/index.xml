@@ -20,12 +20,21 @@ grid的包法與flex一樣，需要有外層的.container，也需要有內層�
  Display Grid-template-columns_rows Grid-template-areas Grid-gap Justify-items Align-items  Items：
  Grid-column_row Justify-self Align-self   Container 跟flex一樣，grid大都是在container裡面下指令。
 Display 先宣告要使用grid來排版。
-&amp;lt;!-- css --&amp;gt; .container{ display: grid; } grid不像flex一下display就會有變化，它還需要把空間切成一塊一塊的才能使用，雖說有些麻煩，但事後在定位排版上會比較好操作，靈活度也比flex還要來得高。
+ grid不像flex一下display就會有變化，它還需要把空間切成一塊一塊的才能使用，雖說有些麻煩，但事後在定位排版上會比較好操作，靈活度也比flex還要來得高。
 Grid-template-columns_rows Template的意思為模板，我們透過這個屬性把想要的區塊切開。它的語法主要分兩個：
-&amp;lt;!-- css --&amp;gt; grid-template-columns: 100px 50px auto 200px 1fr; &amp;lt;!-- 直行 --&amp;gt; grid-template-rows: 25% 100px 1fr; &amp;lt;!-- 橫列 --&amp;gt;   ＊給定的值可以使用px、%、fr等長度單位
+  ＊給定的值可以使用px、%、fr等長度單位
 我們從左至右看，可以發現每一格的寬度是「100px 50px auto 200px 1fr」，這不就跟css內的grid-template-column一樣嗎！它的意思是「切幾格，每格自己給定」，以剛剛的例子來說就是切五格，每格的長度按照裡面的值所定。同理grid-template-rows也是如此。
 Grid-template-areas 這東西像是給定切好的區塊一個名字，之後在items叫它去該區塊。在Container裡先設好模版該長什麼樣、該叫什麼名字，每個格子裡要放哪個items。
-&amp;lt;!-- css --&amp;gt; .container{ grid-template-areas: &amp;#34;header header header header&amp;#34; &amp;#34;main main .</description>
+ 上面的例子就是把Container切成4欄，第一列統一都是header；第二列main佔2欄，之後的為空白，最後一欄是sidebar；第三列皆為footer。而Items就分別帶入各自的名字。
+ ＊空白的地方以&amp;quot;.&amp;ldquo;代替
+Grid-gap 這個功能類似上次提到flex的gap，若不知道在講什麼的朋友可以先來看看[教學]GAP再來了解。
+grid-gap好用的地方在於它的彈性更多，safari也能夠讀取。它有三種寫法，column-gap及row-gap分別控制行、列之間的間隙，而grid-gap是兩個我都要！一次控制行列的間隙。
+ 值得注意的是，這裡給定的值是會影響整個寬度的喔！舉例來說，grid-template-column: 50% 50%，如果我們加上column-gap: 50px，那麼寬度是會炸開的，因為他們的總和超過100%了。
+所以我通常使用fr的單位，變成grid-template-colum: 1fr 1fr就不會有這個問題了。fr的概念可以想像成「將剩餘的空間按照比例去分配」，以grid-template-colum: 1fr 1fr為例，1+1=2，所以每一份間隔皆為1/2。
+那麼依樣畫葫蘆，grid-template-colum: 1fr 2fr 3fr每一欄的寬度分別為1/6，2/6，3/6，是不是蠻簡單的～
+Justify-items   justify-items  此功能與flex的justify-content類似，同樣是控制items水平靠左、置中、靠右。grid不用控制主軸與次軸，因此justify-content就是控制「水平」方向的排版。
+  ＊使用stretch時，不可控制裡面的大小，不然會調不動
+Align-items   align-items  這個功能就跟flex的align-items一模模一樣樣～直接輕鬆套用！</description>
     </item>
     
   </channel>

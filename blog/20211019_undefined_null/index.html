@@ -21,7 +21,7 @@
 <meta itemprop="description" content="null的型別居然是object！這是Bug啊～這是Bug啊～這是Bug啊～">
 <meta itemprop="datePublished" content="2021-10-18T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-10-18T00:00:00+00:00" />
-<meta itemprop="wordCount" content="267">
+<meta itemprop="wordCount" content="186">
 <meta itemprop="image" content="">
 
 
@@ -46,7 +46,7 @@
         <script src="https://kit.fontawesome.com/be54eb011a.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="/css/main.min.2dc7cc66fdb1de8c9e08758ea8f404e86d9b61a4a17ded468118109499810fd6.css" integrity="sha256-LcfMZv2x3oyeCHWOqPQE6G2bYaShfe1GgRgQlJmBD9Y="><link rel="stylesheet" href="/css/add-on.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="/css/main.min.d84a57a14c75cb171588f5e35d85dbf235c4ec43fbcb3801d69d0f5a3cb044e0.css" integrity="sha256-2EpXoUx1yxcViPXjXYXb8jXE7EP7yzgB1p0PWjywROA="><link rel="stylesheet" href="/css/add-on.css">
   
   
 <script type="application/javascript">
@@ -325,17 +325,11 @@ if (!doNotTrack) {
 </ul>
 <p>在這裡可以觀察到本次要探討的<code>null</code>、<code>undefined</code>均出現在基本型別中。而基本型別裡都有「原始值 (primitive value)」，原始值是無法經過更改的的，例如布林值只有<code>truth</code>、<code>false</code>，不會再有其他的值，因此<code>null</code>、<code>undefined</code>也是一樣，<code>null</code> 型別只有一種值，就是 <code>null</code> ，而 <code>undefined</code> 類型也只有一種值，就是 <code>undefined</code>。</p>
 <p>我們透過程式碼來更進一步了解兩者之間的差異，首先分別給他們型別：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span>;
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>) <span style="color:#75715e">// 顯示：undefined，表示尚未賦值，未定義
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>) <span style="color:#75715e">// 顯示：null，表示此變數沒有值
-</span></code></pre></div><p><code>undefined</code>代表根本沒有這個東西，所以不知道這是什麼；<code>null</code>代表此變數（可能曾經有值，可能沒有值）現在沒有值。</p>
+<script src="https://gist.github.com/Jameshsu0407/a2e6d07b7f4971a45d2c2d4a6e17ecc5.js"></script>
+<p><code>undefined</code>代表根本沒有這個東西，所以不知道這是什麼；<code>null</code>代表此變數（可能曾經有值，可能沒有值）現在沒有值。</p>
 <p>接著再用<code>typeof</code>來檢驗型別是不是<code>undefined</code>跟<code>null</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span>;
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">a</span>) <span style="color:#75715e">// 顯示：undefined
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">b</span>) <span style="color:#75715e">// 顯示：object
-</span></code></pre></div><p>可以知道<code>undefined</code> 的型別是 <code>undefined</code>，<code>null</code>的型別是<code>object</code>。</p>
+<script src="https://gist.github.com/Jameshsu0407/7b49a841fdbd609e84603ccd8a9f060a.js"></script>
+<p>可以知道<code>undefined</code> 的型別是 <code>undefined</code>，<code>null</code>的型別是<code>object</code>。</p>
 <blockquote>
 <p>誒，不是誒！剛剛不是說<code>null</code> 型別只有一種值，就是 <code>null</code> ？怎麼變成<code>object</code>？說變就變，不講武德誒！！！</p>
 </blockquote>
@@ -350,10 +344,8 @@ if (!doNotTrack) {
 <p>到這裡先兩者的比較就先告個段落，因為我們要來認識新的東西，之後再比較才不會搞不清楚狀況。</p>
 <h3 id="truthy與falsy">truthy與falsy</h3>
 <p>JS有<code>truthy</code>的概念，在某些情況下會被推斷為<code>true</code>，例如下列程式碼：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">if</span> (<span style="color:#ae81ff">123</span>) {
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;沒有寫判斷居然就進來了&#39;</span>); <span style="color:#75715e">// 顯示：沒有寫判斷居然就進來了
-</span><span style="color:#75715e"></span>}
-</code></pre></div><p>有時候我們在寫if else等判斷式，寫的會像上面的程式碼一樣。這裡的<code>123</code>就代表著<code>true</code>，這就是<code>truthy</code>。<code>truthy</code>的概念就像是「世間萬物皆有更古不變的道理，本就如此，而<code>truthy</code>就是如此，反之亦然」。以下有列表顯示在哪些情況下為<code>truthy</code>，而又在哪些情況下代表<code>falsy</code>：</p>
+<script src="https://gist.github.com/Jameshsu0407/8c5ea55a3a5177107e25e9f450dc4200.js"></script>
+<p>有時候我們在寫if else等判斷式，寫的會像上面的程式碼一樣。這裡的<code>123</code>就代表著<code>true</code>，這就是<code>truthy</code>。<code>truthy</code>的概念就像是「世間萬物皆有更古不變的道理，本就如此，而<code>truthy</code>就是如此，反之亦然」。以下有列表顯示在哪些情況下為<code>truthy</code>，而又在哪些情況下代表<code>falsy</code>：</p>
 <table>
 <thead>
 <tr>
@@ -429,34 +421,21 @@ if (!doNotTrack) {
 <p>一般相等允許在等價性比較中進行強制轉換；嚴格相等則不允許強制轉換。</p>
 </blockquote>
 <p>知道一般相等是比較值、嚴格相等比較型態和值（不能全然這樣說，正確說法是上面那條，這裡僅以大概的意思去詮釋）後，我們可以來做比較了：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">undefined</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>); <span style="color:#75715e">// 顯示：true
-</span></code></pre></div><p>這裡使用一般相等來比較，兩者在轉換完型態後，其值是相等的。這裡我推測這是跟剛剛講的<code>truthy</code>、<code>falsy</code>有關，由於<code>undefined</code>和<code>null</code>都是<code>falsy</code>值，因此兩個<code>falsy</code>相等，得出的是<code>true</code>。</p>
+<script src="https://gist.github.com/Jameshsu0407/4fb5dc11f2e31935e53172b51dcb4098.js"></script>
+<p>這裡使用一般相等來比較，兩者在轉換完型態後，其值是相等的。這裡我推測這是跟剛剛講的<code>truthy</code>、<code>falsy</code>有關，由於<code>undefined</code>和<code>null</code>都是<code>falsy</code>值，因此兩個<code>falsy</code>相等，得出的是<code>true</code>。</p>
 <p>為了避免被強制轉型，這裡建議使用嚴格相等來做比較：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">undefined</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>); <span style="color:#75715e">// 顯示：false
-</span></code></pre></div><p>這就比較正常了～嚴格相等從型別先下手，兩者的型別一個是<code>undefined</code>一個是<code>object</code>，是完全不同的，當然就不一樣囉！</p>
+<script src="https://gist.github.com/Jameshsu0407/2e493aba1ce5739506acaaed7e7d05de.js"></script>
+<p>這就比較正常了～嚴格相等從型別先下手，兩者的型別一個是<code>undefined</code>一個是<code>object</code>，是完全不同的，當然就不一樣囉！</p>
 <h3 id="使用數字運算比較">使用數字運算比較</h3>
 <p>前面透過型別、運算子來做比較，現在我們來用算數來比較它們的差異：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span>;
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
-
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// 顯示：NaN
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// 顯示：1
-</span></code></pre></div><p><code>undefined</code>與任意數字運算都會是 NaN （Not a number）；<code>null</code>與任意數字運算時，<code>null</code>代表的值會是 0，因此可以運算。</p>
+<script src="https://gist.github.com/Jameshsu0407/e2b843346eba47e08461d231d037a08f.js"></script>
+<p><code>undefined</code>與任意數字運算都會是 NaN （Not a number）；<code>null</code>與任意數字運算時，<code>null</code>代表的值會是 0，因此可以運算。</p>
 <h3 id="undefined與not-defined的差別">undefined與not defined的差別</h3>
 <p>這兩個都跟defined有關，但是卻是兩個完全不一樣的概念，前者已經知道是已給定變數名稱，卻還未賦值，英文直譯為『尚未被定義』；後者是「完全沒有者個東西～它連變數也沒有，哪來的定義可言，根本不存在」，因此為『沒有被定義』。</p>
 <h3 id="undefined居然可以當作變數名稱或參數使用">undefined居然可以當作變數名稱或參數使用</h3>
 <p>驚不驚喜，意不意外～我們常說不能拿保留字當作變數，沒想到<code>undefined</code>居然打破這個限制！！！在非全域作用範圍下， <code>undefined</code>允許被當成變數名稱，而且變數的值是可以被修改的：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 當作變數名稱
-</span><span style="color:#75715e"></span>(<span style="color:#66d9ef">function</span>() {
-  <span style="color:#66d9ef">var</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;foo&#39;</span>;
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`值為</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">undefined</span><span style="color:#e6db74">}</span><span style="color:#e6db74">，型別為</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">undefined</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>); <span style="color:#75715e">// 顯示：值為foo，型別為string
-</span><span style="color:#75715e"></span>})()
-
-<span style="color:#75715e">// 當作參數
-</span><span style="color:#75715e"></span>(<span style="color:#66d9ef">function</span>(<span style="color:#66d9ef">undefined</span>) {
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`值為</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">undefined</span><span style="color:#e6db74">}</span><span style="color:#e6db74">，型別為</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">undefined</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>); <span style="color:#75715e">// 顯示：值為foo，型別為string
-</span><span style="color:#75715e"></span>})(<span style="color:#e6db74">&#39;foo&#39;</span>);
-</code></pre></div><p>此舉雖然是合法的，但請不要使用好嗎？這樣會搞死一堆人 <del>（除非你想欉康你的同事</del></p>
+<script src="https://gist.github.com/Jameshsu0407/3d1ea06baefd41761c96572a34b799d7.js"></script>
+<p>此舉雖然是合法的，但請不要使用好嗎？這樣會搞死一堆人 <del>（除非你想欉康你的同事</del></p>
 <h3 id="結語">結語</h3>
 <p>講了這麼多，希望有幫助到各位了解<code>undefined</code>與<code>null</code>之間的差異，以下是整理表格：</p>
 <table>
@@ -781,7 +760,6 @@ if (!doNotTrack) {
       
       
       
-      <a href='https://vbshoptrax.com/track/clicks/4820/ce2bc2bf9f0527d6f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpages%2Fnovember-sale-1111-199up%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://vbshoptrax.com/track/imp/img/164798/ce2bc2bf9f0527d6f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
       <a href='https://twcouponcenter.com/track/clicks/4820/ce2bc2bf9f0527d6fa9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpromotions%2F635a50b7a7574d0025f80189%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://twcouponcenter.com/track/imp/img/164793/ce2bc2bf9f0527d6fa9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
       <a href='https://afftck.com/track/clicks/4820/ce2bc2bf9f0527d7f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpages%2Fnovember-sale%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://afftck.com/track/imp/img/164788/ce2bc2bf9f0527d7f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
     </div>

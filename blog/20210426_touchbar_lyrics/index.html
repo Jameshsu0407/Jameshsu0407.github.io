@@ -21,7 +21,7 @@
 <meta itemprop="description" content="Show Lyrics on Touch Bar">
 <meta itemprop="datePublished" content="2021-04-29T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-04-29T00:00:00+00:00" />
-<meta itemprop="wordCount" content="246">
+<meta itemprop="wordCount" content="79">
 <meta itemprop="image" content="">
 
 
@@ -46,7 +46,7 @@
         <script src="https://kit.fontawesome.com/be54eb011a.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="/css/main.min.2dc7cc66fdb1de8c9e08758ea8f404e86d9b61a4a17ded468118109499810fd6.css" integrity="sha256-LcfMZv2x3oyeCHWOqPQE6G2bYaShfe1GgRgQlJmBD9Y="><link rel="stylesheet" href="/css/add-on.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="/css/main.min.d84a57a14c75cb171588f5e35d85dbf235c4ec43fbcb3801d69d0f5a3cb044e0.css" integrity="sha256-2EpXoUx1yxcViPXjXYXb8jXE7EP7yzgB1p0PWjywROA="><link rel="stylesheet" href="/css/add-on.css">
   
   
 <script type="application/javascript">
@@ -484,61 +484,16 @@ if (!doNotTrack) {
 <p>這個軟體是需要搭配<a href="https://folivora.ai" target="_blank">BetterTouchTool</a>來使用的。簡單來說BetterTouchTool可以完全客製化touch bar的內容，多了很多彈性，當然設定也就蠻複雜的，網路上有很多別人做好的設定，下載下來並且根據自己需要的情境做設定是最快的方法。，由於設定BetterTouchTool需要花很長的篇幅來講解，這裡僅分享如何安裝歌詞的外掛到BetterTouchTool上，BetterTouchTool的安裝設定就不多贅述了，說不定哪天我心情好就來寫～</p>
 <p>此次的安裝需要打一些程式碼，稍微有些難度，但我們會一步一步慢慢來。</p>
 <p>我們使用homebrew來安裝python3，之後再去安裝touchbar_lyric。將此段程式碼貼到終端機上。</p>
-<pre><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
-</code></pre><p>安裝好homebrew之後，接著來安裝python3。一樣將下列程式碼貼到終端機上。</p>
-<pre><code>brew install python3 
-</code></pre><p>在終端機輸入下列程式碼：</p>
-<pre><code>pip3 install touchbar_lyric --upgrade
-</code></pre><p>安裝完成之後，複製以下文字，之後直接貼在BetterTouchTool。</p>
-<pre><code>[
-    {
-      &quot;BTTWidgetName&quot; : &quot;Lyric&quot;,
-      &quot;BTTTriggerType&quot; : 642,
-      &quot;BTTTriggerTypeDescription&quot; : &quot;Shell Script \/ Task Widget&quot;,
-      &quot;BTTTriggerClass&quot; : &quot;BTTTriggerTypeTouchBar&quot;,
-      &quot;BTTPredefinedActionType&quot; : -1,
-      &quot;BTTPredefinedActionName&quot; : &quot;No Action&quot;,
-      &quot;BTTShellScriptWidgetGestureConfig&quot; : &quot;\/bin\/sh:::-c:::-:::&quot;,
-      &quot;BTTEnabled2&quot; : 1,
-      &quot;BTTRepeatDelay&quot; : 0,
-      &quot;BTTUUID&quot; : &quot;93C8B565-73C7-49BE-960A-4FCF512CE881&quot;,
-      &quot;BTTNotesInsteadOfDescription&quot; : 0,
-      &quot;BTTEnabled&quot; : 1,
-      &quot;BTTModifierMode&quot; : 0,
-      &quot;BTTOrder&quot; : 0,
-      &quot;BTTDisplayOrder&quot; : 99,
-      &quot;BTTMergeIntoTouchBarGroups&quot; : 0,
-      &quot;BTTTriggerConfig&quot; : {
-        &quot;BTTTouchBarFreeSpaceAfterButton&quot; : 0,
-        &quot;BTTTouchBarOnlyShowIcon&quot; : false,
-        &quot;BTTTouchBarButtonColor&quot; : &quot;0.000000, 0.000000, 0.000000, 255.000000&quot;,
-        &quot;BTTTouchBarApplyCornerRadiusTo&quot; : 0,
-        &quot;BTTTouchBarItemPlacement&quot; : 0,
-        &quot;BTTTouchBarAppleScriptStringRunOnInit&quot; : true,
-        &quot;BTTTouchBarAlwaysShowButton&quot; : false,
-        &quot;BTTTouchBarFontColorAlternate&quot; : &quot;0.000000, 0.000000, 0.000000, 255.000000&quot;,
-        &quot;BTTScriptType&quot; : 0,
-        &quot;BTTTouchBarButtonWidth&quot; : 550,
-        &quot;BTTTouchBarScriptUpdateInterval&quot; : 1,
-        &quot;BTTTouchBarItemIconHeight&quot; : 22,
-        &quot;BTTTouchBarButtonUseFixedWidth&quot; : 0,
-        &quot;BTTTouchBarButtonTextAlignment&quot; : 1,
-        &quot;BTTTouchBarAlternateBackgroundColor&quot; : &quot;0.000000, 0.000000, 0.000000, 255.000000&quot;,
-        &quot;BTTTBWidgetWidth&quot; : 400,
-        &quot;BTTTouchBarItemIconWidth&quot; : 22,
-        &quot;BTTTouchBarShellScriptString&quot; : &quot;$PYTHONPATH -m touchbar_lyric  --app Spotify&quot;,
-        &quot;BTTTouchBarIconTextOffset&quot; : 5,
-        &quot;BTTTouchBarButtonFontSize&quot; : 12,
-        &quot;BTTTouchBarFontColor&quot; : &quot;156.000006, 226.000002, 90.000002, 255.000000&quot;,
-        &quot;BTTTouchBarButtonName&quot; : &quot;Lyric&quot;,
-        &quot;BTTTouchBarButtonCornerRadius&quot; : 6,
-        &quot;BTTTouchBarItemPadding&quot; : 20
-      }
-    }
-  ]
-</code></pre><p>接著在Script裡面填上：</p>
-<pre><code>/usr/local/Cellar/python@3.9/3.9.4/bin/python3.9 -m touchbar_lyric  --app Music --traditional
-</code></pre>
+<script src="https://gist.github.com/Jameshsu0407/d67b24383b06d427b0423f315524a582.js"></script>
+<p>安裝好homebrew之後，接著來安裝python3。一樣將下列程式碼貼到終端機上。</p>
+<script src="https://gist.github.com/Jameshsu0407/41d24988c819d632d40414554d20c263.js"></script>
+<p>在終端機輸入下列程式碼：</p>
+<script src="https://gist.github.com/Jameshsu0407/4f50dfddef28b16d61c5327928729102.js"></script>
+<p>安裝完成之後，複製以下文字，之後直接貼在BetterTouchTool。</p>
+<script src="https://gist.github.com/Jameshsu0407/64036aca0ef9afec01925667140d37c8.js"></script>
+<p>接著在Script裡面填上：</p>
+<script src="https://gist.github.com/Jameshsu0407/93b8a7a37312c989d36db34e3903ceed.js"></script>
+
 
 
   
@@ -896,7 +851,6 @@ if (!doNotTrack) {
       
       
       
-      <a href='https://vbshoptrax.com/track/clicks/4820/ce2bc2bf9f0527d6f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpages%2Fnovember-sale-1111-199up%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://vbshoptrax.com/track/imp/img/164798/ce2bc2bf9f0527d6f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
       <a href='https://twcouponcenter.com/track/clicks/4820/ce2bc2bf9f0527d6fa9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpromotions%2F635a50b7a7574d0025f80189%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://twcouponcenter.com/track/imp/img/164793/ce2bc2bf9f0527d6fa9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
       <a href='https://afftck.com/track/clicks/4820/ce2bc2bf9f0527d7f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpages%2Fnovember-sale%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://afftck.com/track/imp/img/164788/ce2bc2bf9f0527d7f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
     </div>

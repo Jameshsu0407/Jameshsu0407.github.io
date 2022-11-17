@@ -21,7 +21,7 @@
 <meta itemprop="description" content="不要再亂設定變數了啊～設定好變數可以幫你減少bug喔！">
 <meta itemprop="datePublished" content="2021-10-13T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-10-13T00:00:00+00:00" />
-<meta itemprop="wordCount" content="482">
+<meta itemprop="wordCount" content="163">
 <meta itemprop="image" content="">
 
 
@@ -46,7 +46,7 @@
         <script src="https://kit.fontawesome.com/be54eb011a.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="/css/main.min.2dc7cc66fdb1de8c9e08758ea8f404e86d9b61a4a17ded468118109499810fd6.css" integrity="sha256-LcfMZv2x3oyeCHWOqPQE6G2bYaShfe1GgRgQlJmBD9Y="><link rel="stylesheet" href="/css/add-on.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="/css/main.min.d84a57a14c75cb171588f5e35d85dbf235c4ec43fbcb3801d69d0f5a3cb044e0.css" integrity="sha256-2EpXoUx1yxcViPXjXYXb8jXE7EP7yzgB1p0PWjywROA="><link rel="stylesheet" href="/css/add-on.css">
   
   
 <script type="application/javascript">
@@ -365,123 +365,56 @@ if (!doNotTrack) {
 <li>全域變數（Global Variable）：在<code>函式外</code>宣告的變數。整個程式中都可以被存取與修改。</li>
 <li>區域變數（Local Variable）：在<code>區塊內</code>等被 { } 包起來的地方宣告的變數。此變數只能提供在所屬的function函式中執行，不提供給functionc函式以外呼叫使用，當function函式執行完後，記憶體只會保留其執行的結果，變數的部分則會被記憶體消除釋放掉。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">global_variable</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;我是全域變數&#34;</span>; <span style="color:#75715e">// 宣告全域變數
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">show</span>(){
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">local_variable</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;我是區域變數&#34;</span>; <span style="color:#75715e">// 宣告區域變數
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`在function內呼叫全域變數： </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">global_variable</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>); <span style="color:#75715e">// 顯示：在function內呼叫全域變數： 我是全域變數
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`在function內呼叫區域變數： </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">local_variable</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>); <span style="color:#75715e">// 顯示：在function內呼叫區域變數： 我是區域變數
-</span><span style="color:#75715e"></span>}
-<span style="color:#a6e22e">show</span>(); <span style="color:#75715e">//呼叫函式
-</span><span style="color:#75715e"></span>
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`在function外呼叫全域變數： </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">global_variable</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>); <span style="color:#75715e">// 顯示：在function外呼叫全域變數： 我是全域變數
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`在function外呼叫區域變數： </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">local_variable</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>); <span style="color:#75715e">// 報錯：Uncaught ReferenceError: local_variable is not defined at &lt;anonymous&gt;
-</span></code></pre></div><p>由上方的程式碼可以看出全域變數可以在整個程式碼內取得到；而區域變數只能在該函數（區域）取得，在函數（區塊）外就取得不到，因此會報錯顯示「not defined（沒有被定義）」。</p>
+<script src="https://gist.github.com/Jameshsu0407/f1a4c7c886551676e996bcbdc12dc031.js"></script>
+<p>由上方的程式碼可以看出全域變數可以在整個程式碼內取得到；而區域變數只能在該函數（區域）取得，在函數（區塊）外就取得不到，因此會報錯顯示「not defined（沒有被定義）」。</p>
 <p>到這裡補充完ECMAScript、變數的有效範圍的相關知識，我們終於可以進到下一趴了～～</p>
 <h3 id="初始值initializer">初始值（initializer）</h3>
 <ol>
 <li><code>var</code>、<code>let</code>不需要給初始值，它們的預設是undefined。</li>
 <li><code>const</code>必須有初始值，因為是常數，自然是要有固定不變的常量。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">var_initial</span> <span style="color:#75715e">// 顯示：undefined
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">let_initial</span> <span style="color:#75715e">// 顯示：undefined
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">const_initial</span> <span style="color:#75715e">// 報錯： Uncaught SyntaxError: Missing initializer in const declaration
-</span></code></pre></div><h3 id="作用域scope">作用域（scope）</h3>
+<script src="https://gist.github.com/Jameshsu0407/bfdffb954a4b52c233a4f6687bf00990.js"></script>
+<h3 id="作用域scope">作用域（scope）</h3>
 <ol>
 <li>函式作用域（function scope）：<code>var</code>屬函式作用域，唯有在函式（function）內才使用，作用範圍為區域性（local）；若在函式外宣告，其作用範圍就變成了全域性（global）。</li>
 <li>塊級作用域（block scope）：<code>let</code>、<code>const</code>屬塊級作用域，以塊級（block）當作最小單位來切分，也就是用大括號<code>{}</code>來區分。</li>
 </ol>
 <p>以下是函式作用域（function scope）的範例：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">show</span>() {
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">num</span>); <span style="color:#75715e">// 顯示：1
-</span><span style="color:#75715e"></span>}
-<span style="color:#a6e22e">show</span>(); <span style="color:#75715e">// 呼叫函式
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">num</span>); <span style="color:#75715e">// 報錯：Uncaught ReferenceError: num is not defined at &lt;anonymous&gt;
-</span></code></pre></div><p>再來對比塊級作用域（block scope）就可以知道兩者差在哪：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">show</span>() {
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">num1</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">num2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">num1</span>); <span style="color:#75715e">// 顯示：1
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">num2</span>); <span style="color:#75715e">// 顯示：2
-</span><span style="color:#75715e"></span>}
-<span style="color:#a6e22e">show</span>(); <span style="color:#75715e">// 呼叫函式
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">num1</span>); <span style="color:#75715e">// 報錯：Uncaught ReferenceError: num1 is not defined at &lt;anonymous&gt;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">num2</span>); <span style="color:#75715e">// 報錯：Uncaught ReferenceError: num2 is not defined at &lt;anonymous&gt;
-</span></code></pre></div><p>上面的程式碼可以看到<code>let</code>、<code>const</code>並無法在函式外被呼叫，因為function的大括號也算是一種block scope。</p>
-<p>在<code>if</code>、<code>else</code>、<code>for</code>、<code>while</code>等塊級區域（block scope）使用var告變數是會污染全域變數的。我們來看看下列的程式碼：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">3</span> ; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>){
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>); <span style="color:#75715e">//依序顯示：1、2
-</span><span style="color:#75715e"></span>}
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>); <span style="color:#75715e">// 顯示： 3
-</span></code></pre></div><p>但我覺得那是工程師沒有仔細注意<code>var</code>是function scope，它的最小單位是以function來區分的，而<code>if</code>、<code>else</code>、<code>for</code>、<code>while</code>等塊級區域（block scope）則是以大括號<code>{}</code>來區分的，因此在block scope裡面的<code>var</code>當然會繼續往上加Ｒ～</p>
+<script src="https://gist.github.com/Jameshsu0407/a3841c756632f4d04153eded31894f7a.js"></script>
+<p>再來對比塊級作用域（block scope）就可以知道兩者差在哪：</p>
+<script src="https://gist.github.com/Jameshsu0407/cf131406a37b213583d3e25b1484c5b0.js"></script>
+<p>上面的程式碼可以看到<code>let</code>、<code>const</code>並無法在函式外被呼叫，因為function的大括號也算是一種block scope。</p>
+<p>在<code>if</code>、<code>else</code>、<code>for</code>、<code>while</code>等塊級區域（block scope）使用var宣告變數是會污染全域變數的。我們來看看下列的程式碼：</p>
+<script src="https://gist.github.com/Jameshsu0407/84ea459023726de770655deef33cb9fc.js"></script>
+<p>但我覺得那是工程師沒有仔細注意<code>var</code>是function scope，它的最小單位是以function來區分的，而<code>if</code>、<code>else</code>、<code>for</code>、<code>while</code>等塊級區域（block scope）則是以大括號<code>{}</code>來區分的，因此在block scope裡面的<code>var</code>當然會繼續往上加Ｒ～</p>
 <p>這裡再舉一個例子，這樣會比較好理解：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">show1</span>() {
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
-  <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>){ 
-	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>); <span style="color:#75715e">// 顯示：1,2
-</span><span style="color:#75715e"></span>  }
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>); <span style="color:#75715e">// 顯示：3
-</span><span style="color:#75715e"></span>}
-<span style="color:#a6e22e">show1</span>(); <span style="color:#75715e">// 呼叫函式
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>); <span style="color:#75715e">// 報錯：Uncaught ReferenceError: i is not defined at &lt;anonymous&gt;
-</span></code></pre></div><p>從上面的程式碼可以了解<code>var</code>確實為function scope，因此在函式內的block scope是無法攔下<code>i</code>的，它會繼續增加；而在函式外面卻是找不到<code>i</code>的。</p>
+<script src="https://gist.github.com/Jameshsu0407/8eba8a069524f9837b016b4a060f8db3.js"></script>
+<p>從上面的程式碼可以了解<code>var</code>確實為function scope，因此在函式內的block scope是無法攔下<code>i</code>的，它會繼續增加；而在函式外面卻是找不到<code>i</code>的。</p>
 <h3 id="重複賦值reassigned">重複賦值（reassigned）</h3>
 <ol>
 <li><code>var</code>、<code>let</code>可以重複賦值，賦予的值稱「變數」，顧名思義是可以改變的數字。</li>
 <li><code>const</code>無法重複賦值，賦予的值稱「常數」，常數又稱定數，是指一個數值固定不變的常量，如圓周率等，這類的數值是無法經過改動的。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
-<span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>); <span style="color:#75715e">// 顯示：2
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>); <span style="color:#75715e">// 顯示：3
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
-<span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>; <span style="color:#75715e">// 報錯：Uncaught TypeError: Assignment to constant variable. at &lt;anonymous&gt;
-</span></code></pre></div><p>這裡需要特別注意一點，<code>const</code>雖然不能夠重複賦值，但它若是「物件型別」的物件或陣列，則『看起來就能夠重複賦值』，但它並沒有！！！！！！！！</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr1</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arr1</span>;
-<span style="color:#a6e22e">arr2</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">4</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr1</span>); <span style="color:#75715e">// 顯示：1,2,3,4
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr2</span>); <span style="color:#75715e">// 顯示：1,2,3,4
-</span></code></pre></div><p>由上方的程式碼可以看到，在arr2新增4，結果arr1的值也發生了改動，這樣確實看起來像是<code>const</code>可以重複賦值。然而實際上卻不是如此，第二行程式碼的意思為將arr2「指向」arr1現在指向的記憶體位置，所以兩者皆指向同一個記憶體。<strong>「用 const 宣告的變數，不能改變其值」，對於 object 來說是指：「物件/陣列裡面存的 『記憶體位置』 不能改變」</strong>，因此這裡不會改變記憶體位置，改變的而是值。</p>
+<script src="https://gist.github.com/Jameshsu0407/a773fda511b00d8a4dec3662d6f9fdbb.js"></script>
+<p>這裡需要特別注意一點，<code>const</code>雖然不能夠重複賦值，但它若是「物件型別」的物件或陣列，則『看起來就能夠重複賦值』，但它並沒有！！！！！！！！</p>
+<script src="https://gist.github.com/Jameshsu0407/97d70df58af554506e441bdd568c9ff8.js"></script>
+<p>由上方的程式碼可以看到，在arr2新增4，結果arr1的值也發生了改動，這樣確實看起來像是<code>const</code>可以重複賦值。然而實際上卻不是如此，第二行程式碼的意思為將arr2「指向」arr1現在指向的記憶體位置，所以兩者皆指向同一個記憶體。<strong>「用 const 宣告的變數，不能改變其值」，對於 object 來說是指：「物件/陣列裡面存的 『記憶體位置』 不能改變」</strong>，因此這裡不會改變記憶體位置，改變的而是值。</p>
 <p>我之後會補上傳值、傳參考的文章，想要了解詳情之後可以去看看。</p>
 <h3 id="重複宣告redeclared">重複宣告（redeclared）</h3>
 <ol>
 <li><code>var</code>可以重複宣告。</li>
 <li><code>let</code>、<code>const</code>不可重複宣告。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>); <span style="color:#75715e">// 顯示：2
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// 報錯：Uncaught SyntaxError: Identifier &#39;b&#39; has already been declared
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// 報錯：Uncaught SyntaxError: Identifier &#39;c&#39; has already been declared
-</span></code></pre></div><h3 id="變量提升hoisting">變量提升（hoisting）</h3>
+<script src="https://gist.github.com/Jameshsu0407/496a6723f3d500c32828152eb08f6d39.js"></script>
+<h3 id="變量提升hoisting">變量提升（hoisting）</h3>
 <ol>
 <li><code>var</code>能夠變量提升。</li>
 <li><code>let</code>、<code>const</code>無法變量提升。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>);
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>);
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// 報錯：Uncaught ReferenceError: b is not defined at &lt;anonymous&gt;
-</span><span style="color:#75715e"></span>
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">c</span>);
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>; <span style="color:#75715e">// 報錯：Uncaught ReferenceError: c is not defined at &lt;anonymous&gt;
-</span></code></pre></div><p>簡單來說使用變量提升，程式碼就會自動幫你編譯：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>); <span style="color:#75715e">// 顯示：undefined
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-<span style="color:#75715e">// 以上程式碼等同於
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span>;
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>); <span style="color:#75715e">// 顯示：undefined
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-</code></pre></div><p>以上程式碼可以理解為：「編譯階段會放入記憶體存著，但是只存宣告，不能存變數」。</p>
+<script src="https://gist.github.com/Jameshsu0407/9af6c4b9984b251007a224877dc9a3e3.js"></script>
+<p>簡單來說使用變量提升，程式碼就會自動幫你編譯：</p>
+<script src="https://gist.github.com/Jameshsu0407/eba7496825e234e4efdda29df18c5b9b.js"></script>
+<p>以上程式碼可以理解為：「編譯階段會放入記憶體存著，但是只存宣告，不能存變數」。</p>
 <h3 id="結語">結語</h3>
 <p>最後稍微總結這三者的使用方式。</p>
 <ul>
@@ -823,7 +756,6 @@ if (!doNotTrack) {
       
       
       
-      <a href='https://vbshoptrax.com/track/clicks/4820/ce2bc2bf9f0527d6f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpages%2Fnovember-sale-1111-199up%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://vbshoptrax.com/track/imp/img/164798/ce2bc2bf9f0527d6f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
       <a href='https://twcouponcenter.com/track/clicks/4820/ce2bc2bf9f0527d6fa9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpromotions%2F635a50b7a7574d0025f80189%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://twcouponcenter.com/track/imp/img/164793/ce2bc2bf9f0527d6fa9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
       <a href='https://afftck.com/track/clicks/4820/ce2bc2bf9f0527d7f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpages%2Fnovember-sale%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://afftck.com/track/imp/img/164788/ce2bc2bf9f0527d7f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
     </div>

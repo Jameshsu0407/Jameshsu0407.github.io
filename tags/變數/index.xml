@@ -23,7 +23,7 @@
  目前的瀏覽器普遍支援ES5、ES6，甚至支援更新的ES7，大家可以安心使用。這裡我列出從ES5更新到ES6的主要改動：
     ES5 ES6     類型 空值（null）、未定義（undefined）、布林值（boolean）、數字（number）、字串（string）、物件（object） 引入新的類型：符號（symbol）用來表示唯一值   變數 只能使用var來定義變數 新增let、const，能夠更嚴謹的定義變數   箭頭函數 使用function、return來定義函數內容 可用&amp;quot;=&amp;gt;&amp;ldquo;等符號代表function   迴圈 使用for迴圈、for in迴圈、forEach迴圈&amp;hellip; 新增for of迴圈    從上方表格可得知ES6是基於ES5上新增了部分的功能，而我們今天就先來探討變數的部分，其他的之後後再說（如果老師有出的話我就一定會更新 XDD~
 變數的有效範圍 宣告變數的位置是會影響到他們的作用範圍，有效範圍主要分成「全域變數」、「區域變數」兩種：
- 全域變數（Global Variable）：在函式外宣告的變數。整個程式中都可以被存取與修改。 區域變數（Local Variable）：在區塊內等被 { } 包起來的地方宣告的變數。此變數只能提供在所屬的function函式中執行，不提供給functionc函式以外呼叫使用，當function函式執行完後，記憶體只會保留其執行的結果，變數的部分則會被記憶體消除釋放掉。  var global_variable = &amp;#34;我是全域變數&amp;#34;; // 宣告全域變數 function show(){ var local_variable = &amp;#34;我是區域變數&amp;#34;; // 宣告區域變數  console.</description>
+ 全域變數（Global Variable）：在函式外宣告的變數。整個程式中都可以被存取與修改。 區域變數（Local Variable）：在區塊內等被 { } 包起來的地方宣告的變數。此變數只能提供在所屬的function函式中執行，不提供給functionc函式以外呼叫使用，當function函式執行完後，記憶體只會保留其執行的結果，變數的部分則會被記憶體消除釋放掉。   由上方的程式碼可以看出全域變數可以在整個程式碼內取得到；而區域變數只能在該函數（區域）取得，在函數（區塊）外就取得不到，因此會報錯顯示「not defined（沒有被定義）」。</description>
     </item>
     
   </channel>

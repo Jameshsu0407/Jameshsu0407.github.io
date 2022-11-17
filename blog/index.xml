@@ -42,7 +42,7 @@
       <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://jameshsu0407.github.io/blog/20220423_substitute_military_2/</guid>
-      <description>前言 上一篇有提及到替代役新訓的心得與攻略，沒有看過的請查看【替代役攻略】225T成功嶺新訓14天心得＆部分攻略
+      <description>前言 上一篇有提及到替代役新訓的心得與攻略，沒有看過的請查看[心得]替代役230T攻略＆心得
 網路上提到成功嶺新訓的文章有非常多，留在成功嶺一般中隊的文章也還是有幾篇，但有關「班本部」的文章幾乎是沒有的，於是我這不就來了嘛ww～
 這篇文章會以「我的視角」來介紹班本部，其中的內容可能因中隊級幹部、處室長官而有所改變，實際的內容請等你到班本部才會知道，那就開始吧。
  目錄：
@@ -104,7 +104,7 @@
       <guid>https://jameshsu0407.github.io/blog/20211130_aspect-ratio_object-fit/</guid>
       <description>前言 一年前我上傳了[教學]圖片自適應外框大小的教學文章，透過控制圖片的max-width: 100%, max-height: 100%以及使用object-fit來控制，那篇的流量還蠻高的，我想一定是大家都有圖片跑版的困擾吧，因此我決定再分享我最近發現好用的方法。
 aspect-ratio 這次介紹另一個語法叫做aspect-ratio，看到ratio就可以猜出它可控制比例，它的語法如下：
-aspect-ratio: 1/1; // 長寬比1比1 aspect-ratio: inherit; // 繼承 aspect-ratio: initial; // 初始值 aspect-ratio: unset; // 能繼承就繼承 不能就使用初始值 其中1/1的地方是可以任意設定的，假設需要圖片以16：9的方式呈現，其值設為16/9，需要4：3的比例，就設成4/3以此類推。
+ 其中1/1的地方是可以任意設定的，假設需要圖片以16：9的方式呈現，其值設為16/9，需要4：3的比例，就設成4/3以此類推。
 組合技：使用aspect-ratio加上object-fit 每個版面的圖片都有建議尺寸，客戶如若不按照建議尺寸亂上圖片，圖片就會大跑版，因此我們需要考量到這點，要將圖片限制在固定的區域。
 常用的方式有兩種，一種是強制將圖片等比例塞進限制的空間，不符合建議尺寸的圖片就會留有白邊：另一種是將圖片放大後裁切超出的部分，但無法控制要裁切的中心，所以不適合放有文字的圖片。
 我們先來看範例：
@@ -113,7 +113,7 @@ aspect-ratio: 1/1; // 長寬比1比1 aspect-ratio: inherit; // 繼承 aspect-rat
 因此我們使用aspect-ratio來控制圖片的比例，如此一來就不需要設定高度了，圖片會根據比例撐開。（本範例使用Bootstrap的欄位系統，每個欄位的寬度自然就被定下來了，因此就不需要設定寬高）。
 最後需要給定圖片的寬度，也就是width: 100%。圖片剛剛講的去設定也有可能會符合比例但是卻太小，或者是太大直接炸開，因此要去控制圖片寬度為100%讓它撐滿。
 主要的寫法整理成：
-img{ aspect-ratio: 4/3; object-fit: contain; width: 100%; } 結語 希望這個小方法可以幫助大家，當然它還是有一定的限制在的，像是有時在display: flex裡面它就會壞掉，或是需要一定程度上的給定寬度，但總體來說我認為還是不錯的方法，供大家參考。</description>
+ 結語 希望這個小方法可以幫助大家，當然它還是有一定的限制在的，像是有時在display: flex裡面它就會壞掉，或是需要一定程度上的給定寬度，但總體來說我認為還是不錯的方法，供大家參考。</description>
     </item>
     
     <item>
@@ -123,13 +123,19 @@ img{ aspect-ratio: 4/3; object-fit: contain; width: 100%; } 結語 希望這個�
       
       <guid>https://jameshsu0407.github.io/blog/20211030_explicit-coercion_implicit-coercion/</guid>
       <description>前言 相信大家在剛學習JS的時候一定會遇到 轉型（coercion） 的問題，像是：
-let a = &amp;#34;1&amp;#34;; a = a + 2; a = a * 2; a = a + true; a = a * null; a = a / undefined; 請問每一行a的值為何呢？？
+ 請問每一行a的值為何呢？？
 我想很多人一定會把它拿去console.log()裡面查詢吧～
 JS會很貼心的（有夠雞婆）幫我們轉換型別，其中有分「顯性轉型（explicit coercion）」與「隱性轉型（implicit coercion）」，前者規規矩矩，你叫它轉型它才轉型；後者像一個死屁孩一樣會自動轉型，而且你還可能猜不透它會怎麼轉！！！
 本次就來了解到底轉型是怎麼一回事ㄅ～
  目錄：
  顯性轉型與隱性轉型 顯性轉型  轉型為布林型別：Boolean() 轉型為字串型別：toString()、String() 轉型為數值型別：Number()、parseInt()、parseFloat()   隱性轉型  轉換為布林型別：其實都是看truthy跟falsy值 轉換為字串型別：使用加號 轉換為數值型別：可以使用加號，但是小心使用     顯性轉型與隱性轉型 剛剛前面有提過強制轉型分兩種：
- 顯性轉型（explicit coercion）：透過人工的方式，以函式的方法轉換值的型別。 隱性轉型（implicit coercion）：看到兩個不同型別的值就會自動判斷，把值轉換為相同型別，再做運算。  let a = &amp;#34;1&amp;#34;; let b = &amp;#34;1&amp;#34;; console.</description>
+ 顯性轉型（explicit coercion）：透過人工的方式，以函式的方法轉換值的型別。 隱性轉型（implicit coercion）：看到兩個不同型別的值就會自動判斷，把值轉換為相同型別，再做運算。   不管是顯性轉型或是隱性轉型，它們轉出來的型別就只會有布林值（boolean）字串（string）以及數字（number）這三種。
+顯性轉型 透過明確的JS函式方法來轉換變數的型別，對應的函式方法分別有：
+ 轉換為布林型別：Boolean()。 轉換為字串型別：toString()、String()。 轉換為數值型別：Number()、parseInt()、parseFloat()。  這裡有個觀念要先澄清，變數若要轉換型別，原先的屬性下就有個類似轉換為其他型別的「方法」，因此呼叫這組方法便能轉換成其它型別。
+ 大家可以執行上面的程式碼，你會發現a有好幾種函式，接著可以展開[[Prototype]]，你會發現toString方法就在這裡。這就是為什麼每次在官方文件上找方法會看到像Number.prototype.toString()一樣長的原因。
+  可用函式  由於這牽涉到「物件原型」相互繼承的觀念，在這裡就不多做說明了，有興趣的朋友可以參考官方文件。
+轉型為布林型別：Boolean() 還記得前幾篇的[教學]UNDEFINED與NULL的比較曾提到過truth值與falsy值嗎？在這裡也需要用到喔～
+    truthy狀態 falsy狀態     布林值（Boolean） true false   字串（string） 除了空字串以外的字串 空字串   數字（number） 除了0之外的任意值 0   null、undefined 不可能 永遠   任何物件，包含{}、[] 永遠 不可能    接下來到了看圖說故事的時間，顯示為truthy就為true；falthy就歸類為false，就是這麼簡單！</description>
     </item>
     
     <item>
@@ -140,7 +146,20 @@ JS會很貼心的（有夠雞婆）幫我們轉換型別，其中有分「顯性
       <guid>https://jameshsu0407.github.io/blog/20211023_if-else_switch-case/</guid>
       <description>前言 在寫程式的時候如果要判斷東西，你第一個想到的是什麼語法？？我想絕大多數的人都會選擇用if else吧！因為我也是一樣～ 不過其實還有另一位弟兄可以寫判斷式，它就是最近剛發表的Switch啦！！！！！！（最近才剛收了一台二手switch，每次下班後都想拿起來玩，不想寫文章&amp;hellip;&amp;hellip;. 咳咳！扯遠了。這個switch case也能寫判斷式，所以這次就來比較看看兩者間的差異～
  目錄：
- 語法差異 可讀性 嚴謹度 效能 使用時機   語法差異  if else：當條件成立的時候會執行其陳述式裡的程式，而不成立時則執行另外一個陳述式。 switch case：括號內放入表達式，接著就會表達式裡的值是否符合case條件，然後再執行此條件相關的陳述式。  // if else語法 if (條件式一){ // 若條件式一成立，則執行此區塊 } else if (條件式二){ // 若條件式二成立，則執行此區塊 } else{ // 若上述條件都不成立，則執行此區塊 } // switch case語法 switch (表達式){ case value1: //當 expression 的值符合 value1，則執行此陳述句  break; case value2: //當 expression 的值符合 value2，則執行此陳述句  break; ... case valueN: //當 expression 的值符合 valueN，則執行此陳述句  break; default: //當 expression 的值都不符合上述條件式，則執行此陳述句  break; } 從上面的程式碼可知，if else是將整個要判斷的內容放在條件式，其條件式是使用布林值作為判斷基礎，並且可以搭配邏輯運算子使用，例如：if ( a &amp;lt; 10 &amp;amp;&amp;amp; a &amp;gt;= 5)，這裡就代表如果變數a的值介於5~10之間，程式就會執行該區塊的內容；switch case的判斷方式則不同，它是將表達式的值與case裡的值做比較，其條件判斷是分佈在「表達式」與「case」裡。</description>
+ 語法差異 可讀性 嚴謹度 效能 使用時機   語法差異  if else：當條件成立的時候會執行其陳述式裡的程式，而不成立時則執行另外一個陳述式。 switch case：括號內放入表達式，接著就會表達式裡的值是否符合case條件，然後再執行此條件相關的陳述式。   從上面的程式碼可知，if else是將整個要判斷的內容放在條件式，其條件式是使用布林值作為判斷基礎，並且可以搭配邏輯運算子使用，例如：if ( a &amp;lt; 10 &amp;amp;&amp;amp; a &amp;gt;= 5)，這裡就代表如果變數a的值介於5~10之間，程式就會執行該區塊的內容；switch case的判斷方式則不同，它是將表達式的值與case裡的值做比較，其條件判斷是分佈在「表達式」與「case」裡。
+這裡特別講一下switch case也能夠做到區間判斷，就像if else語法一樣，但又不太一樣。
+讓我們看看傳統的if else是如何判斷區間：
+ 接著使用switch case的寫法，如果將if else的寫法搬過來使用，答案會是&amp;hellip;
+ 什麼？為什麼會不及格？有哪邊出錯了嗎？其實這樣的判斷邏輯是對的，只是不了解switch case在比對的方法。
+剛剛前面有提到switch case的判斷方式為：「將表達式的值與case去做比對」，以上面的程式碼為例，第一個比較的就「表達式的是score」與「case的score &amp;gt;= 90」是否相等，這裡是用布林值來做判斷true或false，所以程式其實是以77 !== true來做判斷。
+由此可見，這樣的判斷寫法是錯誤的，因此程式就會繼續執行，最後因為所以條件都不符才會跑進default裡。
+到這裡希望大家可以先停下腳步，想想看若要改程式碼的話，應該要如何調整呢？（提示：想想判斷條件及布林值的比較）
+3&amp;hellip;
+2&amp;hellip;
+1&amp;hellip;答案揭曉：
+ 很簡單的，表達式帶入的值不需要是變數本身，只需寫true即可，亦即需要判斷的事情就交給case，表達式只需等同於它即可。
+可讀性  if else：非常直覺，可套入人類的思考邏輯，如：「如果今天下雨，就要帶傘，沒有就不需要」，想到有什麼就寫什麼，之後若要再修改條件也是非常容易，因此很常被使用。 switch case：無法想到什麼就寫什麼，需要先仔細想想該如何應用。另外，在寫程式碼時還需注意加上break，程式才不會一直執行下去，假設判斷的東西變多，很有可能會有所遺漏。  這裡來看看若是沒加上break的話會有什麼結果：
+ 如果忘記加break，那麼程式會將所對應的case開始執行，然後持續執行之後的case，不論正確不正確。</description>
     </item>
     
     <item>
@@ -154,11 +173,13 @@ JS會很貼心的（有夠雞婆）幫我們轉換型別，其中有分「顯性
  使用型態比較 truthy與falsy 使用一般相等與嚴格相等比較 使用數字運算比較 undefined與not defined的差別 undefined居然可以當作變數名稱或參數使用   使用型態比較 在寫JS時有兩大型別，分別是基本型別（Primitives）與物件型別（Object）。
  基本型別： string、number、boolean、null、undefined、symbol 物件型別：array、object、function&amp;hellip;&amp;hellip;  在這裡可以觀察到本次要探討的null、undefined均出現在基本型別中。而基本型別裡都有「原始值 (primitive value)」，原始值是無法經過更改的的，例如布林值只有truth、false，不會再有其他的值，因此null、undefined也是一樣，null 型別只有一種值，就是 null ，而 undefined 類型也只有一種值，就是 undefined。
 我們透過程式碼來更進一步了解兩者之間的差異，首先分別給他們型別：
-let a; let b = null; console.log(a) // 顯示：undefined，表示尚未賦值，未定義 console.log(b) // 顯示：null，表示此變數沒有值 undefined代表根本沒有這個東西，所以不知道這是什麼；null代表此變數（可能曾經有值，可能沒有值）現在沒有值。
+ undefined代表根本沒有這個東西，所以不知道這是什麼；null代表此變數（可能曾經有值，可能沒有值）現在沒有值。
 接著再用typeof來檢驗型別是不是undefined跟null:
-let a; let b = null; console.log(typeof a) // 顯示：undefined console.log(typeof b) // 顯示：object 可以知道undefined 的型別是 undefined，null的型別是object。
+ 可以知道undefined 的型別是 undefined，null的型別是object。
  誒，不是誒！剛剛不是說null 型別只有一種值，就是 null ？怎麼變成object？說變就變，不講武德誒！！！
- 既然有問題我們就去找找，從官方文件MDN Web Docs有說：</description>
+ 既然有問題我們就去找找，從官方文件MDN Web Docs有說：
+ The value null represents the intentional absence of any object value&amp;hellip;
+The value null is written with a literal, null (it&amp;rsquo;s not an identifer for a property of the global object like undefined can be)&amp;hellip;</description>
     </item>
     
     <item>
@@ -177,7 +198,7 @@ let a; let b = null; console.log(typeof a) // 顯示：undefined console.log(typ
  目前的瀏覽器普遍支援ES5、ES6，甚至支援更新的ES7，大家可以安心使用。這裡我列出從ES5更新到ES6的主要改動：
     ES5 ES6     類型 空值（null）、未定義（undefined）、布林值（boolean）、數字（number）、字串（string）、物件（object） 引入新的類型：符號（symbol）用來表示唯一值   變數 只能使用var來定義變數 新增let、const，能夠更嚴謹的定義變數   箭頭函數 使用function、return來定義函數內容 可用&amp;quot;=&amp;gt;&amp;ldquo;等符號代表function   迴圈 使用for迴圈、for in迴圈、forEach迴圈&amp;hellip; 新增for of迴圈    從上方表格可得知ES6是基於ES5上新增了部分的功能，而我們今天就先來探討變數的部分，其他的之後後再說（如果老師有出的話我就一定會更新 XDD~
 變數的有效範圍 宣告變數的位置是會影響到他們的作用範圍，有效範圍主要分成「全域變數」、「區域變數」兩種：
- 全域變數（Global Variable）：在函式外宣告的變數。整個程式中都可以被存取與修改。 區域變數（Local Variable）：在區塊內等被 { } 包起來的地方宣告的變數。此變數只能提供在所屬的function函式中執行，不提供給functionc函式以外呼叫使用，當function函式執行完後，記憶體只會保留其執行的結果，變數的部分則會被記憶體消除釋放掉。  var global_variable = &amp;#34;我是全域變數&amp;#34;; // 宣告全域變數 function show(){ var local_variable = &amp;#34;我是區域變數&amp;#34;; // 宣告區域變數  console.</description>
+ 全域變數（Global Variable）：在函式外宣告的變數。整個程式中都可以被存取與修改。 區域變數（Local Variable）：在區塊內等被 { } 包起來的地方宣告的變數。此變數只能提供在所屬的function函式中執行，不提供給functionc函式以外呼叫使用，當function函式執行完後，記憶體只會保留其執行的結果，變數的部分則會被記憶體消除釋放掉。   由上方的程式碼可以看出全域變數可以在整個程式碼內取得到；而區域變數只能在該函數（區域）取得，在函數（區塊）外就取得不到，因此會報錯顯示「not defined（沒有被定義）」。</description>
     </item>
     
     <item>
@@ -264,12 +285,21 @@ grid的包法與flex一樣，需要有外層的.container，也需要有內層�
  Display Grid-template-columns_rows Grid-template-areas Grid-gap Justify-items Align-items  Items：
  Grid-column_row Justify-self Align-self   Container 跟flex一樣，grid大都是在container裡面下指令。
 Display 先宣告要使用grid來排版。
-&amp;lt;!-- css --&amp;gt; .container{ display: grid; } grid不像flex一下display就會有變化，它還需要把空間切成一塊一塊的才能使用，雖說有些麻煩，但事後在定位排版上會比較好操作，靈活度也比flex還要來得高。
+ grid不像flex一下display就會有變化，它還需要把空間切成一塊一塊的才能使用，雖說有些麻煩，但事後在定位排版上會比較好操作，靈活度也比flex還要來得高。
 Grid-template-columns_rows Template的意思為模板，我們透過這個屬性把想要的區塊切開。它的語法主要分兩個：
-&amp;lt;!-- css --&amp;gt; grid-template-columns: 100px 50px auto 200px 1fr; &amp;lt;!-- 直行 --&amp;gt; grid-template-rows: 25% 100px 1fr; &amp;lt;!-- 橫列 --&amp;gt;   ＊給定的值可以使用px、%、fr等長度單位
+  ＊給定的值可以使用px、%、fr等長度單位
 我們從左至右看，可以發現每一格的寬度是「100px 50px auto 200px 1fr」，這不就跟css內的grid-template-column一樣嗎！它的意思是「切幾格，每格自己給定」，以剛剛的例子來說就是切五格，每格的長度按照裡面的值所定。同理grid-template-rows也是如此。
 Grid-template-areas 這東西像是給定切好的區塊一個名字，之後在items叫它去該區塊。在Container裡先設好模版該長什麼樣、該叫什麼名字，每個格子裡要放哪個items。
-&amp;lt;!-- css --&amp;gt; .container{ grid-template-areas: &amp;#34;header header header header&amp;#34; &amp;#34;main main .</description>
+ 上面的例子就是把Container切成4欄，第一列統一都是header；第二列main佔2欄，之後的為空白，最後一欄是sidebar；第三列皆為footer。而Items就分別帶入各自的名字。
+ ＊空白的地方以&amp;quot;.&amp;ldquo;代替
+Grid-gap 這個功能類似上次提到flex的gap，若不知道在講什麼的朋友可以先來看看[教學]GAP再來了解。
+grid-gap好用的地方在於它的彈性更多，safari也能夠讀取。它有三種寫法，column-gap及row-gap分別控制行、列之間的間隙，而grid-gap是兩個我都要！一次控制行列的間隙。
+ 值得注意的是，這裡給定的值是會影響整個寬度的喔！舉例來說，grid-template-column: 50% 50%，如果我們加上column-gap: 50px，那麼寬度是會炸開的，因為他們的總和超過100%了。
+所以我通常使用fr的單位，變成grid-template-colum: 1fr 1fr就不會有這個問題了。fr的概念可以想像成「將剩餘的空間按照比例去分配」，以grid-template-colum: 1fr 1fr為例，1+1=2，所以每一份間隔皆為1/2。
+那麼依樣畫葫蘆，grid-template-colum: 1fr 2fr 3fr每一欄的寬度分別為1/6，2/6，3/6，是不是蠻簡單的～
+Justify-items   justify-items  此功能與flex的justify-content類似，同樣是控制items水平靠左、置中、靠右。grid不用控制主軸與次軸，因此justify-content就是控制「水平」方向的排版。
+  ＊使用stretch時，不可控制裡面的大小，不然會調不動
+Align-items   align-items  這個功能就跟flex的align-items一模模一樣樣～直接輕鬆套用！</description>
     </item>
     
     <item>
@@ -281,14 +311,14 @@ Grid-template-areas 這東西像是給定切好的區塊一個名字，之後在
       <description>前言 在上一篇文章中講解了如何用flex排版，如果還沒看過的話請去看[教學]FLEXBOX再來看這篇文章喔。
 各位在使用Flex時有沒有發生過Container裡面的items都會黏在一起、擠在一起的情況呢？這時我想大家的處理方式應該都是在items下外距來隔開吧！這次要介紹的就是超級方便的gap，他可以快速控制的items的之間的間隔喔！
 GAP 它使用的方式非常簡單，只要在Container裡加上：
-&amp;lt;!-- css --&amp;gt; .container{ gap: 20px; } 好，結束收工。
+ 好，結束收工。
 484很～～～～～～簡單。
  但是&amp;hellip;我用safari看完全沒有間隔R，東西還是黏在一起誒。為什麼會這樣子？
  我們可以去查一下gap語法的支援程度如何。
   gap的支援程度  恩&amp;hellip;滿江紅一片呢，這代表還有很多瀏覽器不支援，各位請加油好嗎？
 在各瀏覽器普遍還沒支援的情況下，我們可以換一種寫法，讓沒有不支援的瀏覽器也能呈現出gap的樣式。
 修改後的GAP 為了達到目的，我們必須從Container跟items下手。
-&amp;lt;!-- css --&amp;gt; .container{ display: flex; flex-wrap: wrap; --gap: 20px; margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap)); } .container &amp;gt; *{ margin: var(--gap) 0 0 var(--gap); } ＊--gap這個東西css裡面的變數，我們將想要的間隔寬度存在這裡，之後要改大小就只需在這裡處理就好。
+ ＊--gap這個東西css裡面的變數，我們將想要的間隔寬度存在這裡，之後要改大小就只需在這裡處理就好。
 它的原理很簡單，以items來說，彼此之間都要有距離，因此每個items都需要在「上方」及「左側」有外距，但如次一來在「上方第一橫排的items」跟「左側第一直排的items」就會跟Container產生間隔。
 這時就換Container來處理問題。我們只需把Container「上方」及「左側」的外距再縮回來就能達到這個效果了。
  ＊2021/06/04更新：現在Safari也已經支援使用gap了，上面的東西大家看看就好。
@@ -312,9 +342,14 @@ GAP 它使用的方式非常簡單，只要在Container裡加上：
  發動場地魔法卡「大地力量」，場面上地屬性怪獸的攻擊力可以上升500&amp;hellip;
  沒錯，可以把它想像成場地效果，你要裡面的東西怎樣他就會怎樣，這樣就可以很好的控制裡面的內容了。以下介紹的屬性都是放在Container裡面的喔。
 Display 首先先宣告為flex它才能使用。
-&amp;lt;!-- css --&amp;gt; .container{ display: flex; } Flex-direction   flex-direction  Flex-direction負責管理Items該如何排列，它掌控著誰可以拿到主導權，能拿到主導權的有兩位人選，一位是column，另一位是row，也就是我們常講的「直行橫列」，直行是column；橫列是row。
+ Flex-direction   flex-direction  Flex-direction負責管理Items該如何排列，它掌控著誰可以拿到主導權，能拿到主導權的有兩位人選，一位是column，另一位是row，也就是我們常講的「直行橫列」，直行是column；橫列是row。
 所謂的主導權就是「主軸（main-axis）」，既然有主軸那就有「副軸（cross-axis）」。預設下主軸為row，而副軸為column。主副軸彼此的關係為「十字交叉」，若一方為主軸，則另一方就是副軸，但Flex-direction只有決定主軸是誰，副軸的功用等等再說吧。我們現來看Flex-direction，它有4個語法，分別是：
-&amp;lt;!-- css --&amp;gt; flex-direction: row; /*預設，主軸由左至右*/ flex-direction: row-reverse; /*主軸由右至左*/ flex-direction: column; /*主軸由上至下*/ flex-direction: column-reverse; /*主軸由下至上*/   ＊因為瀏覽器對於每個語法的定義不同，因此在Chome上看到的flex-direction: column、flex-direction: column-reverse是會爆出框框的；而在Safari上看到的是塞好塞滿。不過兩者皆是把物件塞在同一排，即便有定義好Items的寬高，但在空間不夠時是會壓縮它們的喔！</description>
+  ＊因為瀏覽器對於每個語法的定義不同，因此在Chome上看到的flex-direction: column、flex-direction: column-reverse是會爆出框框的；而在Safari上看到的是塞好塞滿。不過兩者皆是把物件塞在同一排，即便有定義好Items的寬高，但在空間不夠時是會壓縮它們的喔！
+ 咦咦咦！？我不要裡面的東西變形啦！！該怎麼解決呢？有兩個方法，第一個是減少Items，這樣空間就留出來了；第二個是加大Container的寬高。
+ 但～～上面講的都治標不治本，接下來就來介紹解決方案吧！
+Flex-wrap   flex-direction  Flex-wrap決定了Items的排列方式，有別於前者說提到的Flex-direction，它控制物件該不該「包起來」。我們知道單就下Flex-direction只會讓items排一排站好，而且還有可能擠在一起，讓Items變形，因此Flex-wrap透過包起來的方式，將塞不下的Items換行繼續塞，而換行的方向就是根據副軸去排的喔。說了這麼多我們直接看看它到底有哪些功能：
+  ＊Codepen展示中用到Flex-direction: row，其餘的排列組合就請自己去玩玩探索吧！
+＊Flex-wrap: reverse，反轉的地方是指「副軸反轉」，正常的方向是由左至右，由上至下，而反轉後的方向則變成了由右至左，由下至上</description>
     </item>
     
     <item>
@@ -330,8 +365,15 @@ Display 首先先宣告為flex它才能使用。
  剛剛的順序看似再正常不過了，不過使用者有想過隨邊丟一張圖片這確定沒問題嗎？？
 撇除照片檔案太大會影響載入速度外，另一個問題就是「照片的寬高比例」。現代人拍照通常都用手機，但是各家手機尺寸都不盡相同，若將未經裁切的照片丟上網頁，那一定會跑版&amp;hellip;
 解法一：max-width: 100%, max-height: 100% 為了解決這個問題，我原本的想法是在圖片的外層包一層div，並且控制外層大小及照片的排列方式。若照片比例與外框比例不符，它就會等比例縮在外框裡。
-&amp;lt;!-- html --&amp;gt; &amp;lt;div class=&amp;#34;pic&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;https://images.unsplash.com/photo-1600068643981-3c4496a2be55?ixlib=rb-1.2.1&amp;amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;amp;auto=format&amp;amp;amp;fit=crop&amp;amp;amp;w=2467&amp;amp;amp;q=80&amp;#34; alt=&amp;#34;&amp;#34;/&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;pic&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;https://images.unsplash.com/photo-1599930499224-1b9a45439a12?ixlib=rb-1.2.1&amp;amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;amp;auto=format&amp;amp;amp;fit=crop&amp;amp;amp;w=1164&amp;amp;amp;q=80&amp;#34; alt=&amp;#34;&amp;#34;/&amp;gt; &amp;lt;/div&amp;gt; ＊圖片的src=&amp;quot;...&amp;quot;是在圖片地址，你可以換張圖片試試
-/* css */ html, body { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; background-color: #3d3d3d; } .pic { width: 500px; height: 350px; margin: 50px; display: flex; justify-content: center; align-items: center; border: 2px solid; } .</description>
+ ＊圖片的src=&amp;quot;...&amp;quot;是在圖片地址，你可以換張圖片試試
+ ＊html、body是為了排版用
+＊主要看.pic跟.pic img那邊，外層先固定好大小，並使用flex排版，讓裡面的內容能夠水平置中及垂直置中；內層的圖片分別在最大寬度、最大高度指定為100%，意思為寬高最大就是100%，若圖片的寬度大於高度，則寬度就是100%，而高度就依照比例去計算，反之亦然
+ 解法二：object-fit 後來發現另一個更厲害的css內建語法，他叫做object-fit，若要以我剛剛的範例來說，它的語法就是object-fit: contain。
+  ＊使用object-fit就只要在圖片上加上語法，並且列出想要的寬高就可以了
+ 眼尖的人可能會發現，它的語法大致跟background-size一樣，所以它同樣有好幾種顯示方式：
+ fill：為預設值，強制讓圖片變形成外框的寬高。（很醜誒哈哈哈哈 contain：按照圖片等比例縮放塞入外框內。 cover：填滿外框，超出外框的部分會被裁切掉。 none：不做任何調整。（請問我要用你幹嘛？？ scale-down：取決於圖片與外框的大小。若外框小於圖片就用contain；若外框大於圖片就用none。  另外他還有個好朋友叫做object-position，可以理解為圖片在外框中的擺放位置，預設是在正中間。他們兩個可以互相搭配使用，說不定能擦出什麼火花（？？
+  object-fit、object-position瀏覽器支援程度  BTW，剛剛講的object-fit、object-position並不支援IE喔，不過現在應該很少人在用IE了吧！
+結語 其實還有很多種方式可以達成圖片自適應外框大小，若你有新的作法與想法，歡迎在下方留言喔！</description>
     </item>
     
   </channel>

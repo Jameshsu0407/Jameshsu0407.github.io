@@ -21,7 +21,7 @@
 <meta itemprop="description" content="可以二維排列的Grid">
 <meta itemprop="datePublished" content="2021-02-05T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-05T00:00:00+00:00" />
-<meta itemprop="wordCount" content="252">
+<meta itemprop="wordCount" content="82">
 <meta itemprop="image" content="">
 
 
@@ -46,7 +46,7 @@
         <script src="https://kit.fontawesome.com/be54eb011a.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="/css/main.min.2dc7cc66fdb1de8c9e08758ea8f404e86d9b61a4a17ded468118109499810fd6.css" integrity="sha256-LcfMZv2x3oyeCHWOqPQE6G2bYaShfe1GgRgQlJmBD9Y="><link rel="stylesheet" href="/css/add-on.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="/css/main.min.d84a57a14c75cb171588f5e35d85dbf235c4ec43fbcb3801d69d0f5a3cb044e0.css" integrity="sha256-2EpXoUx1yxcViPXjXYXb8jXE7EP7yzgB1p0PWjywROA="><link rel="stylesheet" href="/css/add-on.css">
   
   
 <script type="application/javascript">
@@ -329,17 +329,12 @@ if (!doNotTrack) {
 <p>跟flex一樣，grid大都是在container裡面下指令。</p>
 <h4 id="display">Display</h4>
 <p>先宣告要使用<code>grid</code>來排版。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-.<span style="color:#a6e22e">container</span>{
-  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">grid</span>;
-}
-</code></pre></div><p><code>grid</code>不像<code>flex</code>一下display就會有變化，它還需要把空間切成一塊一塊的才能使用，雖說有些麻煩，但事後在定位排版上會比較好操作，靈活度也比<code>flex</code>還要來得高。</p>
+<script src="https://gist.github.com/Jameshsu0407/e212539bc3734734908e7ea818a88168.js"></script>
+<p><code>grid</code>不像<code>flex</code>一下display就會有變化，它還需要把空間切成一塊一塊的才能使用，雖說有些麻煩，但事後在定位排版上會比較好操作，靈活度也比<code>flex</code>還要來得高。</p>
 <h4 id="grid-template-columns_rows">Grid-template-columns_rows</h4>
 <p>Template的意思為模板，我們透過這個屬性把想要的區塊切開。它的語法主要分兩個：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">grid-template-columns</span><span style="color:#f92672">:</span> <span style="color:#f92672">100px</span> <span style="color:#f92672">50px</span> <span style="color:#f92672">auto</span> <span style="color:#f92672">200px</span> <span style="color:#f92672">1fr</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">直行</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">grid-template-rows</span><span style="color:#f92672">:</span> <span style="color:#f92672">25</span><span style="color:#f92672">%</span> <span style="color:#f92672">100px</span> <span style="color:#f92672">1fr</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">橫列</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-</code></pre></div>
+<script src="https://gist.github.com/Jameshsu0407/095de39458da6af1852d0b677aa090de.js"></script>
+
 
 
 
@@ -360,23 +355,8 @@ if (!doNotTrack) {
 <p>我們從左至右看，可以發現每一格的寬度是「100px 50px auto 200px 1fr」，這不就跟css內的<code>grid-template-column</code>一樣嗎！它的意思是「切幾格，每格自己給定」，以剛剛的例子來說就是切五格，每格的長度按照裡面的值所定。同理<code>grid-template-rows</code>也是如此。</p>
 <h4 id="grid-template-areas">Grid-template-areas</h4>
 <p>這東西像是給定切好的區塊一個名字，之後在items叫它去該區塊。在Container裡先設好模版該長什麼樣、該叫什麼名字，每個格子裡要放哪個items。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-.<span style="color:#a6e22e">container</span>{
-  <span style="color:#66d9ef">grid-template-areas</span>: <span style="color:#e6db74">&#34;header header header header&#34;</span> <span style="color:#e6db74">&#34;main main . sidebar&#34;</span> <span style="color:#e6db74">&#34;footer footer footer footer&#34;</span>;
-}
-.<span style="color:#a6e22e">item1</span>{
-  <span style="color:#66d9ef">grid-area</span>: header;
-}
-.<span style="color:#a6e22e">item2</span>{
-  <span style="color:#66d9ef">grid-area</span>: main;
-}
-.<span style="color:#a6e22e">item3</span>{
-  <span style="color:#66d9ef">grid-area</span>: sidebar;
-}
-.<span style="color:#a6e22e">item4</span>{
-  <span style="color:#66d9ef">grid-area</span>: footer;
-}
-</code></pre></div><p>上面的例子就是把Container切成4欄，第一列統一都是header；第二列main佔2欄，之後的為空白，最後一欄是sidebar；第三列皆為footer。而Items就分別帶入各自的名字。</p>
+<script src="https://gist.github.com/Jameshsu0407/b6395254ee6fa613f5599a9a7e3a9394.js"></script>
+<p>上面的例子就是把Container切成4欄，第一列統一都是header；第二列main佔2欄，之後的為空白，最後一欄是sidebar；第三列皆為footer。而Items就分別帶入各自的名字。</p>
 
 
 
@@ -398,11 +378,8 @@ if (!doNotTrack) {
 <h4 id="grid-gap">Grid-gap</h4>
 <p>這個功能類似上次提到flex的<code>gap</code>，若不知道在講什麼的朋友可以先來看看<a href="https://jameshsu0407.github.io/blog/20201120_gap/">[教學]GAP</a>再來了解。</p>
 <p><code>grid-gap</code>好用的地方在於它的彈性更多，safari也能夠讀取。它有三種寫法，<code>column-gap</code>及<code>row-gap</code>分別控制行、列之間的間隙，而<code>grid-gap</code>是兩個我都要！一次控制行列的間隙。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">column-gap</span><span style="color:#f92672">:</span> <span style="color:#f92672">10px</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">column之間的間隙為10px</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">row-gap</span><span style="color:#f92672">:</span> <span style="color:#f92672">15px</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">row之間的間隙為15px</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">grid-gap</span><span style="color:#f92672">:</span> <span style="color:#f92672">20px</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">所有格子之間的間隙為20px</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-</code></pre></div><p>值得注意的是，這裡給定的值是會影響整個寬度的喔！舉例來說，<code>grid-template-column: 50% 50%</code>，如果我們加上<code>column-gap: 50px</code>，那麼寬度是會炸開的，因為他們的總和超過100%了。</p>
+<script src="https://gist.github.com/Jameshsu0407/2ebe95d18b53e0b649eaa859aa99991d.js"></script>
+<p>值得注意的是，這裡給定的值是會影響整個寬度的喔！舉例來說，<code>grid-template-column: 50% 50%</code>，如果我們加上<code>column-gap: 50px</code>，那麼寬度是會炸開的，因為他們的總和超過100%了。</p>
 <p>所以我通常使用fr的單位，變成<code>grid-template-colum: 1fr 1fr</code>就不會有這個問題了。fr的概念可以想像成「將剩餘的空間按照比例去分配」，以<code>grid-template-colum: 1fr 1fr</code>為例，1+1=2，所以每一份間隔皆為1/2。</p>
 <p>那麼依樣畫葫蘆，<code>grid-template-colum: 1fr 2fr 3fr</code>每一欄的寬度分別為1/6，2/6，3/6，是不是蠻簡單的～</p>
 <h4 id="justify-items">Justify-items</h4>
@@ -429,12 +406,8 @@ if (!doNotTrack) {
 
 
 <p>此功能與flex的<code>justify-content</code>類似，同樣是控制items水平靠左、置中、靠右。grid不用控制主軸與次軸，因此<code>justify-content</code>就是控制「水平」方向的排版。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">justify-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">start</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">靠左</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">justify-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">end</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">靠右</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">justify-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">center</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">置中</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">justify-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">stretch</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">伸展</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-</code></pre></div>
+<script src="https://gist.github.com/Jameshsu0407/15768b56d329a57398fdddb02a92e92a.js"></script>
+
 
 
 
@@ -476,12 +449,8 @@ if (!doNotTrack) {
 
 
 <p>這個功能就跟flex的<code>align-items</code>一模模一樣樣～直接輕鬆套用！</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">align-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">start</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">靠上</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">align-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">end</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">靠底</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">align-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">center</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">置中</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">align-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">stretch</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">伸展</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-</code></pre></div>
+<script src="https://gist.github.com/Jameshsu0407/35451fa28f35302f02400559ef3e5be6.js"></script>
+
 
 
 
@@ -548,12 +517,8 @@ if (!doNotTrack) {
 
 
 <p><code>justify-self</code>是控制item自己的水平排版，這可是flex所沒有的屬性，flex根本不給排啊～</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">justify-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">start</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">靠左</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">justify-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">end</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">靠右</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">justify-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">center</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">置中</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">justify-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">stretch</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">延伸</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-</code></pre></div>
+<script src="https://gist.github.com/Jameshsu0407/a684ec13e8ba48e8e9243dccb4601630.js"></script>
+
 
 
 
@@ -595,12 +560,8 @@ if (!doNotTrack) {
 
 
 <p>來到最後一個屬性：<code>align-self</code>，是控制item自己的垂直排版，這屬性flex倒是有的，用法其實也一模一樣～</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">align-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">start</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">靠上</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">align-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">end</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">靠底</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">align-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">center</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">置中</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">align-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">stretch</span><span style="color:#f92672">;</span> <span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">伸展</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-</code></pre></div>
+<script src="https://gist.github.com/Jameshsu0407/7af4115aa36e6f2e8defb3ee123b5452.js"></script>
+
 
 
 
@@ -902,7 +863,6 @@ if (!doNotTrack) {
       
       
       
-      <a href='https://vbshoptrax.com/track/clicks/4820/ce2bc2bf9f0527d6f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpages%2Fnovember-sale-1111-199up%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://vbshoptrax.com/track/imp/img/164798/ce2bc2bf9f0527d6f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
       <a href='https://twcouponcenter.com/track/clicks/4820/ce2bc2bf9f0527d6fa9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpromotions%2F635a50b7a7574d0025f80189%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://twcouponcenter.com/track/imp/img/164793/ce2bc2bf9f0527d6fa9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
       <a href='https://afftck.com/track/clicks/4820/ce2bc2bf9f0527d7f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpages%2Fnovember-sale%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://afftck.com/track/imp/img/164788/ce2bc2bf9f0527d7f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
     </div>

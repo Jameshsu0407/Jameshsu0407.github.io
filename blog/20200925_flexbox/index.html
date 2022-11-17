@@ -21,7 +21,7 @@
 <meta itemprop="description" content="Flexbox就只是叫小朋友排好隊形而已">
 <meta itemprop="datePublished" content="2020-09-25T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-09-25T00:00:00+00:00" />
-<meta itemprop="wordCount" content="270">
+<meta itemprop="wordCount" content="136">
 <meta itemprop="image" content="">
 
 
@@ -46,7 +46,7 @@
         <script src="https://kit.fontawesome.com/be54eb011a.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="/css/main.min.2dc7cc66fdb1de8c9e08758ea8f404e86d9b61a4a17ded468118109499810fd6.css" integrity="sha256-LcfMZv2x3oyeCHWOqPQE6G2bYaShfe1GgRgQlJmBD9Y="><link rel="stylesheet" href="/css/add-on.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="/css/main.min.d84a57a14c75cb171588f5e35d85dbf235c4ec43fbcb3801d69d0f5a3cb044e0.css" integrity="sha256-2EpXoUx1yxcViPXjXYXb8jXE7EP7yzgB1p0PWjywROA="><link rel="stylesheet" href="/css/add-on.css">
   
   
 <script type="application/javascript">
@@ -362,11 +362,8 @@ if (!doNotTrack) {
 <p>沒錯，可以把它想像成場地效果，你要裡面的東西怎樣他就會怎樣，這樣就可以很好的控制裡面的內容了。以下介紹的屬性都是放在Container裡面的喔。</p>
 <h4 id="display">Display</h4>
 <p>首先先宣告為<code>flex</code>它才能使用。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-.<span style="color:#a6e22e">container</span>{
-  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
-}
-</code></pre></div><h4 id="flex-direction">Flex-direction</h4>
+<script src="https://gist.github.com/Jameshsu0407/88b53b6f8dcad6188da6113deae9092d.js"></script>
+<h4 id="flex-direction">Flex-direction</h4>
 
 
 
@@ -391,12 +388,8 @@ if (!doNotTrack) {
 
 <p><code>Flex-direction</code>負責管理Items該如何排列，它掌控著誰可以拿到主導權，能拿到主導權的有兩位人選，一位是<code>column</code>，另一位是<code>row</code>，也就是我們常講的「直行橫列」，直行是<code>column</code>；橫列是<code>row</code>。</p>
 <p>所謂的主導權就是「主軸（main-axis）」，既然有主軸那就有「副軸（cross-axis）」。預設下主軸為<code>row</code>，而副軸為<code>column</code>。主副軸彼此的關係為「十字交叉」，若一方為主軸，則另一方就是副軸，但<code>Flex-direction</code>只有決定主軸是誰，副軸的功用等等再說吧。我們現來看<code>Flex-direction</code>，它有4個語法，分別是：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">flex-direction</span><span style="color:#f92672">:</span> <span style="color:#f92672">row</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*預設，主軸由左至右*/</span>
-<span style="color:#f92672">flex-direction</span><span style="color:#f92672">:</span> <span style="color:#f92672">row-reverse</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*主軸由右至左*/</span>
-<span style="color:#f92672">flex-direction</span><span style="color:#f92672">:</span> <span style="color:#f92672">column</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*主軸由上至下*/</span>
-<span style="color:#f92672">flex-direction</span><span style="color:#f92672">:</span> <span style="color:#f92672">column-reverse</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*主軸由下至上*/</span>
-</code></pre></div>
+<script src="https://gist.github.com/Jameshsu0407/c0f1d0cfc7f403bfc048fd5898b5bc71.js"></script>
+
 
 
 
@@ -442,11 +435,8 @@ if (!doNotTrack) {
 
 
 <p><code>Flex-wrap</code>決定了Items的排列方式，有別於前者說提到的<code>Flex-direction</code>，它控制物件該不該「包起來」。我們知道單就下<code>Flex-direction</code>只會讓items排一排站好，而且還有可能擠在一起，讓Items變形，因此<code>Flex-wrap</code>透過包起來的方式，將塞不下的Items換行繼續塞，而換行的方向就是根據副軸去排的喔。說了這麼多我們直接看看它到底有哪些功能：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">flex-wrap</span><span style="color:#f92672">:</span> <span style="color:#f92672">nowrap</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*預設，單行排列，不包起來*/</span>
-<span style="color:#f92672">flex-wrap</span><span style="color:#f92672">:</span> <span style="color:#f92672">wrap</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*包好包滿*/</span>
-<span style="color:#f92672">flex-wrap</span><span style="color:#f92672">:</span> <span style="color:#f92672">wrap-reverse</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*包好包滿外還要來個反轉*/</span>
-</code></pre></div>
+<script src="https://gist.github.com/Jameshsu0407/846204171d93be41acab65406fd51411.js"></script>
+
 
 
 
@@ -467,9 +457,8 @@ if (!doNotTrack) {
 <p><i>＊<code>Flex-wrap: reverse</code>，反轉的地方是指「副軸反轉」，正常的方向是由左至右，由上至下，而反轉後的方向則變成了由右至左，由下至上</i></p>
 <h4 id="flex-flow">Flex-flow</h4>
 <p>那麼這個屬性又是幹嘛的呢？？其實你也可以不用懂它，它就是<code>Flex-direction</code>、<code>Flex-wrap</code>的「組合技」，如此一來就可以共同定義主副軸的排列方式了。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">flex-flow</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-direction</span> <span style="color:#f92672">flex-wrap</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*大括號裡面放的就是它們各自的屬性*/</span>
-</code></pre></div><p><i>＊預設為<code>flex-flow: row nowrap</code></i></p>
+<script src="https://gist.github.com/Jameshsu0407/fe1fc1a549a5a312176ad2a773d49577.js"></script>
+<p><i>＊預設為<code>flex-flow: row nowrap</code></i></p>
 <p>接下來就進入重頭戲，也就是介紹Flex屬性是如何「排版」的吧！</p>
 <h4 id="justify-content">Justify-content</h4>
 
@@ -495,14 +484,8 @@ if (!doNotTrack) {
 
 
 <p><code>Justify-content</code>定義了「主軸」的「對齊方式」，有以下5種方式：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">justify-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-start</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*預設，靠頭對齊*/</span>
-<span style="color:#f92672">justify-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-end</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*靠尾對齊*/</span>
-<span style="color:#f92672">justify-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">center</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*置中對齊*/</span>
-<span style="color:#f92672">justify-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">space-between</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*置中對齊，頭尾的items貼齊Container，items之間有固定距離*/</span>
-<span style="color:#f92672">justify-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">space-around</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*置中對齊，頭尾的items沒有貼齊Container，items之間、頭尾items跟Container之間皆有固定距離*/</span>
-<span style="color:#f92672">justify-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">space-evenly</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*置中對齊，頭尾的items沒有貼齊Container，items之間、頭尾items跟Container之間距離相同*/</span>
-</code></pre></div>
+<script src="https://gist.github.com/Jameshsu0407/b2663e8c465dd57e172922585cad2ead.js"></script>
+
 
 
 
@@ -546,13 +529,8 @@ if (!doNotTrack) {
 
 
 <p><code>Align-items</code>定義了「副軸」的「對其方式」，有以下5種方式：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">align-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-start</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*預設，靠頭對齊*/</span>
-<span style="color:#f92672">align-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-end</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*靠尾對齊*/</span>
-<span style="color:#f92672">align-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">center</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*置中對齊*/</span>
-<span style="color:#f92672">align-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">baseline</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*按照文本基線對齊*/</span>
-<span style="color:#f92672">align-items</span><span style="color:#f92672">:</span> <span style="color:#f92672">stretch</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*items延展至Container的頭尾*/</span>
-</code></pre></div>
+<script src="https://gist.github.com/Jameshsu0407/e3010b605995035c59fb8b0dbc8bfacc.js"></script>
+
 
 
 
@@ -595,14 +573,8 @@ if (!doNotTrack) {
 
 
 <p>這個屬性是<code>Align-items</code>的進階版，而且它跟<code>Justify-content</code>長得有八成像，所以他們能控制的東西也是一樣差不多～這裡再再提醒一次：<code>Justify-content</code>控制主軸；<code>Align-content</code>控制副軸喔。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">align-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-start</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*預設，靠頭對齊*/</span>
-<span style="color:#f92672">align-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-end</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*靠尾對齊*/</span>
-<span style="color:#f92672">align-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">center</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*置中對齊*/</span>
-<span style="color:#f92672">align-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">space-between</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*置中對齊，頭尾的items貼齊Container，items之間有固定距離*/</span>
-<span style="color:#f92672">align-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">space-around</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*置中對齊，頭尾的items沒有貼齊Container，items之間、頭尾items跟Container之間皆有固定距離*/</span>
-<span style="color:#f92672">align-content</span><span style="color:#f92672">:</span> <span style="color:#f92672">stretch</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*items延展至Container的頭尾*/</span>
-</code></pre></div>
+<script src="https://gist.github.com/Jameshsu0407/67926d9e20191babe300173e3d5658b9.js"></script>
+
 
 
 
@@ -648,9 +620,8 @@ if (!doNotTrack) {
 
 
 <p><code>order</code>屬性可以控制誰在前誰在後，即使在HTML上的物件是在最後一個，只要下達這個指令就可以輕輕鬆鬆要它在哪它就在哪囉。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">order</span><span style="color:#f92672">:</span> <span style="color:#f92672">integer</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*預設為0，integer的地方是給整數*/</span>
-</code></pre></div>
+<script src="https://gist.github.com/Jameshsu0407/a322f56bc0ec2d8fd6249b535587d0ba.js"></script>
+
 
 
 
@@ -671,9 +642,8 @@ if (!doNotTrack) {
 <p><i>＊<code>order</code>預設為零，若要排在0前面的話也可以負值喔</i></p>
 <h4 id="flex-basis">Flex-basis</h4>
 <p>它決定了主軸上items的預設長度。以<code>row</code>當主軸來說它控制items的「寬度」；以<code>column</code>當主軸來說它控制items的「高度」</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">flex-basis</span><span style="color:#f92672">:</span> <span style="color:#f92672">auto</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*預設為auto，可以給長度各種單位*/</span>
-</code></pre></div>
+<script src="https://gist.github.com/Jameshsu0407/e7a55b1c28b59a0a4c206b58a1db7013.js"></script>
+
 
 
 
@@ -782,14 +752,8 @@ if (!doNotTrack) {
 
 <p>終終終於來到最後一個屬性了啊！！！！（撒花～</p>
 <p>這個屬性可以調整「副軸」的對齊屬性，再重申一次，是「副軸」喔不是主軸。它與<code>Align-items</code>、<code>Align-content</code>一樣可以控制副軸的排列方式，它卻能更進一步個別調整單一item的排列方式，以下是它的語法：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;!</span><span style="color:#f92672">--</span> <span style="color:#f92672">css</span> <span style="color:#f92672">--</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">align-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">auto</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*預設，與Container的align-items一樣*/</span>
-<span style="color:#f92672">align-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-start</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*預設，靠頭對齊*/</span>
-<span style="color:#f92672">align-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">flex-end</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*靠尾對齊*/</span>
-<span style="color:#f92672">align-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">center</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*置中對齊*/</span>
-<span style="color:#f92672">align-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">baseline</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*按照文本基線對齊*/</span>
-<span style="color:#f92672">align-self</span><span style="color:#f92672">:</span> <span style="color:#f92672">stretch</span><span style="color:#f92672">;</span> <span style="color:#75715e">/*items延展至Container的頭尾*/</span>
-</code></pre></div>
+<script src="https://gist.github.com/Jameshsu0407/1e390191f4d21e297a0108c1e0e2d2e3.js"></script>
+
 
 
 
@@ -1095,7 +1059,6 @@ if (!doNotTrack) {
       
       
       
-      <a href='https://vbshoptrax.com/track/clicks/4820/ce2bc2bf9f0527d6f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpages%2Fnovember-sale-1111-199up%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://vbshoptrax.com/track/imp/img/164798/ce2bc2bf9f0527d6f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
       <a href='https://twcouponcenter.com/track/clicks/4820/ce2bc2bf9f0527d6fa9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpromotions%2F635a50b7a7574d0025f80189%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://twcouponcenter.com/track/imp/img/164793/ce2bc2bf9f0527d6fa9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
       <a href='https://afftck.com/track/clicks/4820/ce2bc2bf9f0527d7f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fpages%2Fnovember-sale%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://afftck.com/track/imp/img/164788/ce2bc2bf9f0527d7f19cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
     </div>
