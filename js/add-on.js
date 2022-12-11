@@ -15,7 +15,7 @@ $("a[href*='#']").on('click',function(e){
       window.setTimeout(function(){
         $('html, body').animate({
 
-          scrollTop: $( '#'+$self.attr('href').split('#').pop() ).offset().top -140
+          scrollTop: $( '#'+$self.attr('href').split('#').pop() ).offset().top - 80
 
         }, 1000);
       }, 250);
@@ -32,7 +32,7 @@ $(document).ready(function(){
 
     window.setTimeout(function(){
       $('html, body').animate({
-        scrollTop: $( window.location.hash ).offset().top -140
+        scrollTop: $( window.location.hash ).offset().top - 80
       }, 2000);
     }, 250);
   }
