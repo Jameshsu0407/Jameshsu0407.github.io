@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="zh-tw">
+<head>
+  <meta charset="utf-8">
+<title>[教學]常用處理字串的方法 - 米米的部落格</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+<meta name="generator" content="Hugo 0.78.2" /><meta itemprop="name" content="[教學]常用處理字串的方法">
+<meta itemprop="description" content="整理系列 - String">
+<meta itemprop="datePublished" content="2022-12-10T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-12-10T00:00:00+00:00" />
+<meta itemprop="wordCount" content="75">
+<meta itemprop="image" content="">
+
+
+
+<meta itemprop="keywords" content="前端,教學,Javascript,JS,string," />
+
+<meta property="og:title" content="[教學]常用處理字串的方法" />
+<meta property="og:description" content="整理系列 - String" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jameshsu0407.github.io/blog/20221210_string_prototype/" />
+<meta property="og:image" content="https://jameshsu0407.github.io/img/main/JS.png" />
+<meta property="article:published_time" content="2022-12-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-12-10T00:00:00+00:00" /><meta property="og:site_name" content="米米的部落格" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jameshsu0407.github.io/img/main/JS.png"/>
+
+<meta name="twitter:title" content="[教學]常用處理字串的方法"/>
+<meta name="twitter:description" content="整理系列 - String"/>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+        <script src="https://kit.fontawesome.com/be54eb011a.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><link rel="stylesheet" href="/css/main.min.ab3a21f91e6f00fa84bb40d6425d0491e81a1a0cec4774d8458a87827db962cc.css" integrity="sha256-qzoh&#43;R5vAPqEu0DWQl0EkegaGgzsR3TYRYqHgn25Ysw="><link rel="stylesheet" href="/css/add-on.css">
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-176771659-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+  
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1HVV9SJYSW"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-1HVV9SJYSW');
+</script>
+  
+  
+  <script data-ad-client="ca-pub-8363323903573630" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+
+<body>
+  
+
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title" data-aos="fade-down" data-aos-duration="800">
+      <a href="/" class="nav">
+        
+          blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu" data-aos="fade-down" data-aos-duration="800">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fas fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="/portfolio/" class="nav link"><i class='fas fa-palette'></i> Portfolio</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+      <a href="javascript:void0" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="javascript:void0" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="javascript:void0" class="nav search-toggle" data-aos="fade-down" data-aos-duration="800" data-aos-delay="300"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="javascript:void0" class="nav share-toggle" data-aos="fade-down" data-aos-duration="800" data-aos-delay="400"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    
+    <a href="javascript:void0" class="nav nav-toggle" data-aos="fade-down" data-aos-duration="800" data-aos-delay="500"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu" placeholder="For English Only"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+        <a href="//social-plugins.line.me/lineit/share?url=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20221210_string_prototype%2f" target="_blank" rel="noopener" class="nav share-btn line">
+          <p>line</p>
+          </a>
+  
+
+  
+    
+    <a href="//twitter.com/share?text=%5b%e6%95%99%e5%ad%b8%5d%e5%b8%b8%e7%94%a8%e8%99%95%e7%90%86%e5%ad%97%e4%b8%b2%e7%9a%84%e6%96%b9%e6%b3%95&amp;url=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20221210_string_prototype%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20221210_string_prototype%2f&amp;title=%5b%e6%95%99%e5%ad%b8%5d%e5%b8%b8%e7%94%a8%e8%99%95%e7%90%86%e5%ad%97%e4%b8%b2%e7%9a%84%e6%96%b9%e6%b3%95" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20221210_string_prototype%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=%e6%9f%a5%e7%9c%8b%e6%ad%a4%e5%b8%96%e5%ad%90%e7%9a%84%e4%bd%9c%e8%80%85 %e7%b1%b3%e7%b1%b3&amp;body=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20221210_string_prototype%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+  <div id="wrapper">
+    <section id="site-intro" data-aos="zoom-in-up" data-aos-duration="800" >
+  <a href="/"><img src="https://jameshsu0407.github.io/img/main/memoji.png" class="circle" width="150" alt="大頭照" /></a>
+  <header>
+    <h1>你好，我是米米</h1>
+  </header>
+  <main>
+    <p>菜雞前端工程師</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/Jameshsu0407" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+<li><a href="//codepen.io/Jameshsu0407" target="_blank" rel="noopener" title="CodePen" class="fab fa-codepen"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:Jameshsu0407@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+    <main id="site-main">
+      
+
+
+
+
+
+<article class="post" data-aos="zoom-in-up" data-aos-duration="800">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/blog/20221210_string_prototype/">[教學]常用處理字串的方法</a></h2>
+    
+    
+      <p>整理系列 - String</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2022-12-10 00:00:00 &#43;0000 UTC">2022-12-10</time>
+    <p>米米</p>
+    
+  </div>
+</header>
+
+  <div id="socnet-share">
+    
+
+
+
+
+  
+        <a href="//social-plugins.line.me/lineit/share?url=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20221210_string_prototype%2f" target="_blank" rel="noopener" class="nav share-btn line">
+          <p>line</p>
+          </a>
+  
+
+  
+    
+    <a href="//twitter.com/share?text=%5b%e6%95%99%e5%ad%b8%5d%e5%b8%b8%e7%94%a8%e8%99%95%e7%90%86%e5%ad%97%e4%b8%b2%e7%9a%84%e6%96%b9%e6%b3%95&amp;url=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20221210_string_prototype%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20221210_string_prototype%2f&amp;title=%5b%e6%95%99%e5%ad%b8%5d%e5%b8%b8%e7%94%a8%e8%99%95%e7%90%86%e5%ad%97%e4%b8%b2%e7%9a%84%e6%96%b9%e6%b3%95" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20221210_string_prototype%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=%e6%9f%a5%e7%9c%8b%e6%ad%a4%e5%b8%96%e5%ad%90%e7%9a%84%e4%bd%9c%e8%80%85 %e7%b1%b3%e7%b1%b3&amp;body=https%3a%2f%2fjameshsu0407.github.io%2fblog%2f20221210_string_prototype%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+  </div>
+  <div class="content">
+    <a href="/blog/20221210_string_prototype/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/main/JS.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/main/JS.png" alt="JS、常用處理字串的方法">
+  </a>
+    <h3 id="前言">前言</h3>
+<p>每次都會忘記字串、物件、陣列的方法該怎麼使用，於是我決定花些時間記錄下來，以下是常用處理字串的方法。</p>
+<blockquote>
+<p>目錄：</p>
+<ul>
+<li>
+<p><a href="#合併concat">合併：concat()</a></p>
+</li>
+<li>
+<p>分割：</p>
+<ul>
+<li><a href="#分割split">回傳陣列：split()</a></li>
+<li>回傳字串：
+<ul>
+<li><a href="#分割substring">回傳字串：substring()</a></li>
+<li><a href="#分割slice">回傳字串：slice()</a></li>
+<li><a href="#分割substr">回傳字串：substr()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>找值：</p>
+<ul>
+<li><a href="#找值indexof">找值：indexOf()</a></li>
+<li><a href="#找值lastindexof">找值：lastIndexOf()</a></li>
+<li><a href="#找值search">找值：search()</a></li>
+<li><a href="#找值includes">找值：includes()</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#取代replace">取代：replace()</a></p>
+</li>
+<li>
+<p><a href="#去除空白trim">去除空白：trim()</a></p>
+</li>
+<li>
+<p><a href="#轉大寫touppercase">轉大寫：toUpperCase()</a></p>
+</li>
+<li>
+<p><a href="#轉小寫tolowercase">轉小寫：toLowerCase()</a></p>
+</li>
+</ul>
+</blockquote>
+<h3 id="合併concat">合併：concat()</h3>
+<p><code>concat()</code>方法將一個或多個字串與原字串連接合併，形成一個新的字符串並回傳。意思等同用加號相加，<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/concat#性能" target="_blank">MDN文件</a>強烈建議使用「賦值運算子」也就是（<code>+</code>, <code>+=</code>）來代替此方法。</p>
+<script src="https://gist.github.com/Jameshsu0407/7303f94aa8dfc5f22a996a28801ed26f.js"></script>
+<h3 id="分割split">分割：split()</h3>
+<p><strong><code>split()</code></strong> 方法使用指定的分隔字，將字串分割成子字串，並以陣列的方式回傳。</p>
+<script src="https://gist.github.com/Jameshsu0407/d862ec9d92ce68e8006e97acf99ef83c.js"></script>
+<h3 id="分割substring">分割：substring()</h3>
+<p><strong><code>substring()</code></strong> 方法會回傳指定位置之間的字串。</p>
+<script src="https://gist.github.com/Jameshsu0407/a7868ff2cd1d1016291d40421f8baeb9.js"></script>
+<p>我們可以運用字串長度的性質來做處理，像是「列出字串的後5位數」等。使用字串長度顯然更輕鬆，因為不需要去記住起始值與最終值，只需扣掉要的長度即可：</p>
+<script src="https://gist.github.com/Jameshsu0407/73457bb94f3e2f535b879b21dbaefea7.js"></script>
+<h3 id="分割slice">分割：slice()</h3>
+<p><strong><code>slice()</code></strong> 方法提取部分字串並以字串的方式回傳。概念像從某個位置切下去。</p>
+<script src="https://gist.github.com/Jameshsu0407/17f256ce7c60186d431c26da9704a5ed.js"></script>
+<h4 id="分割substr">分割：substr()</h4>
+<p><strong><code>substr()</code></strong> 方法會回傳一個由指定位置開始算長度的字串。與上方兩者不太相同，擷取字串並非設定以索引值設定頭尾來取，反之，以頭的索引值開始，擷取內容以長度來區分。</p>
+<script src="https://gist.github.com/Jameshsu0407/576a1d179b249a4e2d9078db13af9624.js"></script>
+<h3 id="找值indexof">找值：indexOf()</h3>
+<p><strong><code>indexOf()</code></strong> 方法與其說找值，不如說它能告訴你想要找的值存不存在。存在會回傳該值的第一個索引值；若不存在就會回傳-1，</p>
+<script src="https://gist.github.com/Jameshsu0407/678cc0c8981993ea5b9ae62c72bffb30.js"></script>
+<h3 id="找值lastindexof">找值：lastIndexOf()</h3>
+<p><strong><code>lastIndexOf()</code></strong> 方法與 <strong><code>indexOf()</code></strong> 方法相似，差別只在於 <strong><code>lastIndexOf()</code></strong> 只會回傳鎖定對象最後一次出現的索引值。</p>
+<script src="https://gist.github.com/Jameshsu0407/c5a729862bb146bbedd1875ddc61c783.js"></script>
+<h3 id="找值search">找值：search()</h3>
+<p><strong><code>search()</code></strong> 方法與 <strong><code>indexOf()</code></strong> 方法相似，差別在於 <strong><code>search()</code></strong> 方法可以使用正規表達式。</p>
+<script src="https://gist.github.com/Jameshsu0407/531abd8f09f467c3841024612168cb5b.js"></script>
+<h3 id="找值includes">找值：includes()</h3>
+<p><strong><code>includes()</code></strong> 方法不能全然說他能找值，只能說它能判斷你要找的值是否有出現，因為它的回傳值是布林。</p>
+<script src="https://gist.github.com/Jameshsu0407/8fc9f3ed12277de266b80473dd520762.js"></script>
+<h3 id="取代replace">取代：replace()</h3>
+<p><strong><code>replace()</code></strong> 方法能取代特定文字。</p>
+<script src="https://gist.github.com/Jameshsu0407/33813ba83bf85d384aefc3acf344b0e9.js"></script>
+<h3 id="去除空白trim">去除空白：trim()</h3>
+<p><strong><code>trim()</code></strong> 方法能夠清除字串兩端的空格（包含tab）。</p>
+<script src="https://gist.github.com/Jameshsu0407/1ff538a626c93e102046558e96358171.js"></script>
+<h3 id="轉大寫touppercase">轉大寫：toUpperCase()</h3>
+<p><strong><code>toUpperCase()</code></strong> 方法能將字串全部轉為大寫，若非字串是會強制轉型（<strong><code>null</code></strong> 、<strong><code>undefined</code></strong> 會報錯 ）。</p>
+<script src="https://gist.github.com/Jameshsu0407/897f565d08056fffd45f65eef932fff7.js"></script>
+<h3 id="轉小寫tolowercase">轉小寫：toLowerCase()</h3>
+<p><strong><code>toLowerCase()</code></strong> 方法能將字串全部轉為小寫，若非字串是會強制轉型（<strong><code>null</code></strong> 、<strong><code>undefined</code></strong> 會報錯 ）。</p>
+<script src="https://gist.github.com/Jameshsu0407/c6a78cfe42f93f9573cdbd9c174b12ba.js"></script>
+<h3 id="結語">結語</h3>
+<p>以上整理了常用的字串方法，接下來幾篇應該是整理陣列、物件的方法。</p>
+
+  </div>
+  <footer>
+    <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/%e5%89%8d%e7%ab%af%e6%95%99%e5%ad%b8/">前端教學</a></li>
+          
+          <li><a class="article-terms-link" href="/categories/js/">JS</a></li>
+          
+      
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/%e5%89%8d%e7%ab%af/">前端</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/%e6%95%99%e5%ad%b8/">教學</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/javascript/">Javascript</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/js/">JS</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/string/">string</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+
+<article class="post" data-aos="zoom-in-up" data-aos-duration="800">
+  <h2 style="text-align: center; margin-bottom: 0;">感謝抖內</h2>
+  <h6 style="text-align: center; margin-top: 5px;">BUY ME A COFFEE</h2>
+    <div class="donate">
+      
+      <div class="jkos">
+        
+        <img class="normal_logo" src="/img/donate/jkos_logo.png" alt="jkos_logo">
+        
+        <img class="white_logo" src="/img/donate/jkos_logo_white.png" alt="jkos_logo">
+        <img class="qrcode" src="/img/donate/jkos_qrcode.JPG" alt="jkos_qrcode:901382227">
+        <h2>帳號：901382227</h5>
+      </div>
+      
+      <div class="paypal">
+        <img src="/img/donate/paypel_logo.png" alt="paypel_logo">
+        <div id="smart-button-container">
+          
+          <label for="description"></label>
+          <input type="text" name="descriptionInput" id="description" value="" placeholder="Please enter a description"
+            class="margin-bottom: 0.625rem;">
+          <p id="descriptionError" style="display: none; visibility: hidden; color:red; ">Please enter a description</p>
+          
+          <label for="amount"></label>
+          <input name="amountInput" type="number" id="amount" value="" placeholder="Please enter a price: US Dollar"
+            min="0">
+          <p id="priceLabelError" style="display: none; visibility: hidden; color:red; ">Please enter a price</p>
+
+          <div id="invoiceidDiv" style=" display: none;"><label for="invoiceid"> </label><input name="invoiceid"
+              type="text" id="invoiceid" value=""></div>
+          <p id="invoiceidError" style="visibility: hidden; color:red; ">Please enter an Invoice ID</p>
+          <div style="margin-top: 0.625rem;" id="paypal-button-container"></div>
+        </div>
+        <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD"
+          data-sdk-integration-source="button-factory"></script>
+        <script>
+          function initPayPalButton() {
+            var description = document.querySelector('#smart-button-container #description');
+            var amount = document.querySelector('#smart-button-container #amount');
+            var descriptionError = document.querySelector('#smart-button-container #descriptionError');
+            var priceError = document.querySelector('#smart-button-container #priceLabelError');
+            var invoiceid = document.querySelector('#smart-button-container #invoiceid');
+            var invoiceidError = document.querySelector('#smart-button-container #invoiceidError');
+            var invoiceidDiv = document.querySelector('#smart-button-container #invoiceidDiv');
+
+            var elArr = [description, amount];
+
+            if (invoiceidDiv.firstChild.innerHTML.length > 1) {
+              invoiceidDiv.style.display = "block";
+            }
+
+            var purchase_units = [];
+            purchase_units[0] = {};
+            purchase_units[0].amount = {};
+
+            function validate(event) {
+              return event.value.length > 0;
+            }
+
+            paypal.Buttons({
+              style: {
+                color: 'blue',
+                shape: 'rect',
+                label: 'paypal',
+                layout: 'vertical',
+
+              },
+
+              onInit: function (data, actions) {
+                actions.disable();
+
+                if (invoiceidDiv.style.display === "block") {
+                  elArr.push(invoiceid);
+                }
+
+                elArr.forEach(function (item) {
+                  item.addEventListener('keyup', function (event) {
+                    var result = elArr.every(validate);
+                    if (result) {
+                      actions.enable();
+                    } else {
+                      actions.disable();
+                    }
+                  });
+                });
+              },
+
+              onClick: function () {
+                if (description.value.length < 1) {
+                  descriptionError.style.visibility = "visible";
+                  descriptionError.style.display = "block";
+                } else {
+                  descriptionError.style.visibility = "hidden";
+                  descriptionError.style.display = "none";
+                }
+
+                if (amount.value.length < 1) {
+                  priceError.style.visibility = "visible";
+                  priceError.style.display = "block";
+                } else {
+                  priceError.style.visibility = "hidden";
+                  priceError.style.display = "none";
+                }
+
+                if (invoiceid.value.length < 1 && invoiceidDiv.style.display === "block") {
+                  invoiceidError.style.visibility = "visible";
+                } else {
+                  invoiceidError.style.visibility = "hidden";
+                }
+
+                purchase_units[0].description = description.value;
+                purchase_units[0].amount.value = amount.value;
+
+                if (invoiceid.value !== '') {
+                  purchase_units[0].invoice_id = invoiceid.value;
+                }
+              },
+
+              createOrder: function (data, actions) {
+                return actions.order.create({
+                  purchase_units: purchase_units,
+                });
+              },
+
+              onApprove: function (data, actions) {
+                return actions.order.capture().then(function (orderData) {
+
+                  
+                  console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+                  
+                  const element = document.getElementById('paypal-button-container');
+                  element.innerHTML = '';
+                  element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+                  
+
+                });
+              },
+
+              onError: function (err) {
+                console.log(err);
+              }
+            }).render('#paypal-button-container');
+          }
+          initPayPalButton();
+        </script>
+      </div>
+    </div>
+</article>
+
+
+
+
+  <article class="post" data-aos="zoom-in-up" data-aos-duration="800">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jameshsu0407" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </article>
+
+
+
+
+
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jameshsu0407" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+
+<div class="pagination">
+  
+  
+  <a href="/blog/20220729_got_covid/" class="button right"><span>[心得]米米的確診漂流記</span></a>
+  
+</div>
+
+    </main>
+    
+    
+    <section id="site-sidebar">
+  
+  <section data-aos="zoom-in-up" data-aos-duration="800">
+    <header>
+      <h1>advertisement</h1>
+    </header>
+    <div class="ad_slick">
+      
+      <a href='https://vbshoptrax.com/track/clicks/6575/ce2bc2bf9b0129ddfb9cbd2e8d2b8914736249ce76eee0e25826bf0362035a?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.verve.com.tw'><img src='https://vbshoptrax.com/track/imp/img/120922/ce2bc2bf9b0129ddfb9cbd2e8d2b8914736249ce76eee0e25826bf0362035a?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+      <a href='https://twshop4coupon.com/track/clicks/6575/ce2bc2bf9b0128daf09cbd2e8d2b8914736249ce76eee0e25826bf0362035a?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.verve.com.tw'><img src='https://twshop4coupon.com/track/imp/img/120859/ce2bc2bf9b0128daf09cbd2e8d2b8914736249ce76eee0e25826bf0362035a?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+      <a href='https://tlcafftrax.com/track/clicks/6575/ce2bc2bf9b0128dafc9cbd2e8d2b8914736249ce76eee0e25826bf0362035a?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.verve.com.tw'><img src='https://tlcafftrax.com/track/imp/img/120855/ce2bc2bf9b0128dafc9cbd2e8d2b8914736249ce76eee0e25826bf0362035a?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+      <a href='https://affclkr.online/track/clicks/6575/ce2bc2bf9b0128d9fa9cbd2e8d2b8914736249ce76eee0e25826bf0362035a?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.verve.com.tw'><img src='https://affclkr.online/track/imp/img/120863/ce2bc2bf9b0128d9fa9cbd2e8d2b8914736249ce76eee0e25826bf0362035a?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+    </div>
+  </section>
+  
+  
+    <section id="recent-posts" data-aos="zoom-in-up" data-aos-duration="800">
+      <header>
+        <h1>recent post</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/blog/20221210_string_prototype/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/main/JS.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/main/JS.png" alt="JS、常用處理字串的方法">
+  </a>
+        <header>
+          <h2><a href="/blog/20221210_string_prototype/">[教學]常用處理字串的方法</a></h2>
+          <time class="published" datetime="2022-12-10 00:00:00 &#43;0000 UTC">2022-12-10</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/portfolio/gootv/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/portfolio_img/GOODTV/GOODTV.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/portfolio_img/GOODTV/GOODTV.png" alt="GOODTV">
+  </a>
+        <header>
+          <h2><a href="/portfolio/gootv/">GOOD TV</a></h2>
+          <time class="published" datetime="2022-11-20 00:00:00 &#43;0000 UTC">2022-11-20</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/20220729_got_covid/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/blog_img/20220729_got_covid/%E7%A2%BA%E8%A8%BA.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/blog_img/20220729_got_covid/%E7%A2%BA%E8%A8%BA.png" alt="css">
+  </a>
+        <header>
+          <h2><a href="/blog/20220729_got_covid/">[心得]米米的確診漂流記</a></h2>
+          <time class="published" datetime="2022-07-29 00:00:00 &#43;0000 UTC">2022-07-29</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/blog/20220423_substitute_military_2/" class="image" style="--bg-image: url('https://jameshsu0407.github.io/img/blog_img/20220423_substitute_military_2/logo.png');">
+    <img class="stretchH" src="https://jameshsu0407.github.io/img/blog_img/20220423_substitute_military_2/logo.png" alt="css">
+  </a>
+        <header>
+          <h2><a href="/blog/20220423_substitute_military_2/">[心得]替代役訓練班-班本部</a></h2>
+          <time class="published" datetime="2022-04-23 00:00:00 &#43;0000 UTC">2022-04-23</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">查看更多</a>
+        </footer>
+      
+    </section>
+  
+  
+  
+    
+      <section id="categories" data-aos="zoom-in-up" data-aos-duration="800">
+        <header>
+          <h1><a href="/categories">categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/%E5%89%8D%E7%AB%AF%E6%95%99%E5%AD%B8/">前端教學<span class="count">10</span></a>
+          
+          <li>
+              <a href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/">作品集<span class="count">7</span></a>
+          
+          <li>
+              <a href="/categories/css/">css<span class="count">5</span></a>
+          
+          <li>
+              <a href="/categories/js/">js<span class="count">5</span></a>
+          
+          <li>
+              <a href="/categories/%E5%BF%83%E5%BE%97%E5%88%86%E4%BA%AB/">心得分享<span class="count">4</span></a>
+          
+          <li>
+              <a href="/categories/%E8%BB%9F%E9%AB%94%E5%88%86%E4%BA%AB/">軟體分享<span class="count">3</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+  
+  <section data-aos="zoom-in-up" data-aos-duration="800">
+    <header>
+      <h1>advertisement</h1>
+    </header>
+    <div class="ad_slick">
+      
+      <a href='https://affclkr.com/track/clicks/4820/ce2bc2bf9b0529d9fb9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fcategories%2Fipad-mini-2021-83%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://affclkr.com/track/imp/img/124962/ce2bc2bf9b0529d9fb9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+      <a href='https://twcouponcenter.com/track/clicks/4820/ce2bc2bf9b0529d9fc9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fcategories%2Fipad-mini-2021-83%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://twcouponcenter.com/track/imp/img/124965/ce2bc2bf9b0529d9fc9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+      <a href='https://twcouponcenter.com/track/clicks/4820/ce2bc2bf9a0520daff9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=&t=https%3A%2F%2Fwww.jtlegend.com.tw%2Fcategories%2Fcharger%3Futm_source%3Daffiliates%26utm_medium%3Dcpa%26utm_term%3D-transaction_id-'><img src='https://twcouponcenter.com/track/imp/img/134056/ce2bc2bf9a0520daff9cbd2e8d2b8914736249ce76eee0e25826bf016f065f?subid_1=&subid_2=&subid_3=&subid_4=&subid_5=' border='0' /></a>
+    </div>
+  </section>
+  
+  
+    <section id="mini-bio" data-aos="zoom-in-up" data-aos-duration="800">
+      <header>
+        <h1>about</h1>
+      </header>
+      <p>你好，我是米米，是個剛畢業就已經成為社畜的前端工程師==</p>
+      <footer>
+        <a href="/about" class="button">查看更多</a>
+      </footer>
+    </section>
+  
+</section>
+
+    <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        
+      </ul>
+  
+  <p class="copyright">
+    © 2022 米米的部落格
+      <br>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="//unpkg.com/lunr/lunr.js"></script><script src="/js/bundlecdn.min.f7288d8e16a7e9974761d9099689c3eae255a74fe73940b05710429b1c0145d2.js" integrity="sha256-9yiNjhan6ZdHYdkJlonD6uJVp0/nOUCwVxBCmxwBRdI="></script>
+    <script src="/js/add-on.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-176771659-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  </div>
+</body>
+
+</html>
